@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsPostCsrfMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -83,9 +84,9 @@ WSGI_APPLICATION = 'API_Disponibilidad_Docente.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'docente',
-        'USER': 'postgres',
-        'PASSWORD': 'Warcraft3',
+        'NAME': 'SIGA',
+        'USER': 'ale',
+        'PASSWORD': 'ayylmao717',
         'HOST': 'localhost',
         'PORT': 5432,
     }
@@ -109,7 +110,18 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3001'
+)
 
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

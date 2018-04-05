@@ -22,7 +22,9 @@ class DisponibilidadList(APIView):
         return Response(response.data)
 
     def post(self, request, format=None):
+        print('ah')
         request_dic=json.loads(json.dumps(request.data))
+        print(request_dic)
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
         id_inicial=Disponibilidad.objects.count()+1
         for dia in Diccionarios_intervalos:
@@ -39,5 +41,5 @@ class DisponibilidadList(APIView):
                 if serializer.is_valid():
                     serializer.save()
                 id_inicial=id_inicial+1
-        #return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
         #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
