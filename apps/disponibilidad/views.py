@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from django.http import  HttpResponse
 from rest_framework.response import Response
 from apps.disponibilidad.serializers import DisponibilidadSerializer
+from django.db.models.query import QuerySet
 from apps.disponibilidad.models import Disponibilidad,Dia
 from apps.docente.models import Docente
 from rest_framework import status
@@ -18,17 +19,16 @@ class DisponibilidadList(APIView):
     serializer = DisponibilidadSerializer
     def get(self, request, pk):
         horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk).order_by('id_disponibilidad').values()
-        #Disponibilidad.objects.filter(id_docente=pk).delete() #incluir con la interfaz
-        array = devolver_disponibilidad(horarios_intervalos,pk,8,14)
+        array = devolver_disponibilidad(horarios_intervalos,8,14)
         return Response(json.dumps(array))
 
 
         #lista = Disponibilidad.objects.all() #para mostrar las disponibilidad
         #response = self.serializer(lista, many=True) #para mostrar todos las listas
     def post(self, request, pk):
+        Disponibilidad.objects.filter(id_docente=pk).delete()
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
         id_inicial=Disponibilidad.objects.count()+1
-        print(Diccionarios_intervalos)
         for dia in Diccionarios_intervalos:
             for intervalos in Diccionarios_intervalos[dia]:
                 disponibilidad=Disponibilidad.objects.create(
