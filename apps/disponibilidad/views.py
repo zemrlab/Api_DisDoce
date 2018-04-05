@@ -22,9 +22,7 @@ class DisponibilidadList(APIView):
         return Response(response.data)
 
     def post(self, request, format=None):
-        print('ah')
         request_dic=json.loads(json.dumps(request.data))
-        print(request_dic)
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
         id_inicial=Disponibilidad.objects.count()+1
         for dia in Diccionarios_intervalos:

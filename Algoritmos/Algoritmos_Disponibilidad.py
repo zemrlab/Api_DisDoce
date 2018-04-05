@@ -20,7 +20,6 @@ def Descifrar_disponibilidad(jsonDescifrar,row,col,hora_inicial,clave):
 				i=i+1
 				hora=hora+1
 			if(len(lista)>0):
-				print(lista)
 				lista_nueva=[lista[0],lista.pop()+1]
 				lista_intervalos.append(lista_nueva)
 				lista=[]
