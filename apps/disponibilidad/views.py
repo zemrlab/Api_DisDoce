@@ -9,27 +9,28 @@ from apps.docente.models import Docente
 from rest_framework import status
 
 #MIS ALGORITMOS
-from Algoritmos.Algoritmos_Disponibilidad import Descifrar_disponibilidad
+from Algoritmos.Algoritmos_Disponibilidad import Descifrar_disponibilidad,devolver_disponibilidad
 #
 
 # Create your views here.
 
 class DisponibilidadList(APIView):
     serializer = DisponibilidadSerializer
-    def get(self, request, format=None):
-        lista = Disponibilidad.objects.all()
-        response = self.serializer(lista, many=True)
-        return Response(response.data)
+    def get(self, request, pk):
+        #lista = Disponibilidad.objects.all() #para mostrar las disponibilidad
+        array = devolver_disponibilidad(pk,8)
+        #response = self.serializer(lista, many=True) #para mostrar todos las listas
+        return Response(json.dumps(array))
 
-    def post(self, request, format=None):
-        request_dic=json.loads(json.dumps(request.data))
+    def post(self, request, pk):
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
         id_inicial=Disponibilidad.objects.count()+1
+        print(Diccionarios_intervalos)
         for dia in Diccionarios_intervalos:
             for intervalos in Diccionarios_intervalos[dia]:
                 disponibilidad=Disponibilidad.objects.create(
                                             id_disponibilidad=id_inicial,
-                                            id_docente=Docente.objects.get(pk=request_dic["teacher"]),
+                                            id_docente=Docente.objects.get(pk=pk),
                                             id_dia=Dia.objects.get(pk=dia),
                                             hr_inicio=intervalos[0],
                                             hr_fin=intervalos[1],
