@@ -33,15 +33,14 @@ def Descifrar_disponibilidad(jsonDescifrar,row,col,hora_inicial,clave):
 
 	return diccionario_intervalos
 
-def devolver_disponibilidad(iddocente,hora_inicio): #jsoncifrar disccionario de dias
-    horarios_intervalos=Disponibilidad.objects.filter(id_docente=iddocente).order_by('id_disponibilidad').values()
+def devolver_disponibilidad(horarios_intervalos,hora_inicio,horas_del_dia): #jsoncifrar disccionario de dias
     dia=1
     i_horario=0
     horarios=[]
     while(dia<8):
         hora=hora_inicio #8
         horario_seleccionado=False
-        for i in range(14):
+        for i in range(horas_del_dia): #14
             if(dia==int((horarios_intervalos[i_horario])['id_dia_id']) and hora==int((horarios_intervalos[i_horario])['hr_inicio'])):
                 horario_seleccionado=True
             if(dia==int((horarios_intervalos[i_horario])['id_dia_id']) and hora==int((horarios_intervalos[i_horario])['hr_fin'])):

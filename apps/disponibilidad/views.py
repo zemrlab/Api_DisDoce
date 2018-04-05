@@ -17,11 +17,14 @@ from Algoritmos.Algoritmos_Disponibilidad import Descifrar_disponibilidad,devolv
 class DisponibilidadList(APIView):
     serializer = DisponibilidadSerializer
     def get(self, request, pk):
-        #lista = Disponibilidad.objects.all() #para mostrar las disponibilidad
-        array = devolver_disponibilidad(pk,8)
-        #response = self.serializer(lista, many=True) #para mostrar todos las listas
+        horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk).order_by('id_disponibilidad').values()
+        #Disponibilidad.objects.filter(id_docente=pk).delete() #incluir con la interfaz
+        array = devolver_disponibilidad(horarios_intervalos,pk,8,14)
         return Response(json.dumps(array))
 
+
+        #lista = Disponibilidad.objects.all() #para mostrar las disponibilidad
+        #response = self.serializer(lista, many=True) #para mostrar todos las listas
     def post(self, request, pk):
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
         id_inicial=Disponibilidad.objects.count()+1
