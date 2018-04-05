@@ -39,5 +39,5 @@ class DisponibilidadList(APIView):
                 if serializer.is_valid():
                     serializer.save()
                 id_inicial=id_inicial+1
-        #return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
         #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

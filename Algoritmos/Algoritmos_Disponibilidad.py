@@ -15,12 +15,12 @@ def Descifrar_disponibilidad(jsonDescifrar,row,col,hora_inicial,clave):
 		cantidad=len(fila)
 		i=0
 		while(i<cantidad):
-			while(i<cantidad and fila[i]=='1'):
+			while(i<cantidad and fila[i]==True):
 				lista.append(hora)
 				i=i+1
 				hora=hora+1
 			if(len(lista)>0):
-				lista_nueva=[lista.pop(0),lista.pop()+1]
+				lista_nueva=[lista[0],lista.pop()+1]
 				lista_intervalos.append(lista_nueva)
 				lista=[]
 			i=i+1
