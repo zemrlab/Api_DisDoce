@@ -16,7 +16,7 @@ from Algoritmos.Algoritmos_Disponibilidad import Descifrar_disponibilidad,devolv
 # Create your views here.
 
 class DisponibilidadList(APIView):
-    serializer = DisponibilidadSerializer
+    #serializer = DisponibilidadSerializer
     def get(self, request, pk):
         horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk).order_by('id_disponibilidad').values()
         array = devolver_disponibilidad(horarios_intervalos,8,14)

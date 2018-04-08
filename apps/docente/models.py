@@ -1,5 +1,4 @@
 from django.db import models
-from apps.curso.models import Curso
 from apps.usuario.models import Usuario
 # Create your models here.
 
@@ -26,14 +25,6 @@ class Docente(models.Model):
     class Meta:
         #managed = False
         db_table = 'docente'
-class Preferencia(models.Model):
-            id_preferencia = models.IntegerField(primary_key=True)
-            id_docente = models.ForeignKey(Docente, db_column='id_docente',on_delete=models.CASCADE)
-            id_curso = models.ForeignKey(Curso, db_column='id_curso',on_delete=models.CASCADE)
-
-            class Meta:
-                #managed = False
-                db_table = 'preferencia'
 
 class TipoGrado(models.Model):
     id_tip_grado = models.CharField(primary_key=True, max_length=2)
