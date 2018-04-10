@@ -1,0 +1,14 @@
+
+servidor_lccal_por_defecto=http://127.0.0.1:8000
+
+<servidor>/docente/pdf/<iddocente>  : GET - devuelve los datos por pdf
+
+<servidor>/docente/api/<iddocente>  : GET - devuelve los datos del docente en un json
+
+<servidor>/disponibilidad/api/<iddocente>  : GET - devuelve la disponibilidad del docente(de acuerdo al formato establecido , ver enviar datos a json del web service)
+                                             POST - ingresa disponibilidad del docente (de acuerdo al formato establecido , ver enviar datos a json del web service)
+
+<servidor>/curso/api : GET - devuelve todos los datos de los programas y sus cursos.
+
+
+<servidor>/curso/docente/<iddocente> : GET - devuelve los cursos que prefiere enseñar el docente

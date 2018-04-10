@@ -12,13 +12,12 @@ class ProgramasCursoList(APIView):
     def get(self, request):
         programas=Programa.objects.all()
         response = self.serializer(programas,many=True)
-        print(response.data)
         return Response(response.data)
 
 class ProgramaDocenteLista(APIView):
     serializer=CursoPrefSerializer
     def get(self,request,pk):
-        preferencias = Preferencia.objects.filter(id_docente=pk).values()           #filter(id_docente=pk)
+        preferencias = Preferencia.objects.filter(id_docente=pk).values()
         cursos=[]
         for preferencia in preferencias:
             curso=Curso.objects.get(id_curso=preferencia['id_curso_id'])

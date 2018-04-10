@@ -5,7 +5,7 @@ from django.conf import settings
 from rest_framework.views import APIView
 from apps.docente.serializers import DocenteSerializer
 from rest_framework.response import Response
-from apps.docente.models import Docente
+from apps.docente.models import Docente,DatosAcademicos,TipoGrado
 from django.http import  HttpResponse
 from reportlab.pdfgen import canvas
 from Algoritmos.libreria_pdf import *
@@ -25,7 +25,11 @@ class PDFView(APIView):
         response = HttpResponse(content_type='application/pdf')
         nombre_pdf='docente'+id
         response['Content-Disposition'] = 'filename="'+nombre_pdf+'.pdf"'
-        informacion_docente=Docente.objects.get(id_docente=id)
+
+        try:
+            informacion_docente=Docente.objects.get(id_docente=id)
+        except Docente.DoesNotExist:
+            return HttpResponse('NO EXISTE DOCENTE')
 
         #variables docente
         docente_nom=informacion_docente.nom_docente
@@ -43,6 +47,15 @@ class PDFView(APIView):
         docente_categoria= informacion_docente.categoria
         docente_regimen_dedicacion= informacion_docente.regimen_dedicacion
         docente_cv = informacion_docente.cv
+
+        total_datos_academicos = DatosAcademicos.objects.filter(id_docente=id).values()
+        docente_Grado={}
+        for datos_academicos in total_datos_academicos:
+            Nombre_Tipo_Grado=(TipoGrado.objects.get(id_tip_grado=datos_academicos['id_tip_grado_id'])).nom_tip_grado
+            Nombre_Mencion_Grado=datos_academicos['mencion_grado']
+            print(Nombre_Tipo_Grado)
+            print(Nombre_Mencion_Grado)
+            docente_Grado[Nombre_Tipo_Grado]=Nombre_Mencion_Grado
 
         #variabls de ayuda para pintar docente
         fin_direccion=35
@@ -101,7 +114,7 @@ class PDFView(APIView):
             'campo': 20,
             'campo_radio': 15,
             'radio': 20,
-            'titulo_medio': 40,
+            'titulo_medio': 30,
             'valor': 20,
         }
 
@@ -283,9 +296,15 @@ class PDFView(APIView):
             {'campo': {'text': 'Titulo Profesional',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': docente_Grado.get('Titulo Profesional','NO TIENE'),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
             {'campo': {'text': 'Licenciatura',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': docente_Grado.get('Licenciatura', 'NO TIENE'),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
         ]
 
         # variables:informacion_academica2 form
@@ -306,12 +325,21 @@ class PDFView(APIView):
             {'campo': {'text': 'Maestria',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': docente_Grado.get('Maestria', 'NO TIENE'),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
             {'campo': {'text': 'Especialidad',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': docente_Grado.get('Especialidad', 'NO TIENE'),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
             {'campo': {'text': 'Doctorado',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': docente_Grado.get('Doctorado', 'NO TIENE'),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
         ]
         #titulo
         titulo_texto(p,texto_titulo1,x_titulo1,y_titulo1,
