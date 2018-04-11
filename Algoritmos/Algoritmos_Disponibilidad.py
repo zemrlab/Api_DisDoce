@@ -1,5 +1,6 @@
 import json
 from apps.disponibilidad.models import Disponibilidad
+from django.db.models import Count,Sum
 
 def Descifrar_disponibilidad(jsonDescifrar,row,col,hora_inicial,clave):
 	valores=json.loads(jsonDescifrar)
@@ -55,3 +56,14 @@ def devolver_disponibilidad(horarios_intervalos,hora_inicio,horas_del_dia): #jso
             i_horario=i_horario+1
         dia=dia+1
     return horarios
+def docente_dias_disponibilidad(idDocente):
+    dias_disponibles = Disponibilidad.objects.filter(id_docente=idDocente).values('id_dia_id').annotate(dcount=Count('id_dia_id')).count()
+    return dias_disponibles
+
+def docente_horas_disponibilidad(idDocente):
+    query_horas_disponibles = Disponibilidad.objects.filter(id_docente=idDocente).values()
+    horas_disponibles=0
+    for x in query_horas_disponibles:
+        horas_disponibles=horas_disponibles+int(x['tot_hrs'])
+
+    return horas_disponibles

@@ -57,6 +57,9 @@ def radio(p,dic):
     palabra=texto(p,dic['text'],dic['x']+dic['radio']+dic['espacio_nombre'],dic['y']-dic['radio'],dic['tipo_letra'],dic['tamanio_letra'])
     p.drawText(palabra)
 
+def linea(p,dic):
+    p.line(dic['x_inicio_linea'],dic['y'],dic['x_inicio_linea']+dic['x_ancho_linea'],dic['y'])
+
 
 """
 
@@ -81,6 +84,11 @@ def radio(p,dic):
                'radio': radio_longitud_radio,
                'espacio_nombre': radio_espacio_nombre,
                'tamanio_letra': radio_tamanio_letra_form}
+    {'linea': {'x_inicio_linea': x_marcos,
+               'x_ancho_linea': ancho_marcos}},
+    {'valor': {'text': docente_Grado.get('Especialidad', 'NO TIENE'),
+               'tipo_letra': valor_tipo_letra_form,
+               'tamanio_letra': valor_tamanio_letra_form}},
 
 """
 
@@ -98,4 +106,5 @@ def formulario(p,x,y,lista_form,switcher_formulario,switcher_salto_linea,switche
             func=switcher_formulario.get(key,'No existe')
             if func!='No existe':
                 func(p,value)
+    return y
 
