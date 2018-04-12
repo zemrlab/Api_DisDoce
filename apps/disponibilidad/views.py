@@ -19,6 +19,7 @@ class DisponibilidadList(APIView):
     #serializer = DisponibilidadSerializer
     def get(self, request, pk):
         horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk).order_by('id_disponibilidad').values()
+        print(horarios_intervalos)
         if horarios_intervalos:
             array = devolver_disponibilidad(horarios_intervalos,8,14)
             return Response(json.dumps(array))

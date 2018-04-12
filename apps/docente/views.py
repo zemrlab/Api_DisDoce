@@ -59,7 +59,7 @@ class PDFView(APIView):
             docente_Grado[Nombre_Tipo_Grado]=Nombre_Mencion_Grado
 
         #variabls de ayuda para pintar docente
-        fin_direccion=35
+        fin_direccion=25
         direccion_caracter_siguiente_linea=''
 
         if len(docente_direccion)>=35 :

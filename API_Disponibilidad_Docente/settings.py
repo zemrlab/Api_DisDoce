@@ -85,9 +85,9 @@ WSGI_APPLICATION = 'API_Disponibilidad_Docente.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'docente',
-        'USER': 'postgres',
-        'PASSWORD': 'Warcraft3',
+        'NAME': 'SIGA',
+        'USER': 'ale',
+        'PASSWORD': 'ayylmao717',
         'HOST': 'localhost',
         'PORT': 5432,
     }
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3001'
+    'localhost:3000'
 )
 
 CORS_ALLOW_METHODS = (
