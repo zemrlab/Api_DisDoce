@@ -20,8 +20,11 @@ class DocenteList(APIView):
     serializer = DocenteSerializer
     def get(self, request, id):
         lista = Docente.objects.get(id_docente=id)
-        response=self.serializer(lista)
-        return Response(response.data)
+        listajson=(self.serializer(lista)).data
+        listaDatos_Academicos=DatosAcademicos.objects.filter(id_docente=id)
+        for datos_academicos in listaDatos_Academicos:
+            listajson[datos_academicos.id_tip_grado.nom_tip_grado]=datos_academicos.mencion_grado
+        return Response(listajson)
 
 class PDFView(APIView):
     def get(self,request,id):
@@ -59,7 +62,7 @@ class PDFView(APIView):
             docente_Grado[Nombre_Tipo_Grado]=Nombre_Mencion_Grado
 
         #variabls de ayuda para pintar docente
-        fin_direccion=35
+        fin_direccion=25
         direccion_caracter_siguiente_linea=''
 
         if len(docente_direccion)>=35 :

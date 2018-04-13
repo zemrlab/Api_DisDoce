@@ -1,0 +1,24 @@
+{
+"seleccion": [
+      {
+        "id_programa": 1,
+        "nom_programa": "Programa 1",
+        "cursos": [
+          {
+            "id_curso": 2,
+            "nom_curso": "Curso 2"
+          }
+        ]
+      },
+      {
+        "id_programa": 2,
+        "nom_programa": "Programa 2",
+        "cursos": [
+          {
+            "id_curso": 5,
+            "nom_curso": "Curso 11"
+          }
+        ]
+     }
+ ]
+}
