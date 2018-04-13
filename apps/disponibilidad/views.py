@@ -19,16 +19,11 @@ class DisponibilidadList(APIView):
     #serializer = DisponibilidadSerializer
     def get(self, request, pk):
         horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk).order_by('id_disponibilidad').values()
-        print(horarios_intervalos)
         if horarios_intervalos:
             array = devolver_disponibilidad(horarios_intervalos,8,14)
             return Response(json.dumps(array))
         else:
             return Response(json.dumps([]))
-
-
-        #lista = Disponibilidad.objects.all() #para mostrar las disponibilidad
-        #response = self.serializer(lista, many=True) #para mostrar todos las listas
     def post(self, request, pk):
         Disponibilidad.objects.filter(id_docente=pk).delete()
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
@@ -43,9 +38,7 @@ class DisponibilidadList(APIView):
                                             hr_fin=intervalos[1],
                                             tot_hrs=intervalos[1]-intervalos[0]
                                             )
-                serializer = DisponibilidadSerializer(data=disponibilidad) #cambiar por self.serializer
-                if serializer.is_valid():
-                    serializer.save()
                 id_inicial=id_inicial+1
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-        #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        estado={}
+        estado['estado']='correcto'
+        return Response(estado, status=status.HTTP_201_CREATED)
