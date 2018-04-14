@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer,SlugRelatedField,PrimaryKeyRelatedField
+from rest_framework.serializers import ModelSerializer,SlugRelatedField,PrimaryKeyRelatedField,ListField
 from apps.curso.models import Programa,Curso,Preferencia
 
 
@@ -13,7 +13,6 @@ class ProgramaSerializer(ModelSerializer):
     class Meta:
         model = Programa
         fields = ('id_programa', 'nom_programa', 'cursos',)
-
 
 class CursoPrefSerializer(ModelSerializer):
     class Meta:

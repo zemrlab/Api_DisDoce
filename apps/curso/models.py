@@ -5,7 +5,6 @@ from apps.docente.models import Docente
 class Programa(models.Model):
     id_programa = models.IntegerField(primary_key=True)
     nom_programa = models.CharField(max_length=50)
-
     class Meta:
         #managed = False
         db_table = 'programa'

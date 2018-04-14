@@ -85,9 +85,9 @@ WSGI_APPLICATION = 'API_Disponibilidad_Docente.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'SIGA',
-        'USER': 'ale',
-        'PASSWORD': 'ayylmao717',
+        'NAME': 'docente',
+        'USER': 'postgres',
+        'PASSWORD': 'Warcraft3',
         'HOST': 'localhost',
         'PORT': 5432,
     }
