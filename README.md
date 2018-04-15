@@ -7,6 +7,6 @@ Prerequisito
   [Tener PiP, el manejador de paquetes de django, comando para instalar : python get-pip.py]
   [Hacer un entorno virtual]
 Pasos
-[Instalar requeriments.txt:pip install -r requirements.txt]
+[Instalar requeriments.txt:pip install -r requeriments.txt]
 [Entrar al directorio]
 [le das al comando: python manage.py runserver]
