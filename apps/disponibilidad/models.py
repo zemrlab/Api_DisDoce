@@ -7,7 +7,7 @@ class Dia(models.Model):
     nom_dia = models.CharField(max_length=10)
 
     class Meta:
-        #managed = False
+        managed = False
         db_table = 'dia'
 class Disponibilidad(models.Model):
     id_disponibilidad = models.IntegerField(primary_key=True)
@@ -18,7 +18,7 @@ class Disponibilidad(models.Model):
     tot_hrs = models.CharField(max_length=2)
 
     class Meta:
-        #managed = False
+        managed = False
         db_table = 'disponibilidad'
 
 

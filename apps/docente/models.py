@@ -3,27 +3,48 @@ from apps.usuario.models import Usuario
 # Create your models here.
 
 class Docente(models.Model):
-    id_docente = models.IntegerField(primary_key=True)
-    id_usuario = models.ForeignKey(Usuario, db_column='id_usuario',on_delete=models.CASCADE)
-    nom_docente = models.CharField(max_length=50)
-    ape_docente = models.CharField(max_length=50)
-    codigo_docente = models.CharField(max_length=10)
-    dni_docente = models.CharField(max_length=8)
-    email_docente = models.CharField(max_length=70)
-    celular_docente = models.CharField(max_length=9)
-    genero = models.CharField(max_length=1)
-    pagina_web = models.CharField(max_length=50)
-    #foto = models.BinaryField()
-    fecha_nac = models.DateField()
-    pais = models.CharField(max_length=50)
-    direccion = models.CharField(max_length=80)
-    sunedu_le = models.CharField(max_length=2)
-    categoria = models.CharField(max_length=30)
-    regimen_dedicacion = models.CharField(max_length=30)
-    cv = models.CharField(max_length=100)
+    id_usuario = models.ForeignKey(Usuario, db_column='id_usuario',on_delete=models.CASCADE, blank=True, null=True)
+    nombres = models.CharField(max_length=100, blank=True, null=True)
+    apell_pat = models.CharField(max_length=100, blank=True, null=True)
+    apell_mat = models.CharField(max_length=100, blank=True, null=True)
+    pais = models.CharField(max_length=30, blank=True, null=True)
+    tipo_document = models.CharField(max_length=100, blank=True, null=True)
+    nro_document = models.CharField(max_length=100, blank=True, null=True)
+    codigo = models.CharField(max_length=100, blank=True, null=True)
+    telefono = models.CharField(max_length=100, blank=True, null=True)
+    celular = models.CharField(max_length=100, blank=True, null=True)
+    email = models.CharField(unique=True, max_length=100)
+    linkedinid = models.CharField(db_column='linkedInId', unique=True, max_length=100, blank=True, null=True)  # Field name made lowercase.
+    genero = models.CharField(max_length=1, blank=True, null=True)
+    pag_web = models.CharField(max_length=100, blank=True, null=True)
+    foto = models.CharField(max_length=100, blank=True, null=True)
+    fecha_nac = models.DateField(blank=True, null=True)
+    direccion = models.CharField(max_length=100, blank=True, null=True)
+    mayor_grado = models.CharField(max_length=100, blank=True, null=True)
+    menc_grado = models.CharField(max_length=100, blank=True, null=True)
+    universidad = models.CharField(max_length=100, blank=True, null=True)
+    pais_grado = models.CharField(max_length=100, blank=True, null=True)
+    cv = models.CharField(max_length=100, blank=True, null=True)
+    fech_ingreso = models.CharField(max_length=100, blank=True, null=True)
+    sunedu_ley = models.CharField(max_length=2, blank=True, null=True)
+    nivel_programa = models.CharField(max_length=100, blank=True, null=True)
+    categoria = models.CharField(max_length=100, blank=True, null=True)
+    regimen_dedicacion = models.CharField(max_length=100, blank=True, null=True)
+    horas_semanales = models.CharField(max_length=100, blank=True, null=True)
+    investigador = models.CharField(max_length=2, blank=True, null=True)
+    dina = models.CharField(max_length=2, blank=True, null=True)
+    per_academico = models.CharField(max_length=100, blank=True, null=True)
+    observacion = models.CharField(max_length=100, blank=True, null=True)
+    resetpasswordexpires = models.DateTimeField(db_column='resetPasswordExpires', blank=True, null=True)  # Field name made lowercase.
+    resetpasswordtoken = models.CharField(db_column='resetPasswordToken', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    createdat = models.DateTimeField(db_column='createdAt', blank=True, null=True)  # Field name made lowercase.
+    updatedat = models.DateTimeField(db_column='updatedAt', blank=True, null=True)  # Field name made lowercase.
+    logins = models.IntegerField(blank=True, null=True)
+    profile = models.TextField(blank=True, null=True)  # This field type is a guess.
+    tokens = models.TextField(blank=True, null=True)  # This field type is a guess.
 
     class Meta:
-        #managed = False
+        managed = False
         db_table = 'docente'
 
 class TipoGrado(models.Model):
@@ -31,7 +52,7 @@ class TipoGrado(models.Model):
     nom_tip_grado = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
-        #managed = False
+        managed = False
         db_table = 'tipo_grado'
 class DatosAcademicos(models.Model):
     id_dat_academicos = models.IntegerField(primary_key=True)
@@ -42,5 +63,5 @@ class DatosAcademicos(models.Model):
     pais_estudios = models.CharField(max_length=50)
 
     class Meta:
-        #managed = False
+        managed = False
         db_table = 'datos_academicos'

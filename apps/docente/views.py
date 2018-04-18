@@ -2,6 +2,7 @@
 import json
 from django.shortcuts import render
 from django.conf import settings
+from rest_framework import status
 from rest_framework.views import APIView
 from apps.docente.serializers import DocenteSerializer
 from rest_framework.response import Response
@@ -19,7 +20,10 @@ from PIL import Image
 class DocenteList(APIView):
     serializer = DocenteSerializer
     def get(self, request, id):
-        lista = Docente.objects.get(id_docente=id)
+        try:
+            lista = Docente.objects.get(id=id)
+        except Docente.DoesNotExist:
+            return Response('NO EXISTE DOCENTE',status=status.HTTP_400_BAD_REQUEST)
         listajson=(self.serializer(lista)).data
         listaDatos_Academicos=DatosAcademicos.objects.filter(id_docente=id)
         for datos_academicos in listaDatos_Academicos:
@@ -33,23 +37,25 @@ class PDFView(APIView):
         response['Content-Disposition'] = 'filename="'+nombre_pdf+'.pdf"'
 
         try:
-            informacion_docente=Docente.objects.get(id_docente=id)
+            informacion_docente=Docente.objects.get(id=id)
         except Docente.DoesNotExist:
-            return HttpResponse('NO EXISTE DOCENTE')
+            return Response('NO EXISTE DOCENTE',status=status.HTTP_400_BAD_REQUEST)
 
         #variables docente
-        docente_nom=informacion_docente.nom_docente
-        docente_ape = informacion_docente.ape_docente
-        docente_codigo = informacion_docente.codigo_docente
-        docente_dni= informacion_docente.dni_docente
-        docente_email = informacion_docente.email_docente
-        docente_celular=informacion_docente.celular_docente
+        docente_nom=informacion_docente.nombres
+        apellidos=informacion_docente.apell_pat+" "+informacion_docente.apell_mat
+        docente_ape = apellidos
+        docente_codigo = informacion_docente.codigo
+        docente_tipo_documento=informacion_docente.tipo_document
+        docente_nro_documento= informacion_docente.nro_document
+        docente_email = informacion_docente.email
+        docente_celular=informacion_docente.celular
         docente_genero= informacion_docente.genero
-        docente_pagina_web= informacion_docente.pagina_web
+        docente_pagina_web= informacion_docente.pag_web
         docente_fecha_nac= informacion_docente.fecha_nac
         docente_pais= informacion_docente.pais
         docente_direccion= informacion_docente.direccion
-        docente_sunedu_le= informacion_docente.sunedu_le
+        docente_sunedu_le= informacion_docente.sunedu_ley
         docente_categoria= informacion_docente.categoria
         docente_regimen_dedicacion= informacion_docente.regimen_dedicacion
         docente_cv = informacion_docente.cv
@@ -65,9 +71,14 @@ class PDFView(APIView):
         fin_direccion=25
         direccion_caracter_siguiente_linea=''
 
-        if len(docente_direccion)>=35 :
-            if docente_direccion[35]!=' ':
+        # variabls de ayuda para pintar programa de los cursos
+        fin_programa_curso=55
+        programa_curso_caracter_siguiente_linea=''
+
+        if len(docente_direccion)>=fin_direccion :
+            if docente_direccion[fin_direccion]!=' ':
                 direccion_caracter_siguiente_linea='-'
+
 
         docente_genero_radio = {'Masculino':False,'Femenino':False}
 
@@ -213,10 +224,10 @@ class PDFView(APIView):
             {'valor': {'text': docente_ape,
                        'tipo_letra': valor_tipo_letra_form,
                        'tamanio_letra': valor_tamanio_letra_form}},
-            {'campo': {'text': 'DNI',
+            {'campo': {'text': docente_tipo_documento,
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
-            {'valor': {'text': docente_dni,
+            {'valor': {'text': docente_nro_documento,
                        'tipo_letra': valor_tipo_letra_form,
                        'tamanio_letra': valor_tamanio_letra_form}},
             {'campo_radio': {'text': 'Sexo',
@@ -302,7 +313,7 @@ class PDFView(APIView):
             {'campo': {'text': 'Titulo Profesional',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
-            {'valor': {'text': docente_Grado.get('Titulo Profesional','NO TIENE'),
+            {'valor': {'text': docente_Grado.get('Titulo','NO TIENE'),
                        'tipo_letra': valor_tipo_letra_form,
                        'tamanio_letra': valor_tamanio_letra_form}},
             {'campo': {'text': 'Licenciatura',
@@ -471,6 +482,8 @@ class PDFView(APIView):
 
         #FORM_DINAMICO
 
+        programas_cursos_keys=programas_cursos.keys()
+        ultimovalor=(list(programas_cursos_keys)).pop()
 
         for key, value in programas_cursos.items():
             # Marcos
@@ -479,11 +492,18 @@ class PDFView(APIView):
                    ancho_marcos,
                    alto_marcos)
 
+            if len(key) >= fin_programa_curso:
+                if key[fin_programa_curso] != ' ':
+                    programa_curso_caracter_siguiente_linea = '-'
+
             lista_form_marcos_form = [
                 {'campo': {'text': 'Nombre de programa',
                             'tipo_letra': campo_tipo_letra_form,
                             'tamanio_letra': campo_tamanio_letra_form}},
-                {'valor': {'text':  key,
+                {'valor': {'text':  key[:fin_programa_curso]+programa_curso_caracter_siguiente_linea,
+                           'tipo_letra': valor_tipo_letra_form,
+                           'tamanio_letra': valor_tamanio_letra_form}},
+                {'valor': {'text': key[fin_programa_curso:],
                            'tipo_letra': valor_tipo_letra_form,
                            'tamanio_letra': valor_tamanio_letra_form}},
                 {'linea': {'x_inicio_linea': x_marcos,
@@ -517,7 +537,7 @@ class PDFView(APIView):
             x_form_marcos=x_form_inicial
             y_form_marcos=y_marcos-separacion_marcos-alto_marcos*(1/8)
             y_marcos=y_marcos-alto_marcos-separacion_marcos
-            if y_marcos < 0:
+            if y_marcos < 0 and key!=ultimovalor:
                 p.showPage()
                 #OTRA PAGINA
 

@@ -36,8 +36,7 @@ class ProgramaDocenteLista(APIView):
             listaprogramas=serializerprograma.data
             listaprogramas['cursos']=cursos[key]
             programas.append(listaprogramas)
-        seleccion={'seleccion':programas}
-        return Response(seleccion)
+        return Response(programas)
 
     def post(self,request,pk):
         Preferencia.objects.filter(id_docente=pk).delete()

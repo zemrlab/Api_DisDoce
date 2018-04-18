@@ -7,7 +7,7 @@ class TipoUsuario(models.Model):
     nombre_tipo = models.CharField(unique=True, max_length=30)
 
     class Meta:
-        #managed = False
+        managed = False
         db_table = 'tipo_usuario'
 class Usuario(models.Model):
     id_usuario = models.IntegerField(primary_key=True)
@@ -16,5 +16,5 @@ class Usuario(models.Model):
     pass_field = models.CharField(db_column='pass', max_length=30)  # Field renamed because it was a Python reserved word.
 
     class Meta:
-        #managed = False
+        managed = False
         db_table = 'usuario'
