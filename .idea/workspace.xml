@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50f36800-2442-4377-bb8f-a92a86f63a9b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/API_Disponibilidad_Docente.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/API_Disponibilidad_Docente.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notas/el local.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notas/en la nube azure.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/migrations/0002_auto_20180406_0055.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/curso/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/curso/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/curso/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/disponibilidad/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/disponibilidad/migrations/0002_disponibilidad_id_docente.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/disponibilidad/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/disponibilidad/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docente/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docente/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docente/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docente/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docente/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/disponibilidad/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/disponibilidad/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/docente/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docente/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/usuario/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/usuario/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/usuario/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelos.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Api_DisDoce$Run_DjangoRest.coverage" NAME="Run DjangoRest Coverage Results" MODIFIED="1524086525154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Api_DisDoce$Run_DjangoRest.coverage" NAME="Run DjangoRest Coverage Results" MODIFIED="1524181151296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -77,31 +67,48 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="siga@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="siga: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="docente: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+        <item name="roles" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Post de cursos.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Notas/Post de cursos.txt">
+      <file leaf-file-name="el local.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Notas/el local.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state>
+              <caret selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Urls Post y Get.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Notas/Urls Post y Get.txt">
+      <file leaf-file-name="en la nube azure.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Notas/en la nube azure.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="36" />
+            <state>
+              <caret selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/docente/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="519" column="35" lean-forward="true" selection-start-line="519" selection-start-column="35" selection-end-line="519" selection-end-column="35" />
+              <folding>
+                <element signature="e#1#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;/div&gt;</find>
       <find>&lt;div.+</find>
       <find>class=&quot;.+&quot;</find>
       <find>co</find>
@@ -147,6 +153,7 @@
       <find>programas_cursos_lista</find>
       <find>informacion_personal</find>
       <find>direccion</find>
+      <find>second_f</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,19 +188,22 @@
         <option value="$PROJECT_DIR$/Algoritmos/Algoritmos_Disponibilidad.py" />
         <option value="$PROJECT_DIR$/../dispdoc/src/App.js" />
         <option value="$PROJECT_DIR$/API_Disponibilidad_Docente/urls.py" />
-        <option value="$PROJECT_DIR$/apps/disponibilidad/views.py" />
         <option value="$PROJECT_DIR$/Notas/Post de cursos.txt" />
         <option value="$PROJECT_DIR$/Notas/Urls Post y Get.txt" />
         <option value="$PROJECT_DIR$/apps/curso/serializers.py" />
-        <option value="$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py" />
         <option value="$PROJECT_DIR$/modelos.py" />
         <option value="$PROJECT_DIR$/apps/disponibilidad/models.py" />
         <option value="$PROJECT_DIR$/apps/usuario/models.py" />
         <option value="$PROJECT_DIR$/apps/docente/models.py" />
         <option value="$PROJECT_DIR$/apps/curso/models.py" />
+        <option value="$PROJECT_DIR$/apps/docente/serializers.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Notas/en la nube azure.txt" />
+        <option value="$PROJECT_DIR$/Notas/el local.txt" />
+        <option value="$PROJECT_DIR$/apps/disponibilidad/views.py" />
         <option value="$PROJECT_DIR$/apps/curso/views.py" />
         <option value="$PROJECT_DIR$/apps/docente/views.py" />
-        <option value="$PROJECT_DIR$/apps/docente/serializers.py" />
+        <option value="$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py" />
       </list>
     </option>
   </component>
@@ -217,6 +227,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,13 +238,18 @@
             <path>
               <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
               <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
+              <item name="API_Disponibilidad_Docente" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
               <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="curso" type="462c0819:PsiDirectoryNode" />
+              <item name="docente" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
@@ -249,7 +265,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -302,7 +317,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="manage.py" />
-      <option name="PARAMETERS" value="runserver 3000" />
+      <option name="PARAMETERS" value="runserver 8000" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -343,32 +358,32 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.497006" weight="0.32838285" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3489796" side_tool="true" weight="0.2970297" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49786553" weight="0.32921347" />
-      <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.49786553" weight="0.32921347" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3489796" side_tool="true" weight="0.2970297" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49786553" weight="0.32921347" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49786553" weight="0.32921347" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6510204" visible="true" weight="0.2640264" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.71020406" weight="0.21287128" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14489795" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.25408164" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.71020406" weight="0.21287128" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18061225" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15306123" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32959184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989796" weight="0.39933994" />
-      <window_info anchor="right" id="R Graphics" order="3" weight="0.32959184" />
+      <window_info anchor="right" id="R Packages" order="5" weight="0.32959184" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info active="true" anchor="right" id="DB Browser" order="7" visible="true" weight="0.32857144" />
-      <window_info anchor="right" id="R Packages" order="4" weight="0.32959184" />
+      <window_info active="true" anchor="right" id="DB Browser" order="8" visible="true" weight="0.32857144" />
+      <window_info anchor="right" id="R Graphics" order="4" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" weight="0.12871288" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.15511551" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Data View" order="6" />
+      <window_info anchor="right" id="Data View" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,75 +419,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b3b9a5b8-184d-40cf-9944-4fb1cb64fb0b/console.sql" />
-    <entry file="das://table:/a654638d/b3b9a5b8-184d-40cf-9944-4fb1cb64fb0b/SIGA.public.docente" />
-    <entry file="das://table:/a654638d/b3b9a5b8-184d-40cf-9944-4fb1cb64fb0b/SIGA.public.dia" />
-    <entry file="file://$PROJECT_DIR$/../dispdoc/src/App.js" />
-    <entry file="das://table:/a654638d/b3b9a5b8-184d-40cf-9944-4fb1cb64fb0b/SIGA.public.disponibilidad" />
-    <entry file="file://$PROJECT_DIR$/apps/docente/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/a654638d/b3b9a5b8-184d-40cf-9944-4fb1cb64fb0b/SIGA.public.tipo_grado" />
-    <entry file="das://table:/a654638d/b3b9a5b8-184d-40cf-9944-4fb1cb64fb0b/SIGA.public.datos_academicos" />
-    <entry file="file://$PROJECT_DIR$/env/lib/python3.6/site-packages/psycopg2/__init__.py" />
-    <entry file="das://table:/a654638d/b3b9a5b8-184d-40cf-9944-4fb1cb64fb0b/SIGA.public.curso" />
-    <entry file="das://table:/a654638d/b3b9a5b8-184d-40cf-9944-4fb1cb64fb0b/SIGA.public.preferencia" />
-    <entry file="file://$PROJECT_DIR$/Algoritmos/Algoritmos_Disponibilidad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/json/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="179" selection-start-line="179" selection-end-line="179" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/curso/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/API_Disponibilidad_Docente/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18511a59-e4f2-4bee-bb4e-3e5a056a80f6/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/disponibilidad/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10">
@@ -532,12 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/docente/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Notas/Datos que devuelvo.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="uml://DATABASE/18511a59-e4f2-4bee-bb4e-3e5a056a80f6">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -571,35 +511,19 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.17384916748285995" x="1060.5084507042252" y="1001.0" />
+          <settings layout="Hierarchic Group" zoom="0.17384916748285995" x="1061.0" y="1001.0" />
           <SelectedNodes />
           <Categories>
             <Category />
             <Category>Columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/curso/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-491" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/curso/migrations/0002_auto_20180406_0055.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-55" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/docente/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="58" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Notas/Para alejandro(Database).txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/curso/migrations/0001_initial.py" />
+    <entry file="file://$PROJECT_DIR$/apps/curso/migrations/0002_auto_20180406_0055.py" />
+    <entry file="file://$PROJECT_DIR$/apps/docente/migrations/0001_initial.py" />
     <entry file="file://$PROJECT_DIR$/Notas/Enviar datos a json al webservice.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -607,28 +531,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/curso">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/programa">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/preferencia">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/disponibilidad">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -642,16 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/curso/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/curso/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -659,35 +552,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/docente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="profile" languageId="JSON" />
-            <column name="tokens" languageId="JSON" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/tipo_grado">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/curso/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/disponibilidad/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -705,27 +573,208 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notas/Urls Post y Get.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notas/Post de cursos.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2af83361-e633-4afd-8e46-2125e6642b72/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/database/tcs/schema/public/table/curso">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/curso/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notas/Para alejandro(Database).txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/curso">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/dia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/database/tcs/schema/public/table/preferencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/database/tcs/schema/public/table/directiva">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/database/tcs/schema/public/table/docente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/database/tcs/schema/public/table/disponibilidad">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/preferencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/docente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="profile" languageId="JSON" />
+            <column name="tokens" languageId="JSON" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/sigap">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/pg_signal_backend">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/rol_modulo5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/azure_pg_admin">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/azure_superuser">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/modulo2">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/modulo4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/modulo6">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://2af83361-e633-4afd-8e46-2125e6642b72/role/modulo5">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algoritmos/Algoritmos_Disponibilidad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="71" column="28" lean-forward="true" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://18511a59-e4f2-4bee-bb4e-3e5a056a80f6/database/siga/schema/public/table/disponibilidad">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/disponibilidad/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/curso/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/docente/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8381">
-          <caret line="493" lean-forward="true" selection-start-line="493" selection-end-line="493" />
+        <state relative-caret-position="124">
+          <caret line="519" column="35" lean-forward="true" selection-start-line="519" selection-start-column="35" selection-end-line="519" selection-end-column="35" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notas/Post de cursos.txt">
+    <entry file="file://$PROJECT_DIR$/Notas/el local.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state>
+          <caret selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notas/Urls Post y Get.txt">
+    <entry file="file://$PROJECT_DIR$/Notas/en la nube azure.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="36" />
+        <state>
+          <caret selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>

@@ -75,6 +75,10 @@ class PDFView(APIView):
         fin_programa_curso=55
         programa_curso_caracter_siguiente_linea=''
 
+        # variabls de ayuda para pintar programa de los cursos
+        fin_marco_curso = 53
+        marco_curso_caracter_siguiente_linea = '-'
+
         if len(docente_direccion)>=fin_direccion :
             if docente_direccion[fin_direccion]!=' ':
                 direccion_caracter_siguiente_linea='-'
@@ -264,15 +268,6 @@ class PDFView(APIView):
         lista_form_informacion_personal2 = [
             {'campo': {'text': 'Fecha de Nacimiento',
                        'tipo_letra': campo_tipo_letra_form,
-                       'tamanio_letra': campo_tamanio_letra_form}},
-            {'valor': {'text': docente_fecha_nac.strftime('%m/%d/%Y'),
-                       'tipo_letra': valor_tipo_letra_form,
-                       'tamanio_letra': valor_tamanio_letra_form}},
-            {'campo': {'text': 'Pais',
-                       'tipo_letra': campo_tipo_letra_form,
-                       'tamanio_letra': campo_tamanio_letra_form}},
-            {'valor': {'text': docente_pais,
-                       'tipo_letra': valor_tipo_letra_form,
                        'tamanio_letra': valor_tamanio_letra_form}},
             {'campo': {'text': 'Direccion',
                        'tipo_letra': campo_tipo_letra_form,
@@ -487,10 +482,10 @@ class PDFView(APIView):
 
         for key, value in programas_cursos.items():
             # Marcos
-            p.rect(x_marcos,
-                   y_marcos,
-                   ancho_marcos,
-                   alto_marcos)
+            #p.rect(x_marcos,
+            #       y_marcos,
+            #       ancho_marcos,
+            #       alto_marcos)
 
             if len(key) >= fin_programa_curso:
                 if key[fin_programa_curso] != ' ':
@@ -520,8 +515,20 @@ class PDFView(APIView):
             y_form_marcos = y
             x_form_inicial=x_form_marcos
             for curso in value:
-                lista_second_form_marcos_form = (
-                    {'valor': {'text': '- '+curso,
+                curso="-"+curso
+                lista_second_form_marcos_form = []
+                faltante=len(curso)
+                while(faltante>fin_marco_curso):
+                    curso_text=curso[:fin_marco_curso]
+                    curso=curso[fin_marco_curso:]
+                    faltante=len(curso)
+                    lista_second_form_marcos_form.append(
+                        {'valor': {'text': curso_text+marco_curso_caracter_siguiente_linea,
+                                   'tipo_letra': valor_tipo_letra_form,
+                                   'tamanio_letra': valor_tamanio_letra_form}},
+                    )
+                lista_second_form_marcos_form.append(
+                    {'valor': {'text': curso,
                                'tipo_letra': valor_tipo_letra_form,
                                'tamanio_letra': valor_tamanio_letra_form}},
                 )
@@ -530,9 +537,14 @@ class PDFView(APIView):
                                switcher_salto_linea
                                , switcher_padding_left)
                 y_form_marcos=y
-                if y_form_marcos<y_marcos+alto_marcos*(1/8):
-                    y_form_marcos=y_form_inicial
-                    x_form_marcos=x_form_marcos+130
+                if y_form_marcos < y_marcos + alto_marcos * (1 / 8):
+                    y_marcos=y_marcos-switcher_salto_linea['valor']
+                    alto_marcos=alto_marcos+switcher_salto_linea['valor']
+
+            p.rect(x_marcos,
+                   y_marcos,
+                   ancho_marcos,
+                   alto_marcos)
 
             x_form_marcos=x_form_inicial
             y_form_marcos=y_marcos-separacion_marcos-alto_marcos*(1/8)
@@ -664,13 +676,13 @@ class PDFView(APIView):
             {'campo': {'text': 'Toral de horas disponibles :',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
-            {'valor': {'text': str(total_dias_disponible),
-                       'tipo_letra': campo_tipo_letra_form,
-                       'tamanio_letra': campo_tamanio_letra_form}},
-            {'campo': {'text': 'Toral de dias disponibles :',
-                       'tipo_letra': campo_tipo_letra_form,
-                       'tamanio_letra': campo_tamanio_letra_form}},
             {'valor': {'text': str(total_horas_disponible),
+                       'tipo_letra': campo_tipo_letra_form,
+                       'tamanio_letra': campo_tamanio_letra_form}},
+            {'campo': {'text': 'Total de dias disponibles :',
+                       'tipo_letra': campo_tipo_letra_form,
+                       'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': str(total_dias_disponible),
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
         ]

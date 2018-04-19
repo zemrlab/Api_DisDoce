@@ -1,0 +1,23 @@
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tcs',
+        'USER': 'modulo5@sigap.postgres.database.azure.com',
+        'PASSWORD': 'modulo5',
+        'HOST': 'sigap.postgres.database.azure.com',
+        'PORT': 5432,
+    }
+}
+
+
+//superuser
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tcs',
+        'USER': 'sigap@sigap',
+        'PASSWORD': 'Taller123',
+        'HOST': 'sigap.postgres.database.azure.com',
+        'PORT': 5432,
+    }
+}

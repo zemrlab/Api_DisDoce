@@ -85,13 +85,14 @@ WSGI_APPLICATION = 'API_Disponibilidad_Docente.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'siga',
-        'USER': 'postgres',
-        'PASSWORD': 'Warcraft3',
-        'HOST': 'localhost',
+        'NAME': 'tcs',
+        'USER': 'modulo5@sigap.postgres.database.azure.com',
+        'PASSWORD': 'modulo5',
+        'HOST': 'sigap.postgres.database.azure.com',
         'PORT': 5432,
     }
 }
+
 
 
 # Password validation

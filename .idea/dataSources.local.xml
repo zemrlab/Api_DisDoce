@@ -19,5 +19,14 @@
       <user-name>postgres</user-name>
       <introspection-schemas>siga:public</introspection-schemas>
     </data-source>
+    <data-source name="tcs@sigap.postgres.database.azure.com" uuid="2af83361-e633-4afd-8e46-2125e6642b72">
+      <database-info product="PostgreSQL" version="9.6.7" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>modulo5@sigap.postgres.database.azure.com</user-name>
+      <introspection-schemas>tcs:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

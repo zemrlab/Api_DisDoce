@@ -41,9 +41,9 @@ class ProgramaDocenteLista(APIView):
     def post(self,request,pk):
         Preferencia.objects.filter(id_docente=pk).delete()
         lista=request.data
-        listaProgramas=lista['seleccion']
+        listaprogramas=lista['coursesSelection']
         id_inicial = Preferencia.objects.count() + 1
-        for programa in listaProgramas:
+        for programa in listaprogramas:
             for curso in programa['cursos']:
                 while Preferencia.objects.filter(id_preferencia=id_inicial).exists():
                     id_inicial=id_inicial+1

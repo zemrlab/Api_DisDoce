@@ -13,5 +13,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/siga</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="tcs@sigap.postgres.database.azure.com" uuid="2af83361-e633-4afd-8e46-2125e6642b72">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://sigap.postgres.database.azure.com:5432/tcs</jdbc-url>
+    </data-source>
   </component>
 </project>
