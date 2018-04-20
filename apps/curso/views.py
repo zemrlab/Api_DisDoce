@@ -22,21 +22,13 @@ class ProgramaDocenteLista(APIView):
     serializerCurso=CursoSerializer
     serializerPrograma=ProgramaSerializer
     def get(self,request,pk):
-        preferencias = Preferencia.objects.filter(id_docente=pk).values()
-        programas=[]
-        cursos={}
+        preferencias = Preferencia.objects.filter(id_docente=pk).values()  # filter(id_docente=pk)
+        cursos = []
         for preferencia in preferencias:
-            curso=Curso.objects.get(id_curso=preferencia['id_curso_id'])
-            if curso.id_programa not in cursos :
-                cursos[curso.id_programa]=[]
-            serializercurso=self.serializerCurso(curso)
-            cursos[curso.id_programa].append(serializercurso.data)
-        for key in cursos.keys():
-            serializerprograma=self.serializerPrograma(key)
-            listaprogramas=serializerprograma.data
-            listaprogramas['cursos']=cursos[key]
-            programas.append(listaprogramas)
-        return Response(programas)
+            curso = Curso.objects.get(id_curso=preferencia['id_curso_id'])
+            serializer = self.serializerCurso(curso)
+            cursos.append(serializer.data)
+        return Response(cursos)
 
     def post(self,request,pk):
         Preferencia.objects.filter(id_docente=pk).delete()

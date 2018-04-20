@@ -575,7 +575,6 @@ class PDFView(APIView):
                              cantidad_pixeles_titulo2)
                 #titulo
                 p.rect(x_marco, y_marco, ancho_marco, alto_marco)
-
         p.showPage()
 
 
