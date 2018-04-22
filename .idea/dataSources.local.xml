@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="siga@localhost" uuid="86315314-fd1a-468a-9709-9fc28d0affe5">
+    <data-source name="siga@localhost [2]" uuid="795e93ab-8b3a-4581-a312-95f7792ca641">
       <database-info product="PostgreSQL" version="10.3" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
@@ -10,22 +10,13 @@
       <user-name>postgres</user-name>
       <introspection-schemas>siga:public</introspection-schemas>
     </data-source>
-    <data-source name="tcs@sigap.postgres.database.azure.com" uuid="1d2cfcbc-a0c9-4afe-a09d-5443183673de">
+    <data-source name="tcs@sigap.postgres.database.azure.com" uuid="b8c807be-eb14-4958-95a6-9209b5790558">
       <database-info product="PostgreSQL" version="9.6.7" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>modulo5@sigap.postgres.database.azure.com</user-name>
-      <introspection-schemas>tcs:public</introspection-schemas>
-    </data-source>
-    <data-source name="tcs@sigap.postgres.database.azure.com [2]" uuid="9492fa4d-84f4-40f3-9696-c5f897dbdece">
-      <database-info product="PostgreSQL" version="9.6.7" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>sigap@sigap</user-name>
       <introspection-schemas>tcs:public</introspection-schemas>
     </data-source>
   </component>

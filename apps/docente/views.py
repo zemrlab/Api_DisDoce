@@ -2,6 +2,7 @@
 import json
 from django.shortcuts import render
 from django.conf import settings
+from reportlab.lib.utils import ImageReader
 from rest_framework import status
 from rest_framework.views import APIView
 from apps.docente.serializers import DocenteSerializer
@@ -51,14 +52,18 @@ class PDFView(APIView):
         docente_email = informacion_docente.email
         docente_celular=informacion_docente.celular
         docente_genero= informacion_docente.genero
-        docente_pagina_web= informacion_docente.pag_web
+        #docente_pagina_web= informacion_docente.pag_web
         docente_fecha_nac= informacion_docente.fecha_nac
-        docente_pais= informacion_docente.pais
+        #docente_pais= informacion_docente.pais
         docente_direccion= informacion_docente.direccion
-        docente_sunedu_le= informacion_docente.sunedu_ley
-        docente_categoria= informacion_docente.categoria
-        docente_regimen_dedicacion= informacion_docente.regimen_dedicacion
-        docente_cv = informacion_docente.cv
+        #docente_sunedu_le= informacion_docente.sunedu_ley
+        #docente_categoria= informacion_docente.categoria
+        #docente_regimen_dedicacion= informacion_docente.regimen_dedicacion
+        #docente_cv = informacion_docente.cv
+        foto_docente=None
+        docente_foto=ImageReader(foto_docente) if foto_docente else settings.IMAGENES +'/profesor.jpg'
+
+
 
         total_datos_academicos = DatosAcademicos.objects.filter(id_docente=id).values()
         docente_Grado={}
@@ -92,6 +97,7 @@ class PDFView(APIView):
             docente_genero_radio['Femenino']=True
 
         p = canvas.Canvas(response)
+        p.setTitle(docente_nom+' '+apellidos)
 
         #variables globales
         ancho_pagina,alto_pagina=letter
@@ -269,6 +275,9 @@ class PDFView(APIView):
             {'campo': {'text': 'Fecha de Nacimiento',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': valor_tamanio_letra_form}},
+            {'valor': {'text': docente_fecha_nac.strftime('%m/%d/%Y'),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
             {'campo': {'text': 'Direccion',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
@@ -359,7 +368,7 @@ class PDFView(APIView):
                padding_titulo_left_right_titulo1,padding_titulo_bottom_top_titulo1,cantidad_pixeles_titulo1)
 
         #imagen profesor
-        dibujar_imagen(p,'profesor.jpg',
+        dibujar_imagen(p,docente_foto,
                        x_imagen,
                        y_imagen,
                        ancho_porcentaje_imagen,
@@ -436,18 +445,16 @@ class PDFView(APIView):
 
         #variables:Marcos
         margin_marcos_left_right=40
-        margin_marcos_bottom=550
-        margin_marcos_top=20
+        margin_marcos_top_bottom =50
         separacion_marcos=40
         x_marcos=x_marco + margin_marcos_left_right
-        y_marcos=y_marco + margin_marcos_bottom
-        alto_marcos=alto_marco-margin_marcos_top-margin_marcos_bottom #margin_bottom es para que no se mueva el alto del marco
+        y_marcos=y_marco+alto_marco-margin_marcos_top_bottom
         ancho_marcos=ancho_marco - 2 * margin_marcos_left_right
 
         #variables:marcos form
         padding_marcos_form_left= 20
+        padding_marcos_top_bottom = 20
         x_form_marcos=x_marcos+padding_marcos_form_left
-        y_form_marcos=y_marcos+alto_marcos*(7/8)
 
         # titulo2
         titulo_texto(p, texto_titulo2, x_titulo2, y_titulo2,
@@ -477,17 +484,10 @@ class PDFView(APIView):
 
         #FORM_DINAMICO
 
-        programas_cursos_keys=programas_cursos.keys()
-        ultimovalor=(list(programas_cursos_keys)).pop()
 
         for key, value in programas_cursos.items():
-            # Marcos
-            #p.rect(x_marcos,
-            #       y_marcos,
-            #       ancho_marcos,
-            #       alto_marcos)
-
-            if len(key) >= fin_programa_curso:
+            programa_curso_caracter_siguiente_linea = ' '
+            if len(key) > fin_programa_curso:
                 if key[fin_programa_curso] != ' ':
                     programa_curso_caracter_siguiente_linea = '-'
 
@@ -507,74 +507,65 @@ class PDFView(APIView):
                            'tipo_letra': campo_tipo_letra_form,
                            'tamanio_letra': campo_tamanio_letra_form}},
             ]
-            y = formulario(p, x_form_marcos, y_form_marcos,
-                           lista_form_marcos_form, switcher_formulario,
-                           switcher_salto_linea
-                           , switcher_padding_left)
-            y_form_inicial=y
-            y_form_marcos = y
-            x_form_inicial=x_form_marcos
+
             for curso in value:
                 curso="-"+curso
-                lista_second_form_marcos_form = []
                 faltante=len(curso)
                 while(faltante>fin_marco_curso):
                     curso_text=curso[:fin_marco_curso]
                     curso=curso[fin_marco_curso:]
                     faltante=len(curso)
-                    lista_second_form_marcos_form.append(
+                    lista_form_marcos_form.append(
                         {'valor': {'text': curso_text+marco_curso_caracter_siguiente_linea,
                                    'tipo_letra': valor_tipo_letra_form,
                                    'tamanio_letra': valor_tamanio_letra_form}},
                     )
-                lista_second_form_marcos_form.append(
+                lista_form_marcos_form.append(
                     {'valor': {'text': curso,
                                'tipo_letra': valor_tipo_letra_form,
                                'tamanio_letra': valor_tamanio_letra_form}},
                 )
-                y = formulario(p, x_form_marcos, y_form_marcos,
-                               lista_second_form_marcos_form, switcher_formulario,
-                               switcher_salto_linea
-                               , switcher_padding_left)
-                y_form_marcos=y
-                if y_form_marcos < y_marcos + alto_marcos * (1 / 8):
-                    y_marcos=y_marcos-switcher_salto_linea['valor']
-                    alto_marcos=alto_marcos+switcher_salto_linea['valor']
-
-            p.rect(x_marcos,
-                   y_marcos,
-                   ancho_marcos,
-                   alto_marcos)
-
-            x_form_marcos=x_form_inicial
-            y_form_marcos=y_marcos-separacion_marcos-alto_marcos*(1/8)
+            y_form_marcos=y_marcos
+            alto_marcos=0
+            for lista in lista_form_marcos_form:
+                for key in lista:
+                    alto_marcos=alto_marcos+switcher_salto_linea.get(key,0)
             y_marcos=y_marcos-alto_marcos-separacion_marcos
-            if y_marcos < 0 and key!=ultimovalor:
-                p.showPage()
+            if y_marcos<0 :
                 #OTRA PAGINA
-
+                p.showPage()
                 # variables:Marcos
                 margin_marcos_left_right = 40
-                margin_marcos_bottom = 550
-                margin_marcos_top = 20
+                margin_marcos_top_bottom = 50
                 separacion_marcos = 40
                 x_marcos = x_marco + margin_marcos_left_right
-                y_marcos = y_marco + margin_marcos_bottom
-                alto_marcos = alto_marco - margin_marcos_top - margin_marcos_bottom  # margin_bottom es para que no se mueva el alto del marco
+                y_marcos = y_marco + alto_marco - margin_marcos_top_bottom
                 ancho_marcos = ancho_marco - 2 * margin_marcos_left_right
 
                 # variables:marcos form
+
+                #extra
+                y_form_marcos = y_marcos
+
+                padding_marcos_top_bottom = 20
                 padding_marcos_form_left = 20
                 x_form_marcos = x_marcos + padding_marcos_form_left
-                y_form_marcos = y_marcos + alto_marcos * (7 / 8)
-
                 # titulo2
                 titulo_texto(p, texto_titulo2, x_titulo2, y_titulo2,
                              tipo_letra_titulo2, tamanio_letra_titulo2,
                              padding_titulo_left_right_titulo2, padding_titulo_bottom_top_titulo2,
                              cantidad_pixeles_titulo2)
-                #titulo
+                # Marco
                 p.rect(x_marco, y_marco, ancho_marco, alto_marco)
+
+                #extras reiniciar
+                y_marcos = y_marcos - alto_marcos - separacion_marcos
+
+            formulario(p,x_form_marcos,y_form_marcos,lista_form_marcos_form,switcher_formulario,
+                        switcher_salto_linea,switcher_padding_left)
+            p.rect(x_marcos,y_marcos+separacion_marcos,ancho_marcos,alto_marcos+padding_marcos_top_bottom)
+
+
         p.showPage()
 
 

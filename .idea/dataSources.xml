@@ -1,32 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="siga@localhost" uuid="86315314-fd1a-468a-9709-9fc28d0affe5">
+    <data-source source="LOCAL" name="siga@localhost [2]" uuid="795e93ab-8b3a-4581-a312-95f7792ca641">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/siga</jdbc-url>
-      <driver-properties>
-        <property name="ApplicationName" value="DataGrip" />
-      </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="tcs@sigap.postgres.database.azure.com" uuid="1d2cfcbc-a0c9-4afe-a09d-5443183673de">
+    <data-source source="LOCAL" name="tcs@sigap.postgres.database.azure.com" uuid="b8c807be-eb14-4958-95a6-9209b5790558">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://sigap.postgres.database.azure.com:5432/tcs</jdbc-url>
-      <driver-properties>
-        <property name="ApplicationName" value="DataGrip" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="tcs@sigap.postgres.database.azure.com [2]" uuid="9492fa4d-84f4-40f3-9696-c5f897dbdece">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://sigap.postgres.database.azure.com:5432/tcs</jdbc-url>
-      <driver-properties>
-        <property name="ApplicationName" value="DataGrip" />
-      </driver-properties>
     </data-source>
   </component>
 </project>

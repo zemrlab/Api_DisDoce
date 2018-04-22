@@ -1,5 +1,4 @@
 from reportlab.lib import colors
-from django.conf import settings
 from PIL import Image
 from reportlab.lib.pagesizes import letter
 import os
@@ -28,13 +27,15 @@ def titulo_texto(p,
            tamanio_letra_titulo + padding_titulo_bottom_top*2)
     p.drawText(titulo)
 
-def dibujar_imagen(canvas,nombre_archivo,x,y,ancho_porcentaje=None,alto_porcentaje=None):
-    archivo_imagen = settings.IMAGENES + '/'+nombre_archivo
-    imagen=Image.open(archivo_imagen)
+def dibujar_imagen(canvas, foto, x, y, ancho_porcentaje=None, alto_porcentaje=None):
+    #if foto :
+    imagen=Image.open(foto)
     width, height=imagen.size
-    width_total=None if ancho_porcentaje==None else width*(ancho_porcentaje/100)
-    height_total=None if alto_porcentaje==None else height*(alto_porcentaje/100)
-    canvas.drawImage(archivo_imagen, x, y,width_total,height_total)
+    width_total = None if ancho_porcentaje == None else width * (ancho_porcentaje / 100)
+    height_total = None if alto_porcentaje == None else height * (alto_porcentaje / 100)
+    #else:
+     #   width_total,height_total=None,None
+    canvas.drawImage(foto, x, y,width_total,height_total)
 
 #Funciones del formulario
 def titulo(p,dic):
