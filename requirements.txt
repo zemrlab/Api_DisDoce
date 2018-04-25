@@ -1,5 +1,11 @@
-django
-djangorestframework
-psycopg2
-django-cors-headers
-reportlab
+Django==2.0.4
+django-cors-headers==2.2.0
+djangorestframework==3.7.7
+gunicorn==19.7.1
+Pillow==5.1.0
+psycopg2==2.6.2
+pytz==2018.3
+reportlab==3.4.0
+virtualenv==15.2.0
+webencodings==0.5.1
+whitenoise==3.3.1
