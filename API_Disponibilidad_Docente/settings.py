@@ -115,6 +115,8 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:3001',
     '127.0.0.1:3001',
     'localhost:3000',
+    'disponibdocente.herokuapp.com',
+    '.herokuapp.com',
 )
 
 CORS_ALLOW_METHODS = (

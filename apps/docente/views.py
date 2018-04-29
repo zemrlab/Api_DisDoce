@@ -112,13 +112,13 @@ class PDFView(APIView):
         titulo_medio_tipo_letra_form = 'Times-Bold'
         titulo_medio_tamanio_letra_form = 16
 
-        campo_tipo_letra_form = 'Times-Roman'
+        campo_tipo_letra_form = 'Times-Bold'
         campo_tamanio_letra_form = 12
 
         valor_tipo_letra_form= 'Times-Roman'
         valor_tamanio_letra_form = 12
 
-        campo_radio_tipo_letra_form = 'Times-Roman'
+        campo_radio_tipo_letra_form = 'Times-Bold'
         campo_radio_tamanio_letra_form = 12
 
         radio_tipo_letra_form = 'Times-Roman'
@@ -613,6 +613,16 @@ class PDFView(APIView):
         horas_tipo_letra = 'Times-Roman'
         horas_tamanio_letra = 12
 
+        #variables:totalxdias
+        x_totalxdias = 50
+        y_totalxdias = 100
+        x_totalxdias_intervalo = 60
+        totalxdias_tipo_letra = 'Times-Roman'
+        totalxdias_tamanio_letra = 15
+        totalxdias_i=0
+        totalxdias=[]
+        totalxdias_texto="Total"
+
         #Mostrar dias
         for x in range(x_dias,x_dias+x_dias_intervalo*len(dias),x_dias_intervalo):
             dia=texto(p,dias[i],x,y_dias,dias_tipo_letra,dias_tamanio_letra)
@@ -631,12 +641,28 @@ class PDFView(APIView):
         if not array:
             Disponibilidad_marcado=False
         for dia in range(len(dias)):
+            totalxdias.append(0)
             for horas in range(14):
-                if Disponibilidad_marcado and array[horas+14*(dia)] :
+                if Disponibilidad_marcado and array[horas+14*dia]:
                     marcado = 1
+                    totalxdias[totalxdias_i]=totalxdias[totalxdias_i]+1
                 else:
                     marcado = 0
                 p.rect(x_dias+dia*(x_dias_intervalo)+10,y_inicial_horas-horas*(y_horas_intervalo),10,10,1,marcado)
+
+            totalxdias_i=totalxdias_i+1
+
+        #mostrar total x dias
+        totalxdias_i=0
+        Texto_totalxdias=texto(p, totalxdias_texto, x_totalxdias, y_totalxdias, totalxdias_tipo_letra, totalxdias_tamanio_letra)
+        p.drawText(Texto_totalxdias)
+        x_totalxdias=x_totalxdias+x_totalxdias_intervalo
+
+        for x in range(x_totalxdias,x_totalxdias+x_totalxdias_intervalo*len(totalxdias),x_totalxdias_intervalo):
+            totalxdia=texto(p,str(totalxdias[totalxdias_i]),x,y_totalxdias,totalxdias_tipo_letra,totalxdias_tamanio_letra)
+            p.drawText(totalxdia)
+            totalxdias_i=totalxdias_i+1
+
 
         # variables:marco_horario
         x_marco_horario=x_horas-20
