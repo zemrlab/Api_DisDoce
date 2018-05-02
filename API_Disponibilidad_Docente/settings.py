@@ -85,9 +85,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tcs',
-        'USER': 'modulo5@sigap.postgres.database.azure.com',
-        'PASSWORD': 'modulo5',
-        'HOST': 'sigap.postgres.database.azure.com',
+        'USER': 'postgres',
+        'PASSWORD': 'Warcraft3',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }
@@ -115,6 +115,7 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:3001',
     '127.0.0.1:3001',
     'localhost:3000',
+    '127.0.0.1:3000',
     'disponibdocente.herokuapp.com',
     '.herokuapp.com',
 )

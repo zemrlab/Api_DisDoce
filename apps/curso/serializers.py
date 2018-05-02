@@ -12,7 +12,7 @@ class ProgramaSerializer(ModelSerializer):
 
     class Meta:
         model = Programa
-        fields = ('id_programa', 'nom_programa', 'cursos',)
+        fields = ('id_programa', 'nom_programa','id_tip_grado', 'cursos',)
 
 class CursoPrefSerializer(ModelSerializer):
     class Meta:

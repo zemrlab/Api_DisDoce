@@ -13,7 +13,7 @@ from rest_framework import status
 class ProgramasCursoList(APIView):
     serializer=ProgramaSerializer
     def get(self, request):
-        programas=Programa.objects.all()
+        programas=Programa.objects.filter(vigencia_programa=True)
         response = self.serializer(programas,many=True)
         #programas={'programas':response.data}
         return Response(response.data)

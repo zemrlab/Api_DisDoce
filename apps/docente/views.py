@@ -1,4 +1,5 @@
-
+import datetime
+import time
 import json
 from django.shortcuts import render
 from django.conf import settings
@@ -17,6 +18,8 @@ from Algoritmos.Algoritmos_Disponibilidad import devolver_disponibilidad,docente
 from reportlab.lib.pagesizes import letter,landscape
 from PIL import Image
 # Create your views here.
+
+
 
 class DocenteList(APIView):
     serializer = DocenteSerializer
@@ -42,6 +45,9 @@ class PDFView(APIView):
         except Docente.DoesNotExist:
             return Response('NO EXISTE DOCENTE',status=status.HTTP_400_BAD_REQUEST)
 
+        #año del sistema
+        ahora = datetime.datetime.now()
+
         #variables docente
         docente_nom=informacion_docente.nombres
         apellidos=informacion_docente.apell_pat+" "+informacion_docente.apell_mat
@@ -54,7 +60,7 @@ class PDFView(APIView):
         docente_genero= informacion_docente.genero
         #docente_pagina_web= informacion_docente.pag_web
         docente_fecha_nac= informacion_docente.fecha_nac
-        #docente_pais= informacion_docente.pais
+        docente_pais= informacion_docente.pais
         docente_direccion= informacion_docente.direccion
         #docente_sunedu_le= informacion_docente.sunedu_ley
         #docente_categoria= informacion_docente.categoria
@@ -63,6 +69,9 @@ class PDFView(APIView):
         foto_docente=None
         docente_foto=ImageReader(foto_docente) if foto_docente else settings.IMAGENES +'/profesor.jpg'
 
+        #disponibilidadocente
+        total_dias_disponible=docente_dias_disponibilidad(id)
+        total_horas_disponible=docente_horas_disponibilidad(id)
 
 
         total_datos_academicos = DatosAcademicos.objects.filter(id_docente=id).values()
@@ -81,7 +90,7 @@ class PDFView(APIView):
         programa_curso_caracter_siguiente_linea=''
 
         # variabls de ayuda para pintar programa de los cursos
-        fin_marco_curso = 53
+        fin_marco_curso = 60
         marco_curso_caracter_siguiente_linea = '-'
 
         if len(docente_direccion)>=fin_direccion :
@@ -102,8 +111,13 @@ class PDFView(APIView):
         #variables globales
         ancho_pagina,alto_pagina=letter
         espacio_medio_left_right=6
-        y_informacion_personal=238
-        y_informacion_academica=10
+        extra_informacion_personal=20
+        alto_informacion_personal=185 - extra_informacion_personal
+        y_informacion_personal=285 + extra_informacion_personal
+        extra_informacion_academica = 20
+        alto_informacion_academica=150 - extra_informacion_academica
+        y_informacion_academica=100 + extra_informacion_academica
+        x_form_variable=20
 
         #variables:FORMULARIO TOTAL
         titulo_tipo_letra_form='Times-Bold'
@@ -113,43 +127,48 @@ class PDFView(APIView):
         titulo_medio_tamanio_letra_form = 16
 
         campo_tipo_letra_form = 'Times-Bold'
-        campo_tamanio_letra_form = 12
+        campo_tamanio_letra_form = 10
 
         valor_tipo_letra_form= 'Times-Roman'
-        valor_tamanio_letra_form = 12
+        valor_tamanio_letra_form = 10
 
         campo_radio_tipo_letra_form = 'Times-Bold'
-        campo_radio_tamanio_letra_form = 12
+        campo_radio_tamanio_letra_form = 10
 
         radio_tipo_letra_form = 'Times-Roman'
-        radio_tamanio_letra_form = 12
-        radio_longitud_radio=3
+        radio_tamanio_letra_form = 10
+        radio_longitud_radio=2
         radio_espacio_nombre=15
 
         switcher_formulario = {
             'titulo': titulo,
             'campo': campo,
             'campo_radio': campo,
+            'campo_sgt': campo,
             'radio': radio,
             'linea':linea,
             'titulo_medio':titulo_medio,
             'valor': campo,
+            'valor_x_variable':valor_x_variable,
         }
         switcher_salto_linea = {
-            'titulo': 40,
-            'campo': 20,
-            'campo_radio': 15,
+            'titulo': 20,
+            'campo': 0,
+            'campo_sgt': 20,
+            'campo_radio':0,
             'radio': 20,
             'titulo_medio': 30,
             'valor': 20,
             'linea' : 20,
+            'valor_x_variable': 20,
         }
 
         switcher_padding_left = {
-            'campo': 15,
-            'radio': 40,
-            'campo_radio': 15,
-            'valor': 25,
+            'campo': 0,
+            'campo_sgt': 0,
+            'radio': 100,
+            'campo_radio': 0,
+            'valor': 100,
         }
 
         #variables:titulo1
@@ -181,44 +200,56 @@ class PDFView(APIView):
         padding_titulo_bottom_top_titulo1_2=10
         padding_titulo_left_right_titulo1_2=185
         x_titulo1_2 = ancho_pagina/2-cantidad_pixeles_titulo1_2/2
-        y_titulo1_2 = 198
+        y_titulo1_2 = 268
 
         #variables:Imagen
         x_imagen=60
         y_imagen=530
-        ancho_porcentaje_imagen=27
-        alto_porcentaje_imagen=30
+        ancho_porcentaje_imagen=29
+        alto_porcentaje_imagen=29
 
-        #variables:Cursos form
-        ancho_cursos=250
-        alto_cursos=235
-        x_cursos=ancho_pagina/2+espacio_medio_left_right
-        y_cursos=530
-        x_form_cursos=x_cursos+ancho_cursos*(1/8)
-        y_form_cursos=y_cursos+alto_cursos*(7/ 8)
+        #variables:informacion_basica form
+        ancho_informacion_basica=250
+        alto_informacion_basica=235
+        x_informacion_basica=ancho_pagina/2+espacio_medio_left_right
+        y_informacion_basica=530
+        x_form_informacion_basica=x_informacion_basica+x_form_variable
+        y_form_informacion_basica=y_informacion_basica+alto_informacion_basica*(7/ 8)
 
-        lista_form_cursos = [
-            {'titulo': {'text': 'Cursos',
-                        'tipo_letra': titulo_tipo_letra_form,
-                        'tamanio_letra': titulo_tamanio_letra_form}},
-            {'campo': {'text': 'Curso1',
+        lista_form_informacion_basica = [
+            {'campo': {'text': 'Nombres',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
-            {'campo': {'text': 'Curso2',
+            {'valor': {'text': docente_nom,
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
+            {'campo': {'text': 'Apellidos',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
-            {'campo': {'text': 'Curso3',
+            {'valor': {'text': docente_ape,
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
+            {'campo': {'text': 'Fecha',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': time.strftime("%d/%m/%y"),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
+            {'campo': {'text': 'Total de horas',
+                       'tipo_letra': campo_tipo_letra_form,
+                       'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': str(total_horas_disponible),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
         ]
 
 
         #variables:informacion_personal1 form
         ancho_informacion_personal1=250
-        alto_informacion_personal1=235
+        alto_informacion_personal1=alto_informacion_personal
         x_informacion_personal1=ancho_pagina/2-ancho_informacion_personal1-espacio_medio_left_right
         y_informacion_personal1=y_informacion_personal
-        x_form_informacion_personal1 = x_informacion_personal1 + ancho_informacion_personal1 * (1 / 8)
+        x_form_informacion_personal1 = x_informacion_personal1 +x_form_variable
         y_form_informacion_personal1 = y_informacion_personal1 + alto_informacion_personal1 * (7 / 8)
 
         lista_form_informacion_personal1 = [
@@ -265,17 +296,23 @@ class PDFView(APIView):
 
         #variables:informacion_personal2 form
         ancho_informacion_personal2 = 250
-        alto_informacion_personal2 = 235
+        alto_informacion_personal2 = alto_informacion_personal
         x_informacion_personal2 = ancho_pagina/2+espacio_medio_left_right
         y_informacion_personal2 = y_informacion_personal
-        x_form_informacion_personal2 = x_informacion_personal2 + ancho_informacion_personal2 * (1 / 8)
+        x_form_informacion_personal2 = x_informacion_personal2 + x_form_variable
         y_form_informacion_personal2 = y_informacion_personal2 + alto_informacion_personal2 * (7 / 8)
 
         lista_form_informacion_personal2 = [
             {'campo': {'text': 'Fecha de Nacimiento',
                        'tipo_letra': campo_tipo_letra_form,
-                       'tamanio_letra': valor_tamanio_letra_form}},
+                       'tamanio_letra': campo_tamanio_letra_form}},
             {'valor': {'text': docente_fecha_nac.strftime('%m/%d/%Y'),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
+            {'campo': {'text': 'Lugar de Nacimiento',
+                       'tipo_letra': campo_tipo_letra_form,
+                       'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': docente_pais,
                        'tipo_letra': valor_tipo_letra_form,
                        'tamanio_letra': valor_tamanio_letra_form}},
             {'campo': {'text': 'Direccion',
@@ -296,10 +333,10 @@ class PDFView(APIView):
         ]
         # variables:informacion_academica1 form
         ancho_informacion_academica1 = 250
-        alto_informacion_academica1 = 170
+        alto_informacion_academica1 = alto_informacion_academica
         x_informacion_academica1 = ancho_pagina/2-ancho_informacion_academica1-espacio_medio_left_right
         y_informacion_academica1 = y_informacion_academica
-        x_form_informacion_academica1 = x_informacion_academica1 + ancho_informacion_academica1 * (1 / 8)
+        x_form_informacion_academica1 = x_informacion_academica1 +x_form_variable
         y_form_informacion_academica1 = y_informacion_academica1 + alto_informacion_academica1 * (7 / 8)
 
         lista_form_informacion_academica1 = [
@@ -309,11 +346,9 @@ class PDFView(APIView):
             {'valor': {'text': docente_codigo,
                        'tipo_letra': valor_tipo_letra_form,
                        'tamanio_letra': valor_tamanio_letra_form}},
-            {'titulo_medio': {'text': 'Grados',
-                              'x_medio': x_informacion_academica1+ancho_informacion_academica1*(1/2),
-                              'cantidad_espacio_texto':40,
-                              'tipo_letra': titulo_medio_tipo_letra_form,
-                              'tamanio_letra': titulo_medio_tamanio_letra_form}},
+            {'titulo': {'text': 'GRADOS',
+                        'tipo_letra': titulo_tipo_letra_form,
+                        'tamanio_letra': titulo_tamanio_letra_form}},
             {'campo': {'text': 'Titulo Profesional',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
@@ -330,19 +365,16 @@ class PDFView(APIView):
 
         # variables:informacion_academica2 form
         ancho_informacion_academica2 = 250
-        alto_informacion_academica2 = 170
+        alto_informacion_academica2 = alto_informacion_academica
         x_informacion_academica2 = ancho_pagina/2+espacio_medio_left_right
         y_informacion_academica2 = y_informacion_academica
-        x_form_informacion_academica2 = x_informacion_academica2 + ancho_informacion_academica2 * (1 / 8)
+        x_form_informacion_academica2 = x_informacion_academica2 +x_form_variable
         y_form_informacion_academica2 = y_informacion_academica2 + alto_informacion_academica2 * (7 / 8)
 
         lista_form_informacion_academica2 = [
-            {'titulo_medio': {'text': 'PostGrados',
-                              'x_medio': x_informacion_academica2 + ancho_informacion_academica2 * (
-                                          1 / 2) - espacio_medio_left_right*2,
-                              'cantidad_espacio_texto': 50,
-                              'tipo_letra': titulo_medio_tipo_letra_form,
-                              'tamanio_letra': titulo_medio_tamanio_letra_form}},
+            {'titulo': {'text': 'POSGRADOS',
+                        'tipo_letra': titulo_tipo_letra_form,
+                        'tamanio_letra': titulo_tamanio_letra_form}},
             {'campo': {'text': 'Maestria',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
@@ -374,9 +406,9 @@ class PDFView(APIView):
                        ancho_porcentaje_imagen,
                        alto_porcentaje_imagen)
 
-        #Cursos
-        p.rect(x_cursos,y_cursos,ancho_cursos,alto_cursos)
-        formulario(p,x_form_cursos,y_form_cursos,lista_form_cursos,switcher_formulario,switcher_salto_linea
+        #informacion_basica
+        p.rect(x_informacion_basica,y_informacion_basica,ancho_informacion_basica,alto_informacion_basica)
+        formulario(p,x_form_informacion_basica,y_form_informacion_basica,lista_form_informacion_basica,switcher_formulario,switcher_salto_linea
                    ,switcher_padding_left)
 
         #titulo1_1
@@ -492,10 +524,11 @@ class PDFView(APIView):
                     programa_curso_caracter_siguiente_linea = '-'
 
             lista_form_marcos_form = [
-                {'campo': {'text': 'Nombre de programa',
+                {'campo': {'text': 'Nombre de programa:',
                             'tipo_letra': campo_tipo_letra_form,
                             'tamanio_letra': campo_tamanio_letra_form}},
-                {'valor': {'text':  key[:fin_programa_curso]+programa_curso_caracter_siguiente_linea,
+                {'valor_x_variable': {'text':  key[:fin_programa_curso]+programa_curso_caracter_siguiente_linea,
+                           'x_variable':100,
                            'tipo_letra': valor_tipo_letra_form,
                            'tamanio_letra': valor_tamanio_letra_form}},
                 {'valor': {'text': key[fin_programa_curso:],
@@ -503,7 +536,7 @@ class PDFView(APIView):
                            'tamanio_letra': valor_tamanio_letra_form}},
                 {'linea': {'x_inicio_linea': x_marcos,
                            'x_ancho_linea': ancho_marcos}},
-                {'campo': {'text': 'Nombre(s) de( los) curso(s)',
+                {'campo_sgt': {'text': 'Nombre(s) de( los) curso(s)',
                            'tipo_letra': campo_tipo_letra_form,
                            'tamanio_letra': campo_tamanio_letra_form}},
             ]
@@ -516,13 +549,15 @@ class PDFView(APIView):
                     curso=curso[fin_marco_curso:]
                     faltante=len(curso)
                     lista_form_marcos_form.append(
-                        {'valor': {'text': curso_text+marco_curso_caracter_siguiente_linea,
+                        {'valor_x_variable': {'text': curso_text+marco_curso_caracter_siguiente_linea,
                                    'tipo_letra': valor_tipo_letra_form,
+                                   'x_variable':40,
                                    'tamanio_letra': valor_tamanio_letra_form}},
                     )
                 lista_form_marcos_form.append(
-                    {'valor': {'text': curso,
+                    {'valor_x_variable': {'text': curso,
                                'tipo_letra': valor_tipo_letra_form,
+                               'x_variable': 40,
                                'tamanio_letra': valor_tamanio_letra_form}},
                 )
             y_form_marcos=y_marcos
@@ -673,34 +708,34 @@ class PDFView(APIView):
         #Marco_Horario
         p.rect(x_marco_horario, y_marco_horario, ancho_marco_horario, alto_marco_horario)
 
-        total_dias_disponible=docente_dias_disponibilidad(id)
-        total_horas_disponible=docente_horas_disponibilidad(id)
 
     # variables:resumen
         ancho_resumen = 220
-        alto_resumen = 150
+        alto_resumen = 100
         x_resumen = 550
-        y_resumen = 300
+        y_resumen = 350
         x_form_resumen = x_resumen + ancho_resumen * (1 / 8)
         y_form_resumen = y_resumen + alto_resumen * (7 / 8)-10
 
 
         lista_form_resumen = [
-            {'campo': {'text': 'RESUMEN',
+            {'titulo': {'text': 'RESUMEN',
                         'tipo_letra': titulo_tipo_letra_form,
-                        'tamanio_letra': 13}},
+                        'tamanio_letra': titulo_tamanio_letra_form}},
             {'campo': {'text': 'Toral de horas disponibles :',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
-            {'valor': {'text': str(total_horas_disponible),
+            {'valor_x_variable': {'text': str(total_horas_disponible),
+                                  'x_variable': 130,
+                                  'tipo_letra': valor_tipo_letra_form,
+                                  'tamanio_letra': valor_tamanio_letra_form}},
+            {'campo': {'text': 'Toral de dias disponibles:',
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
-            {'campo': {'text': 'Total de dias disponibles :',
-                       'tipo_letra': campo_tipo_letra_form,
-                       'tamanio_letra': campo_tamanio_letra_form}},
-            {'valor': {'text': str(total_dias_disponible),
-                       'tipo_letra': campo_tipo_letra_form,
-                       'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor_x_variable': {'text': str(total_dias_disponible),
+                                  'x_variable':130,
+                                  'tipo_letra': valor_tipo_letra_form,
+                                  'tamanio_letra': valor_tamanio_letra_form}},
         ]
 
         # resumen

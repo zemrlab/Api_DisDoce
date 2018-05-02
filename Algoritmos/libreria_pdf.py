@@ -49,6 +49,10 @@ def titulo_medio(p,dic):
 def campo(p,dic):
     titulo(p,dic)
 
+def valor_x_variable(p,dic):
+    dic['x']=dic['x']+dic['x_variable']
+    titulo(p,dic)
+
 def radio(p,dic):
     if(dic['Marcado'])[dic['text']]:
         marcado=1

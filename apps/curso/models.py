@@ -7,8 +7,7 @@ class Programa(models.Model):
     nom_programa = models.CharField(max_length=116)
     sigla_programa = models.CharField(max_length=10)
     id_tip_grado = models.ForeignKey(TipoGrado,on_delete=models.CASCADE,db_column='id_tip_grado')
-    vigencia_programa = models.CharField(max_length=10)
-
+    vigencia_programa = models.BooleanField()
     class Meta:
         managed = False
         db_table = 'programa'

@@ -13,5 +13,17 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://sigap.postgres.database.azure.com:5432/tcs</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="tcs@sigap.postgres.database.azure.com [2]" uuid="2a4ff1ec-d8a7-4945-aea6-9c3ffad436a5">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://sigap.postgres.database.azure.com:5432/tcs</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="tcs@localhost" uuid="c4ea91bd-1a4c-4e24-a36f-a925681327d0">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/tcs</jdbc-url>
+    </data-source>
   </component>
 </project>

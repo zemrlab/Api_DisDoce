@@ -1,5 +1,5 @@
 {
-"seleccion": [
+"coursesSelection": [
       {
         "id_programa": 1,
         "nom_programa": "Programa 1",
