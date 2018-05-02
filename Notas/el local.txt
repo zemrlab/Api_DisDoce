@@ -1,10 +1,8 @@
-DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'siga',
+        'NAME': 'tcs',
         'USER': 'postgres',
         'PASSWORD': 'Warcraft3',
         'HOST': 'localhost',
         'PORT': 5432,
     }
-}
