@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50f36800-2442-4377-bb8f-a92a86f63a9b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558/storage_v2/_src_/database/tcs.5L8BAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558/storage_v2/_src_/database/tcs.5L8BAA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558/storage_v2/_src_/database/tcs.5L8BAA/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558/storage_v2/_src_/database/tcs.5L8BAA/schema/public.abK9xQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algoritmos/libreria_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algoritmos/libreria_pdf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notas/Post de cursos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Notas/Post de cursos.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/curso/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/curso/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/curso/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docente/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docente/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="50f36800-2442-4377-bb8f-a92a86f63a9b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +185,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="50" />
     <option name="width" value="526" />
     <option name="height" value="729" />
@@ -344,19 +330,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49786553" weight="0.32921347" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.38367346" side_tool="true" weight="0.3778878" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49786553" weight="0.32838285" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49786553" weight="0.32921347" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" visible="true" weight="0.32673267" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" weight="0.32673267" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6163265" weight="0.3778878" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15918367" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15918367" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.20816326" />
+      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.20816326" />
       <window_info anchor="right" id="SciView" order="0" weight="0.32959184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
