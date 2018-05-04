@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bf67251-6dda-4584-8e74-30740adea253" name="Default" comment="" />
+    <list default="true" id="7bf67251-6dda-4584-8e74-30740adea253" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -280,11 +282,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525423932508</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cambio de pyscog2 version 2.7.1">
+      <created>1525470283304</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525470283304</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49786553" weight="0.32921347" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.38367346" side_tool="true" weight="0.3778878" />
