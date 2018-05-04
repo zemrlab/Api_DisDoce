@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7bf67251-6dda-4584-8e74-30740adea253" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algoritmos/Algoritmos_Disponibilidad.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algoritmos/Algoritmos_Disponibilidad.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/disponibilidad/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/disponibilidad/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/disponibilidad/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/disponibilidad/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,69 +64,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/disponibilidad/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="docente" pinned="false" current-in-tab="false">
-        <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/docente">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-              <column-attributes>
-                <column name="profile" languageId="JSON" />
-                <column name="tokens" languageId="JSON" />
-              </column-attributes>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Post de cursos.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Notas/Post de cursos.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/curso/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="49" column="81" selection-start-line="49" selection-start-column="81" selection-end-line="49" selection-end-column="81" />
+            <state relative-caret-position="204">
+              <caret line="24" selection-start-line="22" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/curso/models.py">
+        <entry file="file://$PROJECT_DIR$/apps/disponibilidad/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="48" />
+            <state relative-caret-position="244">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preferencia" pinned="false" current-in-tab="false">
-        <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/preferencia">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="disponibilidad" pinned="false" current-in-tab="false">
-        <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/disponibilidad">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file leaf-file-name="Algoritmos_Disponibilidad.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Algoritmos/Algoritmos_Disponibilidad.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,8 +100,8 @@
       <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+            <state relative-caret-position="136">
+              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -143,15 +112,6 @@
             <state split_layout="SPLIT">
               <first_editor />
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modelos.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modelos.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="204" column="38" selection-start-line="204" selection-start-column="33" selection-end-line="204" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -178,10 +138,11 @@
         <option value="$PROJECT_DIR$/modelos.py" />
         <option value="$PROJECT_DIR$/apps/curso/serializers.py" />
         <option value="$PROJECT_DIR$/apps/curso/models.py" />
-        <option value="$PROJECT_DIR$/apps/disponibilidad/models.py" />
-        <option value="$PROJECT_DIR$/apps/disponibilidad/views.py" />
         <option value="$PROJECT_DIR$/apps/curso/views.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/apps/disponibilidad/views.py" />
+        <option value="$PROJECT_DIR$/apps/disponibilidad/models.py" />
+        <option value="$PROJECT_DIR$/Algoritmos/Algoritmos_Disponibilidad.py" />
       </list>
     </option>
   </component>
@@ -215,7 +176,18 @@
             <path>
               <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
               <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
+              <item name="Algoritmos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="curso" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
@@ -325,24 +297,36 @@
       <option name="project" value="LOCAL" />
       <updated>1525423179794</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="cambio de pyscog2 version 2.6.2">
+      <created>1525423832685</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1525423832685</updated>
+    </task>
+    <task id="LOCAL-00006" summary="cambio de pyscog2 version 2.7.1">
+      <created>1525423932508</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1525423932508</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49786553" weight="0.32921347" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.38367346" side_tool="true" weight="0.3778878" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49786553" weight="0.32838285" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49786553" weight="0.32921347" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" visible="true" weight="0.3250825" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" weight="0.38613862" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6163265" weight="0.3778878" />
-      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49359658" weight="0.19966997" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15612245" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1255102" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.23163265" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.1367347" />
       <window_info anchor="right" id="SciView" order="0" weight="0.32959184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32838285" />
@@ -355,6 +339,7 @@
       <window_info anchor="right" id="Data View" order="4" weight="0.32977587" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49359658" weight="0.19966997" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
@@ -368,6 +353,7 @@
     <MESSAGE value="a ber" />
     <MESSAGE value="Cambios profesora 0.9v" />
     <MESSAGE value="Cambios profesora 0.91v" />
+    <MESSAGE value="cambio de pyscog2 version 2.6.2" />
     <MESSAGE value="cambio de pyscog2 version 2.7.1" />
     <option name="LAST_COMMIT_MESSAGE" value="cambio de pyscog2 version 2.7.1" />
   </component>
@@ -389,13 +375,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/runtime.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/API_Disponibilidad_Docente/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -639,15 +618,6 @@
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/disponibilidad/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/curso/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -662,27 +632,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/curso/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Notas/Post de cursos.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/disponibilidad/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,21 +646,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/preferencia">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/facultad">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/disponibilidad">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -724,8 +663,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="136">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/curso/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/disponibilidad/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/preferencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -740,10 +702,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/disponibilidad">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/disponibilidad/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/disponibilidad/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        <state relative-caret-position="204">
+          <caret line="24" selection-start-line="22" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algoritmos/Algoritmos_Disponibilidad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

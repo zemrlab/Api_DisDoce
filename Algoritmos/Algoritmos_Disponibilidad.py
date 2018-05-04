@@ -39,6 +39,7 @@ def devolver_disponibilidad(horarios_intervalos,hora_inicio,horas_del_dia): #jso
 	i_horario=0
 	horarios=[]
 	while(dia<8):
+		print("hola")
 		hora=hora_inicio #8
 		horario_seleccionado=False
 		for i in range(horas_del_dia): #14
@@ -59,6 +60,7 @@ def devolver_disponibilidad(horarios_intervalos,hora_inicio,horas_del_dia): #jso
 			i_horario=i_horario+1
 		dia=dia+1
 	return horarios
+
 def docente_dias_disponibilidad(idDocente):
 	dias_disponibles = Disponibilidad.objects.filter(id_docente=idDocente).values('id_dia_id').annotate(dcount=Count('id_dia_id')).count()
 	return dias_disponibles
