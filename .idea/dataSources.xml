@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="siga@localhost [2]" uuid="795e93ab-8b3a-4581-a312-95f7792ca641">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/siga</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="tcs@sigap.postgres.database.azure.com" uuid="b8c807be-eb14-4958-95a6-9209b5790558">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
@@ -24,6 +18,12 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/tcs</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="tcs@sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com" uuid="465e8506-9feb-420c-9b1b-4d959d80918b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com:5432/tcs</jdbc-url>
     </data-source>
   </component>
 </project>

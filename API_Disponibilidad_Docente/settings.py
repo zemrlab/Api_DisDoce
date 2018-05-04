@@ -85,14 +85,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tcs',
-        'USER': 'sigap@sigap',
-        'PASSWORD': 'Taller123',
-        'HOST': 'sigap.postgres.database.azure.com',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com',
         'PORT': 5432,
     }
 }
-
-
 
 
 # Password validation

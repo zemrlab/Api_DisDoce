@@ -658,6 +658,7 @@ class PDFView(APIView):
         totalxdias=[]
         totalxdias_texto="Total"
 
+
         #Mostrar dias
         for x in range(x_dias,x_dias+x_dias_intervalo*len(dias),x_dias_intervalo):
             dia=texto(p,dias[i],x,y_dias,dias_tipo_letra,dias_tamanio_letra)
@@ -697,7 +698,7 @@ class PDFView(APIView):
             totalxdia=texto(p,str(totalxdias[totalxdias_i]),x,y_totalxdias,totalxdias_tipo_letra,totalxdias_tamanio_letra)
             p.drawText(totalxdia)
             totalxdias_i=totalxdias_i+1
-
+        
 
         # variables:marco_horario
         x_marco_horario=x_horas-20
@@ -709,14 +710,13 @@ class PDFView(APIView):
         p.rect(x_marco_horario, y_marco_horario, ancho_marco_horario, alto_marco_horario)
 
 
-    # variables:resumen
+        #variables:resumen
         ancho_resumen = 220
         alto_resumen = 100
         x_resumen = 550
         y_resumen = 350
         x_form_resumen = x_resumen + ancho_resumen * (1 / 8)
         y_form_resumen = y_resumen + alto_resumen * (7 / 8)-10
-
 
         lista_form_resumen = [
             {'titulo': {'text': 'RESUMEN',
@@ -737,7 +737,6 @@ class PDFView(APIView):
                                   'tipo_letra': valor_tipo_letra_form,
                                   'tamanio_letra': valor_tamanio_letra_form}},
         ]
-
         # resumen
         p.rect(x_resumen, y_resumen, ancho_resumen, alto_resumen)
         formulario(p, x_form_resumen, y_form_resumen, lista_form_resumen, switcher_formulario, switcher_salto_linea, switcher_padding_left)

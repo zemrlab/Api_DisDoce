@@ -352,7 +352,6 @@
       <ResultsDefinition>numeric</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
-      <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
     <routine id="76" parent="19" name="asignar">
@@ -362,7 +361,6 @@
       <ResultsDefinition>trigger</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
-      <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
     <routine id="77" parent="19" name="duplicar">
@@ -372,7 +370,6 @@
       <ResultsDefinition>trigger</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
-      <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
     <routine id="78" parent="19" name="insert_alumno">
@@ -383,7 +380,6 @@
       <ResultsDefinition>numeric</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
-      <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
     <routine id="79" parent="19" name="insert_concepto">
@@ -394,7 +390,6 @@
       <ResultsDefinition>numeric</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
-      <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
     <routine id="80" parent="19" name="insert_facultad">
@@ -405,7 +400,6 @@
       <ResultsDefinition>numeric</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
-      <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
     <routine id="81" parent="19" name="insert_recaudaciones">
@@ -416,7 +410,6 @@
       <ResultsDefinition>numeric</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
-      <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
     <routine id="82" parent="19" name="insert_usuario">
@@ -427,7 +420,6 @@
       <ResultsDefinition>numeric</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
-      <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
     <routine id="83" parent="19" name="pg_buffercache_pages">
