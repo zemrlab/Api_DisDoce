@@ -1,5 +1,6 @@
 from django.db import models
 from apps.docente.models import Docente
+from apps.curso.models import Ciclo
 # Create your models here.
 
 class Dia(models.Model):
@@ -16,6 +17,7 @@ class Disponibilidad(models.Model):
     hr_inicio = models.CharField(max_length=2)
     hr_fin = models.CharField(max_length=2)
     tot_hrs = models.CharField(max_length=2)
+    id_ciclo = models.ForeignKey(Ciclo,default=1, db_column='id_ciclo',on_delete=models.CASCADE)
 
     class Meta:
         managed = False

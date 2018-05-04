@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="tcs@sigap.postgres.database.azure.com" uuid="b8c807be-eb14-4958-95a6-9209b5790558">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://sigap.postgres.database.azure.com:5432/tcs</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="tcs@sigap.postgres.database.azure.com [2]" uuid="2a4ff1ec-d8a7-4945-aea6-9c3ffad436a5">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://sigap.postgres.database.azure.com:5432/tcs</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="tcs@localhost" uuid="c4ea91bd-1a4c-4e24-a36f-a925681327d0">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/tcs</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="tcs@sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com" uuid="465e8506-9feb-420c-9b1b-4d959d80918b">
+    <data-source source="LOCAL" name="tcs@sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com" uuid="cc8425de-1097-4b60-be70-fe97b50d1d31">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

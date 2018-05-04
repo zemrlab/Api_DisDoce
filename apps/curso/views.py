@@ -15,6 +15,11 @@ class ProgramasCursoList(APIView):
     def get(self, request):
         programas=Programa.objects.filter(vigencia_programa=True)
         response = self.serializer(programas,many=True)
+        for programa in response.data:
+            programa['id_tip_grado']=int(programa['id_tip_grado'])
+            for curso in programa['cursos']:
+                #curso['numciclo']=curso['numciclo'].replace(" ","");
+                curso['numciclo']=int(curso['numciclo'])
         #programas={'programas':response.data}
         return Response(response.data)
 
@@ -34,7 +39,7 @@ class ProgramaDocenteLista(APIView):
         Preferencia.objects.filter(id_docente=pk).delete()
         lista=request.data
         listaprogramas=lista['coursesSelection']
-        id_inicial = Preferencia.objects.count() + 1
+        id_inicial = 0
         for programa in listaprogramas:
             for curso in programa['cursos']:
                 while Preferencia.objects.filter(id_preferencia=id_inicial).exists():
@@ -42,7 +47,7 @@ class ProgramaDocenteLista(APIView):
                 Preferencia.objects.create(
                                             id_preferencia=id_inicial,
                                             id_curso=Curso.objects.get(pk=curso['id_curso']),
-                                            id_docente=Docente.objects.get(pk=pk),
+                                            id_docente=Docente.objects.get(pk=pk)
                                             )
                 id_inicial=id_inicial+1
         return Response(lista, status=status.HTTP_201_CREATED)

@@ -27,7 +27,7 @@ class DisponibilidadList(APIView):
         id_inicial=Disponibilidad.objects.count()+1
         for dia in Diccionarios_intervalos:
             for intervalos in Diccionarios_intervalos[dia]:
-                disponibilidad=Disponibilidad.objects.create(
+                Disponibilidad.objects.create(
                                             id_disponibilidad=id_inicial,
                                             id_docente=Docente.objects.get(pk=pk),
                                             id_dia=Dia.objects.get(pk=dia),
