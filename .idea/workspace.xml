@@ -2,39 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bf67251-6dda-4584-8e74-30740adea253" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/API_Disponibilidad_Docente.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18511a59-e4f2-4bee-bb4e-3e5a056a80f6/storage_v2/_src_/database/siga.sN01AA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18511a59-e4f2-4bee-bb4e-3e5a056a80f6/storage_v2/_src_/database/siga.sN01AA/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18511a59-e4f2-4bee-bb4e-3e5a056a80f6/storage_v2/_src_/database/siga.sN01AA/schema/public.abK9xQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2af83361-e633-4afd-8e46-2125e6642b72/storage_v2/_src_/database/tcs.5L8BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2af83361-e633-4afd-8e46-2125e6642b72/storage_v2/_src_/database/tcs.5L8BAA/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2af83361-e633-4afd-8e46-2125e6642b72/storage_v2/_src_/database/tcs.5L8BAA/schema/public.abK9xQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ca96db2-fc8c-4e2f-927b-8e0272613c9b/storage_v2/_src_/database/docente.Er77bA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ca96db2-fc8c-4e2f-927b-8e0272613c9b/storage_v2/_src_/database/docente.Er77bA/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ca96db2-fc8c-4e2f-927b-8e0272613c9b/storage_v2/_src_/database/docente.Er77bA/schema/public.abK9xQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/795e93ab-8b3a-4581-a312-95f7792ca641/storage_v2/_src_/database/siga.sN01AA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/795e93ab-8b3a-4581-a312-95f7792ca641/storage_v2/_src_/database/siga.sN01AA/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/795e93ab-8b3a-4581-a312-95f7792ca641/storage_v2/_src_/database/siga.sN01AA/schema/public.abK9xQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558/storage_v2/_src_/database/tcs.5L8BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558/storage_v2/_src_/database/tcs.5L8BAA/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8c807be-eb14-4958-95a6-9209b5790558/storage_v2/_src_/database/tcs.5L8BAA/schema/public.abK9xQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/curso/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/curso/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/curso/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/curso/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/disponibilidad/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/disponibilidad/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/disponibilidad/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/disponibilidad/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -138,11 +107,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="disponibilidad" pinned="false" current-in-tab="true">
+      <file leaf-file-name="disponibilidad" pinned="false" current-in-tab="false">
         <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/disponibilidad">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -181,6 +159,7 @@
         <option value="$PROJECT_DIR$/apps/disponibilidad/models.py" />
         <option value="$PROJECT_DIR$/apps/disponibilidad/views.py" />
         <option value="$PROJECT_DIR$/apps/curso/views.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -309,12 +288,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523535118570</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cambios profesora 0.9v">
+      <created>1525421780537</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525421780537</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49786553" weight="0.32921347" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.38367346" side_tool="true" weight="0.3778878" />
@@ -324,9 +309,9 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" visible="true" weight="0.3250825" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6163265" weight="0.3778878" />
       <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49359658" weight="0.19966997" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16020408" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15612245" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.23163265" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.23163265" />
       <window_info anchor="right" id="SciView" order="0" weight="0.32959184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32838285" />
@@ -350,7 +335,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="a ber" />
-    <option name="LAST_COMMIT_MESSAGE" value="a ber" />
+    <MESSAGE value="Cambios profesora 0.9v" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios profesora 0.9v" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -370,14 +356,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/Escritorio/Ciclos/Ciclo7/Django_Rest_Framework_Entornos/API/env/Lib/site-packages/PIL/Image.py" />
-    <entry file="das://b8c807be-eb14-4958-95a6-9209b5790558/database/tcs/schema/public/table/docente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://795e93ab-8b3a-4581-a312-95f7792ca641/database/siga/schema/public/table/docente" />
     <entry file="file://$PROJECT_DIR$/runtime.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -390,13 +368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -704,10 +675,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/facultad">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/docente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="profile" languageId="JSON" />
+            <column name="tokens" languageId="JSON" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
     <entry file="das://cc8425de-1097-4b60-be70-fe97b50d1d31/database/tcs/schema/public/table/disponibilidad">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
         </state>
       </provider>
     </entry>
