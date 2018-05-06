@@ -39,7 +39,6 @@ def devolver_disponibilidad(horarios_intervalos,hora_inicio,horas_del_dia): #jso
 	i_horario=0
 	horarios=[]
 	while(dia<8):
-		print("hola")
 		hora=hora_inicio #8
 		horario_seleccionado=False
 		for i in range(horas_del_dia): #14

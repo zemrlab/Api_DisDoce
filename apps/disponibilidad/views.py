@@ -16,12 +16,11 @@ from Algoritmos.Algoritmos_Disponibilidad import Descifrar_disponibilidad,devolv
 # Create your views here.
 
 class DisponibilidadList(APIView):
-    #serializer = DisponibilidadSerializer
+    serializer = DisponibilidadSerializer
     def get(self, request, pk):
-        horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk).order_by('id_disponibilidad').values()
-        #print("holaa")
-        array = devolver_disponibilidad(horarios_intervalos,8,14)
-        #print("terminando hola")
+        horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk).order_by('id_disponibilidad')
+        disponibilidades=[disponibilidad for disponibilidad in horarios_intervalos.values()]
+        array = devolver_disponibilidad(disponibilidades,8,14)
         return Response(json.dumps(array))
     def post(self, request, pk):
         Disponibilidad.objects.filter(id_docente=pk).delete()
