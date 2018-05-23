@@ -21,7 +21,7 @@ from PIL import Image
 
 
 
-class DocenteList(APIView):
+class DocenteGet(APIView):
     serializer = DocenteSerializer
     def get(self, request, id):
         try:

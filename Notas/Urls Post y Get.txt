@@ -1,5 +1,6 @@
 
 servidor_lccal_por_defecto=http://127.0.0.1:8000
+servidor_heroku=http://apidisponibilidad.herokuapp.com
 
 <servidor>/docente/pdf/<iddocente>  : GET - devuelve los datos por pdf
 
@@ -13,3 +14,10 @@ servidor_lccal_por_defecto=http://127.0.0.1:8000
 
 <servidor>/curso/docente/<iddocente> : GET - devuelve los cursos que prefiere enseñar el docente
                                        POST - Ingresar los cursos que ensenia del docente
+
+<servidor>/ciclos: GET - Devuelve todos los ciclos
+
+<servidor>/nuevociclo: POST - Crea un nuevo ciclo
+
+<servidor>/ciclo/<pk> :  GET - Devuelve un ciclo por su pk ( pk es el nombre de ciclo)
+                         PUT - actualiza ciclo

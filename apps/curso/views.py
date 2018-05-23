@@ -1,12 +1,14 @@
 import json
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
+from rest_framework.exceptions import APIException
 from rest_framework.response import Response
 from django.http.response import HttpResponse
-from apps.curso.serializers import ProgramaSerializer,CursoPrefSerializer,CursoSerializer
-from apps.curso.models import Programa,Preferencia,Curso
+from apps.curso.serializers import ProgramaSerializer, CursoPrefSerializer, CursoSerializer, CicloSerializer
+from apps.curso.models import Programa, Preferencia, Curso, Ciclo
 from apps.docente.models import Docente
-from rest_framework import status
+from rest_framework import status,generics
 
 # Create your views here.
 
@@ -51,3 +53,24 @@ class ProgramaDocenteLista(APIView):
                                             )
                 id_inicial=id_inicial+1
         return Response(lista, status=status.HTTP_201_CREATED)
+
+class CicloListCreate(generics.ListAPIView):
+    serializer_class = CicloSerializer
+    queryset = Ciclo.objects.all()
+
+class CicloCreate(generics.CreateAPIView):
+    serializer_class = CicloSerializer
+    queryset = Ciclo.objects.all()
+
+class CicloGetUpdate(generics.RetrieveUpdateAPIView):
+    serializer_class = CicloSerializer
+    queryset = Ciclo.objects.all()
+
+    def get(self, request,pk):
+        try:
+            ciclo = Ciclo.objects.get(nom_ciclo=pk)
+        except Ciclo.DoesNotExist:
+            return Response('NO EXISTE CICLO', status=status.HTTP_400_BAD_REQUEST)
+        serializer=self.serializer_class(ciclo)
+        return Response(serializer.data)
+
