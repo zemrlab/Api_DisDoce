@@ -19,5 +19,8 @@ servidor_heroku=http://apidisponibilidad.herokuapp.com
 
 <servidor>/nuevociclo: POST - Crea un nuevo ciclo
 
-<servidor>/ciclo/<pk> :  GET - Devuelve un ciclo por su pk ( pk es el nombre de ciclo)
-                         PUT - actualiza ciclo
+<servidor>/ciclo/<pk> :  GET - Devuelve un ciclo por su pk ( pk es el id del ciclo)
+                         PUT - actualiza ciclo ( Todos datos presentes)
+                         PATCH - actualiza ciclo ( solo los datos que se cambiaran)
+
+<servidor>/cicloshabilitados: GET - Devuelve los ciclos habilitados

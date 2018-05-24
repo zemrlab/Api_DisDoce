@@ -1,3 +1,4 @@
+from django.db import connection
 from django.shortcuts import render
 import json
 from rest_framework.views import APIView
@@ -26,17 +27,24 @@ class DisponibilidadList(APIView):
         Disponibilidad.objects.filter(id_docente=pk).delete()
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
         id_inicial=Disponibilidad.objects.count()+1
+        disponibilidades=[]
         for dia in Diccionarios_intervalos:
             for intervalos in Diccionarios_intervalos[dia]:
-                Disponibilidad.objects.create(
+
+                disponibilidad=[id_inicial,pk,dia,intervalos[0],intervalos[1],intervalos[1]-intervalos[0]]
+                """Disponibilidad.objects.create(
                                             id_disponibilidad=id_inicial,
                                             id_docente=Docente.objects.get(pk=pk),
                                             id_dia=Dia.objects.get(pk=dia),
                                             hr_inicio=intervalos[0],
                                             hr_fin=intervalos[1],
                                             tot_hrs=intervalos[1]-intervalos[0]
-                                            )
+                                            )"""
+                disponibilidades.append(disponibilidad)
                 id_inicial=id_inicial+1
+        cursor = connection.cursor()
+        cursor.executemany('INSERT INTO disponibilidad (id_disponibilidad, id_docente, id_dia,hr_inicio,hr_fin,tot_hrs) VALUES (%s, %s, %s,%s,%s,%s)', disponibilidades)
+        cursor.close()
         estado={}
         estado['estado']='correcto'
         return Response(estado, status=status.HTTP_201_CREATED)

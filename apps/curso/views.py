@@ -1,4 +1,6 @@
 import json
+
+from django.db import connection
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
@@ -41,22 +43,28 @@ class ProgramaDocenteLista(APIView):
         Preferencia.objects.filter(id_docente=pk).delete()
         lista=request.data
         listaprogramas=lista['coursesSelection']
-        id_inicial = 0
+        id_inicial = Preferencia.objects.count()+1
+        preferencias = []
         for programa in listaprogramas:
             for curso in programa['cursos']:
-                while Preferencia.objects.filter(id_preferencia=id_inicial).exists():
-                    id_inicial=id_inicial+1
-                Preferencia.objects.create(
+                preferencia=[id_inicial,curso['id_curso'],pk]
+
+                """Preferencia.objects.create(
                                             id_preferencia=id_inicial,
                                             id_curso=Curso.objects.get(pk=curso['id_curso']),
                                             id_docente=Docente.objects.get(pk=pk)
                                             )
+                                            """
+                preferencias.append(preferencia)
                 id_inicial=id_inicial+1
+        cursor = connection.cursor()
+        cursor.executemany('INSERT INTO preferencia (id_preferencia, id_curso, id_docente) VALUES (%s, %s, %s,)',disponibilidades)
+        cursor.close()
         return Response(lista, status=status.HTTP_201_CREATED)
 
-class CicloListCreate(generics.ListAPIView):
+class CicloList(generics.ListAPIView):
     serializer_class = CicloSerializer
-    queryset = Ciclo.objects.all()
+    queryset = Ciclo.objects.all().order_by('-id_ciclo')
 
 class CicloCreate(generics.CreateAPIView):
     serializer_class = CicloSerializer
@@ -68,9 +76,14 @@ class CicloGetUpdate(generics.RetrieveUpdateAPIView):
 
     def get(self, request,pk):
         try:
-            ciclo = Ciclo.objects.get(nom_ciclo=pk)
+            ciclo = Ciclo.objects.get(id_ciclo=pk)
         except Ciclo.DoesNotExist:
             return Response('NO EXISTE CICLO', status=status.HTTP_400_BAD_REQUEST)
         serializer=self.serializer_class(ciclo)
         return Response(serializer.data)
+
+class CicloListHabilitados(generics.ListAPIView):
+    serializer_class = CicloSerializer
+    queryset = Ciclo.objects.all().filter(estado=True).order_by('-id_ciclo')
+
 

@@ -5,7 +5,9 @@ from apps.docente.models import Docente,TipoGrado
 class Ciclo(models.Model):
     id_ciclo = models.AutoField(primary_key=True)
     nom_ciclo = models.CharField(max_length=10)
-
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    estado= models.BooleanField()
     class Meta:
         managed = False
         db_table = 'ciclo'
