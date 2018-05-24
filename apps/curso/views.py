@@ -58,7 +58,7 @@ class ProgramaDocenteLista(APIView):
                 preferencias.append(preferencia)
                 id_inicial=id_inicial+1
         cursor = connection.cursor()
-        cursor.executemany('INSERT INTO preferencia (id_preferencia, id_curso, id_docente) VALUES (%s, %s, %s,)',disponibilidades)
+        cursor.executemany('INSERT INTO preferencia (id_preferencia, id_curso, id_docente) VALUES (%s, %s, %s,)',preferencias)
         cursor.close()
         return Response(lista, status=status.HTTP_201_CREATED)
 
