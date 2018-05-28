@@ -4,7 +4,7 @@ import json
 from django.shortcuts import render
 from django.conf import settings
 from reportlab.lib.utils import ImageReader
-from rest_framework import status
+from rest_framework import status,generics
 from rest_framework.views import APIView
 from apps.docente.serializers import DocenteSerializer
 from rest_framework.response import Response
@@ -746,3 +746,7 @@ class PDFView(APIView):
         p.showPage()
         p.save()
         return response
+
+class DocenteList(generics.ListView):
+    serializer_class = DocenteSerializer
+    queryset = Docente.objects.all().order_by('-id')

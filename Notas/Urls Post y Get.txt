@@ -4,23 +4,26 @@ servidor_heroku=http://apidisponibilidad.herokuapp.com
 
 <servidor>/docente/pdf/<iddocente>  : GET - devuelve los datos por pdf
 
-<servidor>/docente/api/<iddocente>  : GET - devuelve los datos del docente y sus datos academicos en un json
+<servidor>/docente/docente/<iddocente>  : GET - devuelve los datos del docente y sus datos academicos en un json
+
+<servidor>/docente/docentes : GET - devuelve todos los docentes
 
 <servidor>/disponibilidad/api/<iddocente>  : GET - devuelve la disponibilidad del docente(de acuerdo al formato establecido , ver enviar datos a json del web service)
                                              POST - ingresa disponibilidad del docente (de acuerdo al formato establecido , ver enviar datos a json del web service)
 
-<servidor>/curso/api : GET - devuelve todos los datos de los programas y sus cursos.
+
+<servidor>/curso/cursos : GET - devuelve todos los datos de los programas y sus cursos.
 
 
 <servidor>/curso/docente/<iddocente> : GET - devuelve los cursos que prefiere enseñar el docente
                                        POST - Ingresar los cursos que ensenia del docente
 
-<servidor>/ciclos: GET - Devuelve todos los ciclos
+<servidor>/curso/ciclos: GET - Devuelve todos los ciclos
 
-<servidor>/nuevociclo: POST - Crea un nuevo ciclo
+<servidor>/curso/nuevociclo: POST - Crea un nuevo ciclo
 
-<servidor>/ciclo/<pk> :  GET - Devuelve un ciclo por su pk ( pk es el id del ciclo)
+<servidor>/curso/ciclo/<pk> :  GET - Devuelve un ciclo por su pk ( pk es el id del ciclo)
                          PUT - actualiza ciclo ( Todos datos presentes)
                          PATCH - actualiza ciclo ( solo los datos que se cambiaran)
 
-<servidor>/cicloshabilitados: GET - Devuelve los ciclos habilitados
+<servidor>/curso/cicloshabilitados: GET - Devuelve los ciclos habilitados

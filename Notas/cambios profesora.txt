@@ -1,0 +1,23 @@
+
+servidor_lccal_por_defecto=http://127.0.0.1:8000
+servidor_heroku=http://apidisponibilidad.herokuapp.com
+
+unciones de la secretaria:
+	- Aperturar ciclo
+	  -- Listar ciclos
+		- devolver ciclos(nombres, fecha inicio, fecha fin, modificar)
+            <servidor>/ciclos: GET - Devuelve todos los ciclos
+
+	  -- Crear ciclo:
+		- crear ciclo (nombre, fecha inicio y fecha fin)
+            <servidor>/nuevociclo: POST - Crea un nuevo ciclo
+
+	- Modulo Consulta
+	  -- Consultar por curso
+		- El front enviará el nombre de un curso, las horas en las que se dictará y el semestre   academico, la api debe devolver una lista con los docentes hayan escogido esa preferencia de curso y en las horas elegidas.
+
+	  -- Consultar por docente
+		- Listar docente(codigo, dni, nombres y apellidos)
+		    <servidor>/docente/docentes : GET - devuelve todos los docentes
+		- EL front enviará el codigo del docente y la api devolvera todos los datos.
+		    <servidor>/docente/docente/<iddocente>  : GET - devuelve los datos del docente y sus datos academicos en un json
