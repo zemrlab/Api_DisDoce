@@ -14,7 +14,7 @@ unciones de la secretaria:
 	- Modulo Consulta
 	  -- Consultar por curso
 		- El front enviará el nombre de un curso, las horas en las que se dictará y el semestre   academico, la api debe devolver una lista con los docentes hayan escogido esa preferencia de curso y en las horas elegidas.
-
+            <servidor>/curso/secretaria/<curso>/<ciclo>/<hrinicio>/<hrfin>/<dia>
 	  -- Consultar por docente
 		- Listar docente(codigo, dni, nombres y apellidos)
 		    <servidor>/docente/docentes : GET - devuelve todos los docentes
