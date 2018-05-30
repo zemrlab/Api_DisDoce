@@ -7,12 +7,16 @@ from rest_framework.views import APIView
 from rest_framework.exceptions import APIException
 from rest_framework.response import Response
 from django.http.response import HttpResponse
-from apps.curso.serializers import ProgramaSerializer, CursoPrefSerializer, CursoSerializer, CicloSerializer
+from apps.curso.serializers import ProgramaSerializer, CursoPrefSerializer, CursoSerializer, CicloSerializer, \
+    PreferenciaSerializer
 from apps.curso.models import Programa, Preferencia, Curso, Ciclo
 from apps.docente.models import Docente
 from rest_framework import status,generics
 
 # Create your views here.
+from apps.docente.serializers import DocenteSerializer
+from apps.disponibilidad.models import Disponibilidad
+
 
 class ProgramasCursoList(APIView):
     serializer=ProgramaSerializer
@@ -47,7 +51,7 @@ class ProgramaDocenteLista(APIView):
         preferencias = []
         for programa in listaprogramas:
             for curso in programa['cursos']:
-                preferencia=[id_inicial,curso['id_curso'],pk]
+                preferencia=[id_inicial,curso['id_curso'],int(pk)]
 
                 """Preferencia.objects.create(
                                             id_preferencia=id_inicial,
@@ -58,7 +62,7 @@ class ProgramaDocenteLista(APIView):
                 preferencias.append(preferencia)
                 id_inicial=id_inicial+1
         cursor = connection.cursor()
-        cursor.executemany('INSERT INTO preferencia (id_preferencia, id_curso, id_docente) VALUES (%s, %s, %s,)',preferencias)
+        cursor.executemany('INSERT INTO preferencia (id_preferencia, id_curso, id_docente) VALUES (%s, %s, %s)',preferencias)
         cursor.close()
         return Response(lista, status=status.HTTP_201_CREATED)
 
@@ -86,4 +90,21 @@ class CicloListHabilitados(generics.ListAPIView):
     serializer_class = CicloSerializer
     queryset = Ciclo.objects.all().filter(estado=True).order_by('-id_ciclo')
 
+class DocenteHorarioCursoList(APIView):
+    serializerDocente = DocenteSerializer
+    def get(self, request, curso, hrinicio, hrfin, ciclo,dia):
+        print(curso)
+        curso_escogido=Curso.objects.get(nom_curso=curso)
+
+        ciclo=Ciclo.objects.get(nom_ciclo=ciclo)
+        preferencias = Preferencia.objects.filter(id_curso=curso_escogido.id_curso ,id_ciclo=ciclo.id_ciclo) # filter(id_docente=pk)
+        docentes = []
+        for preferencia in preferencias:
+            disponibilidades=Disponibilidad.objects.filter(id_docente=preferencia.id_docente,id_dia=dia)
+            for disponibilidad in disponibilidades:
+                if(disponibilidad.hr_inicio<=hrinicio and disponibilidad.hr_fin>=hrfin):
+                    doc=Docente.objects.get(id=preferencia.id_docente.id)
+                    docente=self.serializerDocente(doc)
+                    docentes.append(docente.data)
+        return Response(docentes)
 

@@ -747,6 +747,6 @@ class PDFView(APIView):
         p.save()
         return response
 
-class DocenteList(generics.ListView):
+class DocenteList(generics.ListAPIView):
     serializer_class = DocenteSerializer
     queryset = Docente.objects.all().order_by('-id')

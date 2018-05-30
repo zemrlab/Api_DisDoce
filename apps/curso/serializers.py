@@ -2,6 +2,8 @@ from rest_framework.serializers import ModelSerializer,SlugRelatedField,PrimaryK
 from apps.curso.models import Programa, Curso, Preferencia, Ciclo
 
 
+
+
 class CursoSerializer(ModelSerializer):
     class Meta:
         model= Curso
@@ -27,4 +29,8 @@ class CicloSerializer(ModelSerializer):
 class PreferenciaSerializer(ModelSerializer):
     class Meta:
         model = Preferencia
-        fields = ('id_preferencia','curso',)"""
+      fields = ('id_preferencia','curso',)"""
+class PreferenciaSerializer(ModelSerializer):
+    class Meta:
+        model= Preferencia
+        fields = '__all__'

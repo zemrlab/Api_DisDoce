@@ -1,4 +1,3 @@
-
 servidor_lccal_por_defecto=http://127.0.0.1:8000
 servidor_heroku=http://apidisponibilidad.herokuapp.com
 
