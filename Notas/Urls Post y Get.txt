@@ -27,3 +27,5 @@ servidor_heroku=http://apidisponibilidad.herokuapp.com
                          PATCH - actualiza ciclo ( solo los datos que se cambiaran)
 
 <servidor>/curso/cicloshabilitados: GET - Devuelve los ciclos habilitados
+
+<servidor>/curso/secretaria/<curso>/<ciclo>/<hrinicio>/<hrfin>/<dia> : GET - lo que pidio la profesora :v
