@@ -1,6 +1,7 @@
 from reportlab.lib import colors
 from PIL import Image
 from reportlab.lib.pagesizes import letter
+from reportlab.platypus import Table,TableStyle
 import os
 from reportlab.lib.units import cm, mm, inch, pica
 
@@ -113,3 +114,40 @@ def formulario(p,x,y,lista_form,switcher_formulario,switcher_salto_linea,switche
                 func(p,value)
     return y
 
+
+#PARA TABLAS
+def tabla(p,encabezados,detalles,x_tabla,y_tabla,estilos,col_tamanio=[100],x_tam=800,y_tam=600):
+
+    # Establecemos el tamaño de cada una de las columnas de la tabla
+    detalle_orden = Table([encabezados] + detalles, colWidths=col_tamanio)
+    # Aplicamos estilos a las celdas de la tabla
+    detalle_orden.setStyle(TableStyle(
+        estilos
+    ))
+    # Establecemos el tamaño de la hoja que ocupará la tabla
+    detalle_orden.wrapOn(p, x_tam, y_tam)
+    # Definimos la coordenada donde se dibujará la tabla
+    detalle_orden.drawOn(p, x_tabla, y_tabla)
+
+"""
+    EJEMPLO DE DATOS:
+    encabezados = ('EQUIPO', 'DESCRIPCION', 'tipo')
+    detalles = [
+        # Equipo             Descripción
+        ('NOMBRE', "STEVE", '3'),
+        ('MARCA', "KHO", 45),
+        ('MODELO', "OK", 5),
+        ('SERIE', "NIAW", 7)
+    ]
+    colWidths=[100,100,50] #El ultimo valor seguira para las demas columnas
+    estilos= [
+            # La primera fila(encabezados) va a estar centrada
+            ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+            ('BACKGROUND', (0, 0), (-1, 0), colors.green),
+            # Los bordes de todas las celdas serán de color negro y con un grosor de 1
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),
+            # El tamaño de las letras de cada una de las celdas será de 10
+            ('FONTSIZE', (0, 0), (-1, -1), 10),
+        ]
+
+"""

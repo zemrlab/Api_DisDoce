@@ -108,3 +108,17 @@ class DocenteHorarioCursoList(APIView):
                     docentes.append(docente.data)
         return Response(docentes)
 
+
+
+"""  ALEJANDRO HABLAR
+class CicloCursoList(generics.ListAPIView):
+    serializer_class = CursoSerializer
+
+    def get_queryset(self):
+        ciclo = self.request.query_params.get('ciclo')
+
+        if ciclo:
+            queryset = Curso.objects.filter(id_ciclo=ciclo)
+            queryset.
+
+        return queryset"""

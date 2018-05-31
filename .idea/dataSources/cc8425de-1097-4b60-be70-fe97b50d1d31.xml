@@ -109,8 +109,8 @@ search_path=pg_catalog, public</Config>
     <schema id="20" parent="4" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-05-30.05:38:14.496</IntrospectionTimestamp>
-      <IntrospectionStateNumber>20779</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-05-31.04:24:13.867</IntrospectionTimestamp>
+      <IntrospectionStateNumber>21001</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -2751,7 +2751,8 @@ id_mod</ColNames>
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2750</StateNumber>
+      <StateNumber>21001</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
     <index id="430" parent="85" name="programa_id_programa_key">

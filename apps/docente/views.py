@@ -16,6 +16,7 @@ from reportlab.pdfgen import canvas
 from Algoritmos.libreria_pdf import *
 from Algoritmos.Algoritmos_Disponibilidad import devolver_disponibilidad,docente_dias_disponibilidad,docente_horas_disponibilidad
 from reportlab.lib.pagesizes import letter,landscape
+from reportlab.platypus import Table,TableStyle
 from PIL import Image
 # Create your views here.
 
@@ -750,3 +751,41 @@ class PDFView(APIView):
 class DocenteList(generics.ListAPIView):
     serializer_class = DocenteSerializer
     queryset = Docente.objects.all().order_by('-id')
+
+class ConsultaDocentePDF(APIView):
+    def get(self,request,id,ciclo=3):
+        response = HttpResponse(content_type='application/pdf')
+        nombre_pdf='Consulta Docente '+id
+        response['Content-Disposition'] = 'filename="'+nombre_pdf+'.pdf"'
+        """try:
+            informacion_docente=Docente.objects.get(id=id)
+        except Docente.DoesNotExist:
+            return Response('NO EXISTE DOCENTE',status=status.HTTP_400_BAD_REQUEST)"""
+        p = canvas.Canvas(response)
+        p.setTitle("Empezando...")
+
+        p.setPageSize(landscape(letter))
+
+        encabezados = ('EQUIPO', 'DESCRIPCION','tipo','ok')
+        detalles = [
+            # Equipo             Descripción
+            ('NOMBRE', "STEVE",'3',3),
+            ('MARCA', "KHO",45,3),
+            ('MODELO',"OK",5,4),
+            ('SERIE',"NIAW",7,5)
+        ]
+        y = 420
+        x =120
+        estilos = [
+                # La primera fila(encabezados) va a estar centrada
+                ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+                ('BACKGROUND', (0, 0), (-1, 0), colors.green),
+                # Los bordes de todas las celdas serán de color negro y con un grosor de 1
+                ('GRID', (0, 0), (-1, -1), 1, colors.black),
+                # El tamaño de las letras de cada una de las celdas será de 10
+                ('FONTSIZE', (0, 0), (-1, -1), 10),
+            ]
+        tabla(p,encabezados,detalles,x,y,estilos)
+        p.showPage()
+        p.save()
+        return response
