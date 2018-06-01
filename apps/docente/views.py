@@ -878,7 +878,7 @@ class ConsultaDocentePDF(APIView):
         detalles=[]
         for dia in dias :
             encabezados.append(dia.nom_dia)
-            detalles
+            detalles    
 
         detalles = [
             # Equipo             Descripción
