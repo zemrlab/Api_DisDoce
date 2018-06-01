@@ -34,8 +34,8 @@ class ProgramasCursoList(APIView):
 class ProgramaDocenteLista(APIView):
     serializerCurso=CursoSerializer
     serializerPrograma=ProgramaSerializer
-    def get(self,request,pk):
-        preferencias = Preferencia.objects.filter(id_docente=pk).values()  # filter(id_docente=pk)
+    def get(self,request,pk,ciclo):
+        preferencias = Preferencia.objects.filter(id_docente=pk,id_ciclo=ciclo).values()  # filter(id_docente=pk)
         cursos = []
         for preferencia in preferencias:
             curso = Curso.objects.get(id_curso=preferencia['id_curso_id'])
@@ -43,15 +43,15 @@ class ProgramaDocenteLista(APIView):
             cursos.append(serializer.data)
         return Response(cursos)
 
-    def post(self,request,pk):
-        Preferencia.objects.filter(id_docente=pk).delete()
+    def post(self,request,pk,ciclo):
+        Preferencia.objects.filter(id_docente=pk,id_ciclo=ciclo).delete()
         lista=request.data
         listaprogramas=lista['coursesSelection']
         id_inicial = Preferencia.objects.count()+1
         preferencias = []
         for programa in listaprogramas:
             for curso in programa['cursos']:
-                preferencia=[id_inicial,curso['id_curso'],int(pk)]
+                preferencia=[id_inicial,curso['id_curso'],int(pk),int(ciclo)]
 
                 """Preferencia.objects.create(
                                             id_preferencia=id_inicial,
@@ -62,7 +62,7 @@ class ProgramaDocenteLista(APIView):
                 preferencias.append(preferencia)
                 id_inicial=id_inicial+1
         cursor = connection.cursor()
-        cursor.executemany('INSERT INTO preferencia (id_preferencia, id_curso, id_docente) VALUES (%s, %s, %s)',preferencias)
+        cursor.executemany('INSERT INTO preferencia (id_preferencia, id_curso, id_docente,ciclo) VALUES (%s, %s, %s,%s)',preferencias)
         cursor.close()
         return Response(lista, status=status.HTTP_201_CREATED)
 
@@ -79,6 +79,7 @@ class CicloGetUpdate(generics.RetrieveUpdateAPIView):
     queryset = Ciclo.objects.all()
 
     def get(self, request,pk):
+        print(holi)
         try:
             ciclo = Ciclo.objects.get(id_ciclo=pk)
         except Ciclo.DoesNotExist:

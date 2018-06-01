@@ -5,5 +5,5 @@ from apps.disponibilidad import views
 app_name='disponibilidad'
 
 urlpatterns = [
-    path('api/<pk>', views.DisponibilidadList.as_view(), name='api_devolver'),
+    path('api/<pk>/<ciclo>', views.DisponibilidadList.as_view(), name='api_devolver'),
 ]

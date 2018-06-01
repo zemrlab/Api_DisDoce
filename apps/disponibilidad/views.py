@@ -4,6 +4,8 @@ import json
 from rest_framework.views import APIView
 from django.http import  HttpResponse
 from rest_framework.response import Response
+
+from apps.curso.models import Ciclo
 from apps.disponibilidad.serializers import DisponibilidadSerializer
 from django.db.models.query import QuerySet
 from apps.disponibilidad.models import Disponibilidad,Dia
@@ -18,20 +20,21 @@ from Algoritmos.Algoritmos_Disponibilidad import Descifrar_disponibilidad,devolv
 
 class DisponibilidadList(APIView):
     serializer = DisponibilidadSerializer
-    def get(self, request, pk):
-        horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk).order_by('id_disponibilidad')
+    def get(self, request, pk,ciclo):
+        horarios_intervalos=Disponibilidad.objects.filter(id_docente=pk,id_ciclo=ciclo).order_by('id_disponibilidad')
         disponibilidades=[disponibilidad for disponibilidad in horarios_intervalos.values()]
         array = devolver_disponibilidad(disponibilidades,8,14)
         return Response(json.dumps(array))
-    def post(self, request, pk):
-        Disponibilidad.objects.filter(id_docente=pk).delete()
+
+    def post(self, request, pk,ciclo):
+        Disponibilidad.objects.filter(id_docente=pk , id_ciclo=ciclo).delete()
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
         id_inicial=Disponibilidad.objects.count()+1
         disponibilidades=[]
         for dia in Diccionarios_intervalos:
             for intervalos in Diccionarios_intervalos[dia]:
 
-                disponibilidad=[id_inicial,pk,dia,intervalos[0],intervalos[1],intervalos[1]-intervalos[0]]
+                disponibilidad=[id_inicial,pk,dia,intervalos[0],intervalos[1],intervalos[1]-intervalos[0],int(ciclo)]
                 """Disponibilidad.objects.create(
                                             id_disponibilidad=id_inicial,
                                             id_docente=Docente.objects.get(pk=pk),
@@ -43,7 +46,7 @@ class DisponibilidadList(APIView):
                 disponibilidades.append(disponibilidad)
                 id_inicial=id_inicial+1
         cursor = connection.cursor()
-        cursor.executemany('INSERT INTO disponibilidad (id_disponibilidad, id_docente, id_dia,hr_inicio,hr_fin,tot_hrs) VALUES (%s, %s, %s,%s,%s,%s)', disponibilidades)
+        cursor.executemany('INSERT INTO disponibilidad (id_disponibilidad, id_docente, id_dia,hr_inicio,hr_fin,tot_hrs,,id_ciclo) VALUES (%s, %s, %s,%s,%s,%s,%s)', disponibilidades)
         cursor.close()
         estado={}
         estado['estado']='correcto'

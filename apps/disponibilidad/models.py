@@ -17,7 +17,7 @@ class Disponibilidad(models.Model):
     hr_inicio = models.CharField(max_length=2)
     hr_fin = models.CharField(max_length=2)
     tot_hrs = models.CharField(max_length=2)
-    #id_ciclo = models.ForeignKey(Ciclo,default=1, db_column='id_ciclo',on_delete=models.CASCADE)
+    id_ciclo = models.ForeignKey(Ciclo,default=1, db_column='id_ciclo',on_delete=models.CASCADE)
     #id_ciclo=models.IntegerField(primary_key=True);
     class Meta:
         managed = False
