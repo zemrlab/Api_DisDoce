@@ -8,15 +8,15 @@ servidor_heroku=http://apidisponibilidad.herokuapp.com
 
 <servidor>/docente/docentes : GET - devuelve todos los docentes
 
-<servidor>/disponibilidad/api/<iddocente>  : GET - devuelve la disponibilidad del docente(de acuerdo al formato establecido , ver enviar datos a json del web service)
-                                             POST - ingresa disponibilidad del docente (de acuerdo al formato establecido , ver enviar datos a json del web service)
+<servidor>/disponibilidad/api/<iddocente>/<idciclo> : GET - devuelve la disponibilidad del docente con su ciclo(de acuerdo al formato establecido , ver enviar datos a json del web service)
+                                             POST - ingresa disponibilidad del docente con su ciclo(de acuerdo al formato establecido , ver enviar datos a json del web service)
 
 
 <servidor>/curso/cursos : GET - devuelve todos los datos de los programas y sus cursos.
 
 
-<servidor>/curso/docente/<iddocente> : GET - devuelve los cursos que prefiere enseñar el docente
-                                       POST - Ingresar los cursos que ensenia del docente
+<servidor>/curso/docente/<iddocente>/<idciclo> : GET - devuelve los cursos que prefiere enseñar el docente con su ciclo
+                                       POST - Ingresar los cursos que ensenia del docente con el ciclo correspondiente
 
 <servidor>/curso/ciclos: GET - Devuelve todos los ciclos
 
