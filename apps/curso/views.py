@@ -79,7 +79,6 @@ class CicloGetUpdate(generics.RetrieveUpdateAPIView):
     queryset = Ciclo.objects.all()
 
     def get(self, request,pk):
-        print(holi)
         try:
             ciclo = Ciclo.objects.get(id_ciclo=pk)
         except Ciclo.DoesNotExist:
