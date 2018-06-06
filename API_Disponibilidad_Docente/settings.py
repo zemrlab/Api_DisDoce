@@ -84,7 +84,7 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tcs',
+        'NAME': 'tcs2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com',

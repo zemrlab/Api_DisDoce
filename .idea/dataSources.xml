@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com:5432/tcs</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="tcs2@sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com" uuid="f688572b-f3d5-4474-af58-0fb8ef718d59">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com:5432/tcs2</jdbc-url>
+    </data-source>
   </component>
 </project>
