@@ -10,5 +10,14 @@
       <user-name>postgres</user-name>
       <introspection-schemas>tcs:public</introspection-schemas>
     </data-source>
+    <data-source name="tcs2@sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com" uuid="f688572b-f3d5-4474-af58-0fb8ef718d59">
+      <database-info product="PostgreSQL" version="9.6.6" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <introspection-schemas>tcs2:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

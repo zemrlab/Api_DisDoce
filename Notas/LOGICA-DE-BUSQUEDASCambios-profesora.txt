@@ -1,0 +1,19 @@
+F(SEMESTRE,CURSO,DOCENTE,DIA,HORA INICIO,HORA FIN)
+
+F(1,1,0,0,0,0)=>nombre,apellid,DNI,celular, disponibilidad(TABLA)
+F(1,1,0,1,1,1)=>nombre,apellid,DNI,celular
+F(1,0,0,0,0,0)=>curso,programa,nº ciclo, creditos
+F(1,0,1,0,0,0)=>curso,programa,nº ciclo, creditos
+F(1,0,0,1,0,0)=>docente, disponibilidad, correo, direccion, celular, grad acd mas alto
+F(1,0,0,0,1,0)=>docente, disponibilidad
+F(1,0,0,0,0,1)=>docente, disponibilidad
+F(0,1,1,0,0,0)=>disponibilidad(TABLA)
+F(0,1,0,1,0,0)=>nombre,apellid,DNI,celular,disponibilidad
+F(0,1,0,0,1,0)=>nombre,apellid,DNI,celular,disponibilidad
+F(0,1,0,0,0,1)=>nombre,apellid,DNI,celular,disponibilidad
+F(0,0,1,1,0,0)=>docente,disponibilidad, correo direccion, celular y grado acad mas alto
+F(0,0,1,0,1,0)=>dia, disponibilidad
+F(0,0,1,0,0,1)=>dia, disponibilidad
+F(0,0,0,1,1,0)=>docente,disponibilidad, correo, direccion, celular, grado acad mas alto
+F(0,0,0,1,0,1)=>docente,disponibilidad, correo, direccion, celular, grado acad mas alto
+
