@@ -46,7 +46,7 @@ class DisponibilidadList(APIView):
                 disponibilidades.append(disponibilidad)
                 id_inicial=id_inicial+1
         cursor = connection.cursor()
-        cursor.executemany('INSERT INTO disponibilidad (id_disponibilidad, id_docente, id_dia,hr_inicio,hr_fin,tot_hrs,,id_ciclo) VALUES (%s, %s, %s,%s,%s,%s,%s)', disponibilidades)
+        cursor.executemany('INSERT INTO disponibilidad (id_disponibilidad, id_docente, id_dia,hr_inicio,hr_fin,tot_hrs,id_ciclo) VALUES (%s, %s, %s,%s,%s,%s,%s)', disponibilidades)
         cursor.close()
         estado={}
         estado['estado']='correcto'
