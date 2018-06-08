@@ -21,5 +21,6 @@ urlpatterns = [
     path('disponibilidad/', include('apps.disponibilidad.urls')),
     path('docente/', include('apps.docente.urls')),
     path('curso/', include('apps.curso.urls')),
-    path('usuario/',include('apps.usuario.urls'))
+    path('usuario/',include('apps.usuario.urls')),
+    path('secretaria/',include('apps.secretaria.urls')),
 ]

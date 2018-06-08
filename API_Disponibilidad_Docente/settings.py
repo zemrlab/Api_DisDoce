@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.curso',
     'apps.docente',
     'apps.usuario',
+    'apps.secretaria',
     'corsheaders'
 ]
 

@@ -1,0 +1,45 @@
+//BUSCADOR TOTAL
+{
+	"semestreFilter": "",//id
+	"cursoFilter": "",//like
+	"docenteFilter": "",//nombre o apellido
+	"diaFilter": "",//1 al 7
+	"horaInicio": "",//1-24
+	"horaFin": ""//1-24
+}
+ //prueba 1
+{
+	"semestreFilter": "1",
+	"cursoFilter": "TRATAMIENTO",
+	"docenteFilter": "",
+	"diaFilter": "",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
+"disponibilidad": [
+          {
+            "id": "5b1857bebc1758deae36e63f",
+            "nombre": "miercoles",
+            "hinicio": 13,
+            "hfin": 19
+          },
+          {
+            "id": "5b1857bee0bf45d71d2ef088",
+            "nombre": "lunes",
+            "hinicio": 12,
+            "hfin": 10
+          },
+          {
+            "id": "5b1857be196d9fd65409b26f",
+            "nombre": "miercoles",
+            "hinicio": 19,
+            "hfin": 14
+          },
+          {
+            "id": "5b1857befb24879caae03d3c",
+            "nombre": "domingo",
+            "hinicio": 22,
+            "hfin": 20
+          }
+        ]
