@@ -16,7 +16,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>postgres</user-name>
+      <user-name>modulo5</user-name>
       <introspection-schemas>tcs2:public</introspection-schemas>
     </data-source>
   </component>

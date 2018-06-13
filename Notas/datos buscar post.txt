@@ -10,7 +10,7 @@
  //prueba 1
 {
 	"semestreFilter": "1",
-	"cursoFilter": "TRATAMIENTO",
+	"cursoFilter": "COB",
 	"docenteFilter": "",
 	"diaFilter": "",
 	"horaInicio": "",
