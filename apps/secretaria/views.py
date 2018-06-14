@@ -189,6 +189,10 @@ class buscadorTotal(APIView):
         p1=[True,True,False,False,False,False]
         p2=[True,True,False,True,True,True]
         p3=[True,False,False,False,False,False]
+        p4 = [True, False, True, False, False, False]
+        p5 = [True, False, False, True, False, False]
+        p6 = [True, False, False, False, True, False]
+        p7 = [True, False, False, False, False, True]
 
         print(buscarValidar)
         resultado = []
@@ -209,11 +213,12 @@ class buscadorTotal(APIView):
              #   docentes.append(prefe.id_docente)
             for docente in docentes:
                 cursor.execute(sqldisponibilidad,[docente['id']])
+                del docente['id']
                 disponibilidad=dictfetchall(cursor)
                 docente['disponibilidad']=disponibilidad
                 resultado.append(docente)
         if buscarValidar==p2:
-            sql1 = """select d.id,d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+            sql1 = """select d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
                         join curso c on p.id_curso = c.id_curso
                         join docente d on p.id_docente = d.id
                         join disponibilidad dis on d.id = dis.id_docente
@@ -222,10 +227,67 @@ class buscadorTotal(APIView):
             cursor.execute(sql1)
             resultado=dictfetchall(cursor)
         if buscarValidar == p3:
-            """select c.nom_curso,pr.nom_programa,ci.nom_ciclo from preferencia p
-join curso c on p.id_curso = c.id_curso
-join programa pr on c.id_programa = pr.id_programa
-join ciclo ci on p.id_ciclo = ci.id_ciclo"""
+            sql1="""select c.nom_curso as curso,pr.nom_programa as programa,c.numciclo as "nr ciclo",c.numcreditaje as creditos from preferencia p
+                    join curso c on p.id_curso = c.id_curso
+                    join programa pr on c.id_programa = pr.id_programa
+                    join ciclo ci on p.id_ciclo = ci.id_ciclo
+                    where ci.id_ciclo=(%s) group by pr.nom_programa,c.numciclo,c.numcreditaje,c.nom_curso"""
+            cursor.execute(sql1,[semestre])
+            resultado=dictfetchall(cursor)
+        if buscarValidar == p4 :
+            sql1 = """select c.nom_curso as curso,pr.nom_programa as programa,c.numciclo as "nr ciclo",c.numcreditaje as creditos from preferencia p
+                    join curso c on p.id_curso = c.id_curso
+                    join programa pr on c.id_programa = pr.id_programa
+                    join ciclo ci on p.id_ciclo = ci.id_ciclo
+                    where ci.id_ciclo=(%s) group by pr.nom_programa,c.numciclo,c.numcreditaje,c.nom_curso"""
+        if buscarValidar == p5 :
+            sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
+                        from docente d
+                        join disponibilidad dis on d.id = dis.id_docente group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,docente"""
+            cursor.execute(sql1)
+            docentes=dictfetchall(cursor)
+            sqldisponibilidad="""select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                    join docente d on dis.id_docente = d.id
+                                    join dia di on dis.id_dia = di.id_dia
+                                    where NULLIF(dis.id_dia, '')::int=(%s) and dis.id_ciclo=(%s) and d.id=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad,[dia,semestre,docente['id']])
+                del docente['id']
+                disponibilidad=dictfetchall(cursor)
+                docente['disponibilidad']=disponibilidad
+                resultado.append(docente)
+        if buscarValidar == p6 :
+            sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
+                        from docente d
+                        join disponibilidad dis on d.id = dis.id_docente group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,docente"""
+            cursor.execute(sql1)
+            docentes=dictfetchall(cursor)
+            sqldisponibilidad="""select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                    join docente d on dis.id_docente = d.id
+                                    join dia di on dis.id_dia = di.id_dia
+                                    where NULLIF(dis.hr_inicio, '')::int>=(%s) and dis.id_ciclo=(%s) and d.id=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad,[hora_inicio,semestre,docente['id']])
+                del docente['id']
+                disponibilidad=dictfetchall(cursor)
+                docente['disponibilidad']=disponibilidad
+                resultado.append(docente)
+        if buscarValidar == p7 :
+            sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
+                        from docente d
+                        join disponibilidad dis on d.id = dis.id_docente group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,docente"""
+            cursor.execute(sql1)
+            docentes=dictfetchall(cursor)
+            sqldisponibilidad="""select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                    join docente d on dis.id_docente = d.id
+                                    join dia di on dis.id_dia = di.id_dia
+                                    where NULLIF(dis.hr_fin, '')::int<=(%s) and dis.id_ciclo=(%s) and d.id=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad,[hora_fin,semestre,docente['id']])
+                del docente['id']
+                disponibilidad=dictfetchall(cursor)
+                docente['disponibilidad']=disponibilidad
+                resultado.append(docente)
         cursor.close()
         return Response(resultado)
         #preferencia=Preferencia.objects.filter(id_ciclo__nom_ciclo__contains=semestre,id_curso__nom_curso__contains=curso)

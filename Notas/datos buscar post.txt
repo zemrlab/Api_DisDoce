@@ -27,6 +27,45 @@
 	"horaFin": "10"
 }
 
+// prueba 3
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
+// prueba 5
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
+// prueba 6
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "",
+	"horaInicio": "8",
+	"horaFin": ""
+}
+
+// prueba 7
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "",
+	"horaInicio": "",
+	"horaFin": "20"
+}
 
 "disponibilidad": [
           {
