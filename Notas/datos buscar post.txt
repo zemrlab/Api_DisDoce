@@ -17,6 +17,17 @@
 	"horaFin": ""
 }
 
+// prueba 2
+{
+	"semestreFilter": "1",
+	"cursoFilter": "COB",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "8",
+	"horaFin": "10"
+}
+
+
 "disponibilidad": [
           {
             "id": "5b1857bebc1758deae36e63f",
