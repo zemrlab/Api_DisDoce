@@ -193,6 +193,18 @@ class buscadorTotal(APIView):
         p5 = [True, False, False, True, False, False]
         p6 = [True, False, False, False, True, False]
         p7 = [True, False, False, False, False, True]
+        p8 = [False,True,True,False,False,False]
+        p9 = [False, True, False, True, False, False]
+        p10 = [False, True, False, False, True, False]
+        p11 = [False, True, False, False, False, True]
+        p12 = [False, False, True, True, False, False]
+        p13 = [False, False, True, False, True, False]
+        p14 = [False, False, True, False, False, True]
+        p15 = [False, False, False, True, True, False]
+        p16 = [False, False, False, True, False, True]
+
+        curso=curso.lower()
+        docente=docente.lower()
 
         print(buscarValidar)
         resultado = []
@@ -201,7 +213,7 @@ class buscadorTotal(APIView):
             sql1="""select d.id,d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
                     join curso c on p.id_curso = c.id_curso
                     join docente d on p.id_docente = d.id
-                    where c.nom_curso like '%"""+curso+"""%' and p.id_ciclo="""+semestre
+                    where lower(c.nom_curso) like '%"""+curso+"""%' and p.id_ciclo="""+semestre
             cursor.execute(sql1)
             docentes=dictfetchall(cursor)
             sqldisponibilidad="""select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
@@ -222,7 +234,7 @@ class buscadorTotal(APIView):
                         join curso c on p.id_curso = c.id_curso
                         join docente d on p.id_docente = d.id
                         join disponibilidad dis on d.id = dis.id_docente
-                        where c.nom_curso like '%"""+curso+"""%' and p.id_ciclo="""+semestre+""" and NULLIF(dis.id_dia, '')::int="""+dia+"""
+                        where lower(c.nom_curso) like '%"""+curso+"""%' and p.id_ciclo="""+semestre+""" and NULLIF(dis.id_dia, '')::int="""+dia+"""
                               and NULLIF(dis.hr_inicio, '')::int>="""+hora_inicio+""" and NULLIF(dis.hr_fin, '')::int>="""+hora_fin
             cursor.execute(sql1)
             resultado=dictfetchall(cursor)
@@ -235,11 +247,17 @@ class buscadorTotal(APIView):
             cursor.execute(sql1,[semestre])
             resultado=dictfetchall(cursor)
         if buscarValidar == p4 :
-            sql1 = """select c.nom_curso as curso,pr.nom_programa as programa,c.numciclo as "nr ciclo",c.numcreditaje as creditos from preferencia p
-                    join curso c on p.id_curso = c.id_curso
-                    join programa pr on c.id_programa = pr.id_programa
-                    join ciclo ci on p.id_ciclo = ci.id_ciclo
-                    where ci.id_ciclo=(%s) group by pr.nom_programa,c.numciclo,c.numcreditaje,c.nom_curso"""
+            sql1 = """select c.nom_curso,pr.nom_programa,c.numciclo,c.numcreditaje,(d.nombres||' '||d.apell_pat||' '||d.apell_mat) as apellido
+                        from preferencia p
+                        join curso c on p.id_curso = c.id_curso
+                        join programa pr on c.id_programa = pr.id_programa
+                        join ciclo ci on p.id_ciclo = ci.id_ciclo
+                        join docente d on p.id_docente = d.id
+                        where ci.id_ciclo="""+semestre+""" and
+                        lower (d.nombres||' '||d.apell_pat||' '||d.apell_mat) like '%"""+docente+"""%' group by pr.nom_programa,c.numciclo,c.numcreditaje,p.id_docente,apellido,c.nom_curso
+                        """
+            cursor.execute(sql1)
+            resultado=dictfetchall(cursor)
         if buscarValidar == p5 :
             sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                         from docente d
@@ -265,13 +283,16 @@ class buscadorTotal(APIView):
             sqldisponibilidad="""select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
                                     join docente d on dis.id_docente = d.id
                                     join dia di on dis.id_dia = di.id_dia
-                                    where NULLIF(dis.hr_inicio, '')::int>=(%s) and dis.id_ciclo=(%s) and d.id=(%s)"""
+                                    where NULLIF(dis.hr_inicio, '')::int>=(%s)
+                                     and NULLIF(dis.hr_fin, '')::int<=(%s)
+                                     and dis.id_ciclo=(%s) and d.id=(%s)"""
             for docente in docentes:
-                cursor.execute(sqldisponibilidad,[hora_inicio,semestre,docente['id']])
+                cursor.execute(sqldisponibilidad,[hora_inicio,hora_inicio,semestre,docente['id']])
                 del docente['id']
                 disponibilidad=dictfetchall(cursor)
-                docente['disponibilidad']=disponibilidad
-                resultado.append(docente)
+                if disponibilidad:
+                    docente['disponibilidad']=disponibilidad
+                    resultado.append(docente)
         if buscarValidar == p7 :
             sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                         from docente d
@@ -281,13 +302,225 @@ class buscadorTotal(APIView):
             sqldisponibilidad="""select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
                                     join docente d on dis.id_docente = d.id
                                     join dia di on dis.id_dia = di.id_dia
-                                    where NULLIF(dis.hr_fin, '')::int<=(%s) and dis.id_ciclo=(%s) and d.id=(%s)"""
+                                    where NULLIF(dis.hr_fin, '')::int<=(%s) 
+                                    and NULLIF(dis.hr_inicio, '')::int>=(%s)
+                                    and dis.id_ciclo=(%s) and d.id=(%s)"""
             for docente in docentes:
-                cursor.execute(sqldisponibilidad,[hora_fin,semestre,docente['id']])
+                cursor.execute(sqldisponibilidad,[hora_fin,hora_fin,semestre,docente['id']])
+                del docente['id']
+                disponibilidad=dictfetchall(cursor)
+                if disponibilidad:
+                    docente['disponibilidad']=disponibilidad
+                    resultado.append(docente)
+        if buscarValidar == p8 :
+            sql1="""select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido from preferencia p
+                        join curso c on p.id_curso = c.id_curso
+                        join docente d on p.id_docente = d.id
+                        where lower(c.nom_curso) like '%"""+curso+"""%' and (lower(d.nombres||' '|| d.apell_pat||' '||d.apell_mat)  like '%"""+docente+"""%'"""
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                    join docente d on dis.id_docente = d.id
+                                    join dia di on dis.id_dia = di.id_dia
+                                    where dis.id_docente=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad,[docente['id']])
                 del docente['id']
                 disponibilidad=dictfetchall(cursor)
                 docente['disponibilidad']=disponibilidad
                 resultado.append(docente)
+        if buscarValidar == p9:
+            sql1="""select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+                        join curso c on p.id_curso = c.id_curso
+                        join docente d on p.id_docente = d.id
+                        where lower(c.nom_curso) like '%"""+curso+"""%'"""
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                    join docente d on dis.id_docente = d.id
+                                    join dia di on dis.id_dia = di.id_dia
+                                    where dis.id_docente=(%s) and  NULLIF(dis.id_dia, '')::int=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad, [docente['id'],dia])
+                del docente['id']
+                disponibilidad = dictfetchall(cursor)
+                docente['disponibilidad'] = disponibilidad
+                resultado.append(docente)
+        if buscarValidar == p10:
+            sql1 = """select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+                                   join curso c on p.id_curso = c.id_curso
+                                   join docente d on p.id_docente = d.id
+                                   where lower(c.nom_curso) like '%""" + curso + """%'"""
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                               join docente d on dis.id_docente = d.id
+                                               join dia di on dis.id_dia = di.id_dia
+                                               where dis.id_docente=(%s) 
+                                               and  NULLIF(dis.hr_inicio, '')::int>=(%s)
+                                               and NULLIF(dis.hr_fin, '')::int<=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad, [docente['id'], hora_inicio,hora_inicio])
+                del docente['id']
+                disponibilidad = dictfetchall(cursor)
+                if disponibilidad:
+                    docente['disponibilidad'] = disponibilidad
+                    resultado.append(docente)
+        if buscarValidar == p11:
+            sql1 = """select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+                                               join curso c on p.id_curso = c.id_curso
+                                               join docente d on p.id_docente = d.id
+                                               where lower(c.nom_curso) like '%""" + curso + """%'"""
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                                           join docente d on dis.id_docente = d.id
+                                                           join dia di on dis.id_dia = di.id_dia
+                                                           where dis.id_docente=(%s) 
+                                                           and  NULLIF(dis.hr_fin, '')::int<=(%s)
+                                                           and NULLIF(dis.hr_inicio, '')::int>=(%s) """
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad, [docente['id'], hora_fin,hora_fin])
+                del docente['id']
+                disponibilidad = dictfetchall(cursor)
+                if disponibilidad:
+                    docente['disponibilidad'] = disponibilidad
+                    resultado.append(docente)
+        if buscarValidar == p12:
+            sql1="""select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
+                        from docente d
+                        join disponibilidad dis on d.id = dis.id_docente
+                          join ciclo c on dis.id_ciclo = c.id_ciclo
+                        where lower (d.nombres||' '||d.apell_pat||' '||d.apell_mat) like '%""" + curso + """%' 
+                        group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,dis.id_ciclo,c.nom_ciclo,docente
+                        """
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            sqldisponibilidad="""select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                    join docente d on dis.id_docente = d.id
+                                    join dia di on dis.id_dia = di.id_dia
+                                    join ciclo c on dis.id_ciclo = c.id_ciclo
+                                    where dis.id_docente=(%s) and dis.id_ciclo=(%s) and  NULLIF(dis.id_dia, '')::int=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad, [docente['id'],docente['id_ciclo'],dia])
+                del docente['id']
+                del docente['id_ciclo']
+                disponibilidad = dictfetchall(cursor)
+                if disponibilidad:
+                    docente['disponibilidad'] = disponibilidad
+                    resultado.append(docente)
+        if buscarValidar == p13:
+            sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
+                                    from docente d
+                                    join disponibilidad dis on d.id = dis.id_docente
+                                      join ciclo c on dis.id_ciclo = c.id_ciclo
+                                    where lower (d.nombres||' '||d.apell_pat||' '||d.apell_mat) like '%""" + curso + """%' 
+                                    group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,dis.id_ciclo,c.nom_ciclo,docente
+                                    """
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            print(docentes)
+            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                                join docente d on dis.id_docente = d.id
+                                                join dia di on dis.id_dia = di.id_dia
+                                                join ciclo c on dis.id_ciclo = c.id_ciclo
+                                                where dis.id_docente=(%s)
+                                                and dis.id_ciclo=(%s) 
+                                                and  NULLIF(dis.hr_fin, '')::int>=(%s)
+                                                and NULLIF(dis.hr_inicio, '')::int<=(%s) """
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad, [docente['id'], docente['id_ciclo'], hora_inicio,hora_inicio])
+                del docente['id']
+                del docente['id_ciclo']
+                disponibilidad = dictfetchall(cursor)
+                print(disponibilidad)
+                if disponibilidad:
+                    docente['disponibilidad'] = disponibilidad
+                    resultado.append(docente)
+        if buscarValidar == p14:
+            sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
+                                    from docente d
+                                    join disponibilidad dis on d.id = dis.id_docente
+                                      join ciclo c on dis.id_ciclo = c.id_ciclo
+                                    where lower (d.nombres||' '||d.apell_pat||' '||d.apell_mat) like '%""" + curso + """%' 
+                                    group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,dis.id_ciclo,c.nom_ciclo,docente
+                                    """
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            print(docentes)
+            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                                join docente d on dis.id_docente = d.id
+                                                join dia di on dis.id_dia = di.id_dia
+                                                join ciclo c on dis.id_ciclo = c.id_ciclo
+                                                where dis.id_docente=(%s)
+                                                and dis.id_ciclo=(%s) 
+                                               and  NULLIF(dis.hr_fin, '')::int>=(%s)
+                                                and NULLIF(dis.hr_inicio, '')::int<=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad, [docente['id'], docente['id_ciclo'], hora_fin,hora_fin])
+                del docente['id']
+                del docente['id_ciclo']
+                disponibilidad = dictfetchall(cursor)
+                print(disponibilidad)
+                if disponibilidad:
+                    docente['disponibilidad'] = disponibilidad
+                    resultado.append(docente)
+        if buscarValidar == p15:
+            sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
+                                           from docente d
+                                           join disponibilidad dis on d.id = dis.id_docente
+                                             join ciclo c on dis.id_ciclo = c.id_ciclo
+                                           group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,dis.id_ciclo,c.nom_ciclo,docente
+                                           """
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            print(docentes)
+            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                                       join docente d on dis.id_docente = d.id
+                                                       join dia di on dis.id_dia = di.id_dia
+                                                       join ciclo c on dis.id_ciclo = c.id_ciclo
+                                                       where dis.id_docente=(%s)
+                                                       and dis.id_ciclo=(%s) 
+                                                       and NULLIF(dis.id_dia, '')::int=(%s)
+                                                       and  NULLIF(dis.hr_fin, '')::int>=(%s)
+                                                       and NULLIF(dis.hr_inicio, '')::int<=(%s) """
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad, [docente['id'], docente['id_ciclo'], dia,hora_inicio, hora_inicio])
+                del docente['id']
+                del docente['id_ciclo']
+                disponibilidad = dictfetchall(cursor)
+                print(disponibilidad)
+                if disponibilidad:
+                    docente['disponibilidad'] = disponibilidad
+                    resultado.append(docente)
+        if buscarValidar == p16:
+            sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
+                                    from docente d
+                                    join disponibilidad dis on d.id = dis.id_docente
+                                      join ciclo c on dis.id_ciclo = c.id_ciclo
+                                    group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,dis.id_ciclo,c.nom_ciclo,docente
+                                    """
+            cursor.execute(sql1)
+            docentes = dictfetchall(cursor)
+            print(docentes)
+            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
+                                                join docente d on dis.id_docente = d.id
+                                                join dia di on dis.id_dia = di.id_dia
+                                                join ciclo c on dis.id_ciclo = c.id_ciclo
+                                                where dis.id_docente=(%s)
+                                                and dis.id_ciclo=(%s) 
+                                                and NULLIF(dis.id_dia, '')::int=(%s)
+                                               and  NULLIF(dis.hr_fin, '')::int>=(%s)
+                                                and NULLIF(dis.hr_inicio, '')::int<=(%s)"""
+            for docente in docentes:
+                cursor.execute(sqldisponibilidad, [docente['id'], docente['id_ciclo'],dia, hora_fin,hora_fin])
+                del docente['id']
+                del docente['id_ciclo']
+                disponibilidad = dictfetchall(cursor)
+                print(disponibilidad)
+                if disponibilidad:
+                    docente['disponibilidad'] = disponibilidad
+                    resultado.append(docente)
         cursor.close()
         return Response(resultado)
         #preferencia=Preferencia.objects.filter(id_ciclo__nom_ciclo__contains=semestre,id_curso__nom_curso__contains=curso)

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bf67251-6dda-4584-8e74-30740adea253" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Api_DisDoce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Api_DisDoce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notas/LOGICA-DE-BUSQUEDASCambios-profesora.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Notas/LOGICA-DE-BUSQUEDASCambios-profesora.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notas/datos buscar post.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Notas/datos buscar post.txt" afterDir="false" />
@@ -17,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Api_DisDoce$Api_Tcs.coverage" NAME="Api_Tcs Coverage Results" MODIFIED="1528960749332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Api_DisDoce$Api_Tcs.coverage" NAME="Api_Tcs Coverage Results" MODIFIED="1528985696774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Api_DisDoce$Run_DjangoRest.coverage" NAME="Run DjangoRest Coverage Results" MODIFIED="1525411165072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
@@ -71,6 +69,16 @@
         <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tcs2@sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tcs2: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="docente: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+      </path>
     </expand>
     <select />
   </component>
@@ -79,11 +87,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/secretaria/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="283" column="70" selection-start-line="283" selection-start-column="70" selection-end-line="283" selection-end-column="70" />
+            <state relative-caret-position="1989">
+              <caret line="511" column="84" lean-forward="true" selection-start-line="511" selection-start-column="84" selection-end-line="511" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -92,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/Notas/LOGICA-DE-BUSQUEDASCambios-profesora.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
+              <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -100,17 +108,17 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f688572b-f3d5-4474-af58-0fb8ef718d59/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-41">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="255">
+              <caret line="54" selection-start-line="54" selection-end-line="54" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="datos buscar post.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="datos buscar post.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Notas/datos buscar post.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="59" selection-start-line="59" selection-end-line="67" selection-end-column="1" />
+            <state relative-caret-position="196">
+              <caret line="160" selection-start-line="160" selection-end-line="167" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -154,9 +162,9 @@
         <option value="$PROJECT_DIR$/apps/secretaria/serializers.py" />
         <option value="$PROJECT_DIR$/API_Disponibilidad_Docente/settings.py" />
         <option value="$PROJECT_DIR$/Notas/LOGICA-DE-BUSQUEDASCambios-profesora.txt" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f688572b-f3d5-4474-af58-0fb8ef718d59/console.sql" />
         <option value="$PROJECT_DIR$/apps/secretaria/views.py" />
         <option value="$PROJECT_DIR$/Notas/datos buscar post.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f688572b-f3d5-4474-af58-0fb8ef718d59/console.sql" />
       </list>
     </option>
   </component>
@@ -259,120 +267,6 @@
       <recent name="$PROJECT_DIR$/Notas" />
       <recent name="$PROJECT_DIR$/apps/secretaria" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/Api_DisDoce.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Notas/datos buscar post.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/apps/secretaria/views.py</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -522,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528914110703</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="cambios profesora v0.37 ( cambio por sql)">
+      <created>1528961155941</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1528961155941</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -530,13 +431,13 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49786553" weight="0.32921347" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.38367346" side_tool="true" weight="0.3778878" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.422449" side_tool="true" visible="true" weight="0.39273927" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" weight="0.38283828" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.57653064" weight="0.38283828" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49786553" weight="0.32838285" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49786553" weight="0.32824427" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6163265" weight="0.37709925" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.49359658" visible="true" weight="0.39438945" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6163265" weight="0.37623763" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.577551" visible="true" weight="0.39273927" />
       <window_info auto_hide="true" content_ui="combo" id="Project" order="0" type="SLIDING" weight="0.1632653" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="5" weight="0.21632653" />
@@ -546,37 +447,37 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Data View" order="4" weight="0.32977587" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32838285" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info active="true" auto_hide="true" content_ui="combo" id="Project" order="0" type="SLIDING" visible="true" weight="0.1632653" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.49359658" visible="true" weight="0.39438945" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="0" type="SLIDING" weight="0.1632653" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" weight="0.3832061" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Data View" order="4" weight="0.32977587" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49786553" weight="0.32838285" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="0" weight="0.32959184" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49786553" weight="0.32921347" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" weight="0.38283828" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Data View" order="4" weight="0.32977587" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.21632653" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6163265" weight="0.37709925" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.38367346" side_tool="true" weight="0.3778878" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49786553" weight="0.32838285" />
-      <window_info anchor="right" id="SciView" order="0" weight="0.32959184" />
-      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49359658" weight="0.19966997" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.25408164" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32838285" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49786553" weight="0.32824427" />
     </layout-to-restore>
@@ -598,7 +499,8 @@
     <MESSAGE value="cambios profesora v0.31" />
     <MESSAGE value="cambios profesora v0.32" />
     <MESSAGE value="cambios profesora v0.33 ( cambio por sql)" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios profesora v0.33 ( cambio por sql)" />
+    <MESSAGE value="cambios profesora v0.37 ( cambio por sql)" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios profesora v0.37 ( cambio por sql)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -930,31 +832,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Notas/datos buscar post.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="160" selection-start-line="160" selection-end-line="167" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f688572b-f3d5-4474-af58-0fb8ef718d59/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="255">
+          <caret line="54" selection-start-line="54" selection-end-line="54" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Notas/LOGICA-DE-BUSQUEDASCambios-profesora.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
+          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/secretaria/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="283" column="70" selection-start-line="283" selection-start-column="70" selection-end-line="283" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Notas/datos buscar post.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="59" selection-start-line="59" selection-end-line="67" selection-end-column="1" />
+        <state relative-caret-position="1989">
+          <caret line="511" column="84" lean-forward="true" selection-start-line="511" selection-start-column="84" selection-end-line="511" selection-end-column="84" />
         </state>
       </provider>
     </entry>

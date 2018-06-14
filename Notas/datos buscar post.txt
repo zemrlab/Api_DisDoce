@@ -37,6 +37,16 @@
 	"horaFin": ""
 }
 
+// prueba 4
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "prueba",
+	"diaFilter": "",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
 // prueba 5
 {
 	"semestreFilter": "1",
@@ -65,6 +75,96 @@
 	"diaFilter": "",
 	"horaInicio": "",
 	"horaFin": "20"
+}
+
+// prueba 8
+{
+	"semestreFilter": "",
+	"cursoFilter": "cob",
+	"docenteFilter": "al",
+	"diaFilter": "",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
+// prueba 9
+{
+	"semestreFilter": "",
+	"cursoFilter": "cob",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
+// prueba 10
+{
+	"semestreFilter": "",
+	"cursoFilter": "cob",
+	"docenteFilter": "",
+	"diaFilter": "",
+	"horaInicio": "8",
+	"horaFin": ""
+}
+
+// prueba 11
+{
+	"semestreFilter": "",
+	"cursoFilter": "cob",
+	"docenteFilter": "",
+	"diaFilter": "",
+	"horaInicio": "",
+	"horaFin": "12"
+}
+
+// prueba 12
+{
+	"semestreFilter": "",
+	"cursoFilter": "",
+	"docenteFilter": "al",
+	"diaFilter": "1",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
+// prueba 13
+{
+	"semestreFilter": "",
+	"cursoFilter": "",
+	"docenteFilter": "al",
+	"diaFilter": "",
+	"horaInicio": "9",
+	"horaFin": ""
+}
+
+// prueba 14
+{
+	"semestreFilter": "",
+	"cursoFilter": "",
+	"docenteFilter": "al",
+	"diaFilter": "",
+	"horaInicio": "",
+	"horaFin": "10"
+}
+
+// prueba 15
+{
+	"semestreFilter": "",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "8",
+	"horaFin": ""
+}
+
+// prueba 16
+{
+	"semestreFilter": "",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "",
+	"horaFin": "10"
 }
 
 "disponibilidad": [
