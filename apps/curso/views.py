@@ -47,11 +47,10 @@ class ProgramaDocenteLista(APIView):
         Preferencia.objects.filter(id_docente=pk,id_ciclo=ciclo).delete()
         lista=request.data
         listaprogramas=lista['coursesSelection']
-        id_inicial = Preferencia.objects.count()+1
         preferencias = []
         for programa in listaprogramas:
             for curso in programa['cursos']:
-                preferencia=[id_inicial,curso['id_curso'],int(pk),int(ciclo)]
+                preferencia=[curso['id_curso'],int(pk),int(ciclo)]
 
                 """Preferencia.objects.create(
                                             id_preferencia=id_inicial,
@@ -62,7 +61,7 @@ class ProgramaDocenteLista(APIView):
                 preferencias.append(preferencia)
                 id_inicial=id_inicial+1
         cursor = connection.cursor()
-        cursor.executemany('INSERT INTO preferencia (id_preferencia, id_curso, id_docente,id_ciclo) VALUES (%s, %s, %s,%s)',preferencias)
+        cursor.executemany('INSERT INTO preferencia (id_curso, id_docente,id_ciclo) VALUES (%s, %s, %s,%s)',preferencias)
         cursor.close()
         return Response(lista, status=status.HTTP_201_CREATED)
 
@@ -93,7 +92,6 @@ class CicloListHabilitados(generics.ListAPIView):
 class DocenteHorarioCursoList(APIView):
     serializerDocente = DocenteSerializer
     def get(self, request, curso, hrinicio, hrfin, ciclo,dia):
-        print(curso)
         curso_escogido=Curso.objects.get(nom_curso=curso)
 
         ciclo=Ciclo.objects.get(nom_ciclo=ciclo)

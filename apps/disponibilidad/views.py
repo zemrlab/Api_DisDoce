@@ -29,12 +29,11 @@ class DisponibilidadList(APIView):
     def post(self, request, pk,ciclo):
         Disponibilidad.objects.filter(id_docente=pk , id_ciclo=ciclo).delete()
         Diccionarios_intervalos=Descifrar_disponibilidad(json.dumps(request.data),7,14,8,'selection')
-        id_inicial=Disponibilidad.objects.count()+1
         disponibilidades=[]
         for dia in Diccionarios_intervalos:
             for intervalos in Diccionarios_intervalos[dia]:
 
-                disponibilidad=[id_inicial,pk,dia,intervalos[0],intervalos[1],intervalos[1]-intervalos[0],int(ciclo)]
+                disponibilidad=[pk,dia,intervalos[0],intervalos[1],intervalos[1]-intervalos[0],int(ciclo)]
                 """Disponibilidad.objects.create(
                                             id_disponibilidad=id_inicial,
                                             id_docente=Docente.objects.get(pk=pk),
@@ -46,7 +45,7 @@ class DisponibilidadList(APIView):
                 disponibilidades.append(disponibilidad)
                 id_inicial=id_inicial+1
         cursor = connection.cursor()
-        cursor.executemany('INSERT INTO disponibilidad (id_disponibilidad, id_docente, id_dia,hr_inicio,hr_fin,tot_hrs,id_ciclo) VALUES (%s, %s, %s,%s,%s,%s,%s)', disponibilidades)
+        cursor.executemany('INSERT INTO disponibilidad (id_docente, id_dia,hr_inicio,hr_fin,tot_hrs,id_ciclo) VALUES (%s, %s,%s,%s,%s,%s)', disponibilidades)
         cursor.close()
         estado={}
         estado['estado']='correcto'
