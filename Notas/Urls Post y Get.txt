@@ -28,4 +28,4 @@ servidor_heroku=http://apidisponibilidad.herokuapp.com
 
 <servidor>/curso/cicloshabilitados: GET - Devuelve los ciclos habilitados
 
-<servidor>/curso/secretaria/<curso>/<ciclo>/<hrinicio>/<hrfin>/<dia> : GET - lo que pidio la profesora :v
+<servidor>/secretaria/buscar : POST -Buscador total , los parametros acordados >:v
