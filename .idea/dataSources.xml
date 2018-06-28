@@ -13,5 +13,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com:5432/tcs2</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="tcs2@159.65.230.188" uuid="e7906894-42ab-443f-bb15-d32b807f9868">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://159.65.230.188:5432/tcs2</jdbc-url>
+    </data-source>
   </component>
 </project>

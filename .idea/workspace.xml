@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7bf67251-6dda-4584-8e74-30740adea253" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notas/Urls Post y Get.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Notas/Urls Post y Get.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,11 +33,11 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Urls Post y Get.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Notas/Urls Post y Get.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="227">
               <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
             </state>
           </provider>
@@ -47,7 +46,7 @@
       <file leaf-file-name="datos buscar post.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Notas/datos buscar post.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2567">
+            <state relative-caret-position="2720">
               <caret line="160" selection-start-line="160" selection-end-line="167" selection-end-column="1" />
             </state>
           </provider>
@@ -56,8 +55,8 @@
       <file leaf-file-name="Post de cursos.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Notas/Post de cursos.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="119">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -116,7 +115,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="526" />
     <option name="height" value="371" />
@@ -126,64 +125,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-              <item name="Algoritmos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-              <item name="API_Disponibilidad_Docente" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="curso" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="disponibilidad" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="docente" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="secretaria" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Api_DisDoce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api_DisDoce" type="462c0819:PsiDirectoryNode" />
-              <item name="Notas" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Mis Documentos/GitHub/Api_DisDoce/apps/disponibilidad/views.py&#10;Integer&#9;null&#9;null" />
@@ -390,11 +332,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529011271735</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="cambios profesora v0.613 ( cambios notas )">
+      <created>1529084564116</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1529084564181</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49786553" weight="0.32921347" />
@@ -406,47 +355,47 @@
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6163265" weight="0.37623763" />
       <window_info auto_hide="true" content_ui="combo" id="Project" order="0" type="SLIDING" weight="0.1632653" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.21632653" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.5081633" />
       <window_info anchor="right" id="SciView" order="0" weight="0.32959184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="4" weight="0.32977587" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.577551" visible="true" weight="0.39273927" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Data View" order="4" weight="0.32977587" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.577551" visible="true" weight="0.39273927" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32838285" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49786553" weight="0.32838285" />
       <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.49359658" visible="true" weight="0.39438945" />
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="0" type="SLIDING" weight="0.1632653" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5285714" weight="0.38283828" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Data View" order="4" weight="0.32977587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49786553" weight="0.32921347" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
-      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49786553" weight="0.32824427" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="0" type="SLIDING" weight="0.1632653" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6163265" weight="0.37709925" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.38367346" side_tool="true" weight="0.3778878" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49786553" weight="0.32838285" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="SciView" order="0" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="5" weight="0.21632653" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32838285" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49786553" weight="0.32824427" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -822,21 +771,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Notas/Post de cursos.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        <state relative-caret-position="119">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Notas/datos buscar post.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2567">
+        <state relative-caret-position="2720">
           <caret line="160" selection-start-line="160" selection-end-line="167" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Notas/Urls Post y Get.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="227">
           <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
         </state>
       </provider>

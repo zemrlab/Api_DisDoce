@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'tcs2',
         'USER': 'modulo5',
         'PASSWORD': 'modulo5e',
-        'HOST': 'sigap-second.cbzwydm3f2if.sa-east-1.rds.amazonaws.com',
+        'HOST': '159.65.230.188',
         'PORT': 5432,
     }
 }
