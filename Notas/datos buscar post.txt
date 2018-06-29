@@ -167,6 +167,56 @@
 	"horaFin": "10"
 }
 
+// prueba 17
+{
+	"semestreFilter": "",
+	"cursoFilter": "",
+	"docenteFilter": "j",
+	"diaFilter": "",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
+// prueba 18
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "20",
+	"horaFin": ""
+}
+
+// prueba 19
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "",
+	"horaFin": "21"
+}
+
+// prueba 20
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "19",
+	"horaFin": "20"
+}
+
+// prueba 21
+{
+	"semestreFilter": "",
+	"cursoFilter": "",
+	"docenteFilter": "",
+	"diaFilter": "1",
+	"horaInicio": "19",
+	"horaFin": "20"
+}
+
 "disponibilidad": [
           {
             "id": "5b1857bebc1758deae36e63f",

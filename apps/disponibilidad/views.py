@@ -6,11 +6,11 @@ from django.http import  HttpResponse
 from rest_framework.response import Response
 
 from apps.curso.models import Ciclo
-from apps.disponibilidad.serializers import DisponibilidadSerializer
+from apps.disponibilidad.serializers import DisponibilidadSerializer,DiaSerializer
 from django.db.models.query import QuerySet
 from apps.disponibilidad.models import Disponibilidad,Dia
 from apps.docente.models import Docente
-from rest_framework import status
+from rest_framework import status,generics
 
 #MIS ALGORITMOS
 from Algoritmos.Algoritmos_Disponibilidad import Descifrar_disponibilidad,devolver_disponibilidad
@@ -49,3 +49,7 @@ class DisponibilidadList(APIView):
         estado={}
         estado['estado']='correcto'
         return Response(estado, status=status.HTTP_201_CREATED)
+
+class DiaList(generics.ListAPIView):
+    serializer_class = DiaSerializer
+    queryset = Dia.objects.all()
