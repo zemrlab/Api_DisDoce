@@ -19,5 +19,14 @@
       <user-name>modulo5</user-name>
       <introspection-schemas>tcs2:public</introspection-schemas>
     </data-source>
+    <data-source name="tcs2@159.65.230.188" uuid="e7906894-42ab-443f-bb15-d32b807f9868">
+      <database-info product="PostgreSQL" version="9.6.9" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>modulo5</user-name>
+      <introspection-schemas>tcs2:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

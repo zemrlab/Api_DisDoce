@@ -60,12 +60,12 @@ def devolver_disponibilidad(horarios_intervalos,hora_inicio,horas_del_dia): #jso
 		dia=dia+1
 	return horarios
 
-def docente_dias_disponibilidad(idDocente):
-	dias_disponibles = Disponibilidad.objects.filter(id_docente=idDocente).values('id_dia_id').annotate(dcount=Count('id_dia_id')).count()
+def docente_dias_disponibilidad(idDocente,idCiclo):
+	dias_disponibles = Disponibilidad.objects.filter(id_docente=idDocente,id_ciclo=idCiclo).values('id_dia_id').annotate(dcount=Count('id_dia_id')).count()
 	return dias_disponibles
 
-def docente_horas_disponibilidad(idDocente):
-	query_horas_disponibles = Disponibilidad.objects.filter(id_docente=idDocente).values()
+def docente_horas_disponibilidad(idDocente,idCiclo):
+	query_horas_disponibles = Disponibilidad.objects.filter(id_docente=idDocente,id_ciclo=idCiclo).values()
 	horas_disponibles=0
 	for x in query_horas_disponibles:
 		horas_disponibles=horas_disponibles+int(x['tot_hrs'])

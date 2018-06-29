@@ -36,7 +36,7 @@ class DocenteGet(APIView):
         return Response(listajson)
 
 class PDFView(APIView):
-    def get(self,request,id):
+    def get(self, request, id, idciclo):
         response = HttpResponse(content_type='application/pdf')
         nombre_pdf='docente'+id
         response['Content-Disposition'] = 'filename="'+nombre_pdf+'.pdf"'
@@ -47,7 +47,7 @@ class PDFView(APIView):
             return Response('NO EXISTE DOCENTE',status=status.HTTP_400_BAD_REQUEST)
 
         #año del sistema
-        ahora = datetime.datetime.now()
+        #ahora = datetime.datetime.now()
 
         #variables docente
         docente_nom=informacion_docente.nombres
@@ -71,8 +71,8 @@ class PDFView(APIView):
         docente_foto=ImageReader(foto_docente) if foto_docente else settings.IMAGENES +'/profesor.jpg'
 
         #disponibilidadocente
-        total_dias_disponible=docente_dias_disponibilidad(id)
-        total_horas_disponible=docente_horas_disponibilidad(id)
+        total_dias_disponible=docente_dias_disponibilidad(id, idciclo)
+        total_horas_disponible=docente_horas_disponibilidad(id, idciclo)
 
 
         total_datos_academicos = DatosAcademicos.objects.filter(id_docente=id).values()
@@ -93,6 +93,13 @@ class PDFView(APIView):
         # variabls de ayuda para pintar programa de los cursos
         fin_marco_curso = 60
         marco_curso_caracter_siguiente_linea = '-'
+
+        #obtener ciclo
+        ciclo=''
+        try:
+            ciclo = Ciclo.objects.get(id_ciclo=idciclo)
+        except Ciclo.DoesNotExist:
+            return Response('NO EXISTE CICLO', status=status.HTTP_400_BAD_REQUEST)
 
         if len(docente_direccion)>=fin_direccion :
             if docente_direccion[fin_direccion]!=' ':
@@ -240,6 +247,12 @@ class PDFView(APIView):
                        'tipo_letra': campo_tipo_letra_form,
                        'tamanio_letra': campo_tamanio_letra_form}},
             {'valor': {'text': str(total_horas_disponible),
+                       'tipo_letra': valor_tipo_letra_form,
+                       'tamanio_letra': valor_tamanio_letra_form}},
+            {'campo': {'text': 'Ciclo',
+                       'tipo_letra': campo_tipo_letra_form,
+                       'tamanio_letra': campo_tamanio_letra_form}},
+            {'valor': {'text': ciclo.nom_ciclo,
                        'tipo_letra': valor_tipo_letra_form,
                        'tamanio_letra': valor_tamanio_letra_form}},
         ]
@@ -502,7 +515,7 @@ class PDFView(APIView):
         #Algoritmos
 
         #Devovler cursos x programa
-        preferencias = Preferencia.objects.filter(id_docente=id).values()
+        preferencias = Preferencia.objects.filter(id_docente=id, id_ciclo=idciclo).values()
         cursos=[]
         programas_cursos={}
         for preferencia in preferencias:
@@ -624,7 +637,7 @@ class PDFView(APIView):
 
 
         #Algoritmo Disponibilidad
-        horarios_intervalos = Disponibilidad.objects.filter(id_docente=id).order_by('id_disponibilidad').values()
+        horarios_intervalos = Disponibilidad.objects.filter(id_docente=id, id_ciclo=idciclo).order_by('id_disponibilidad').values()
         array=[]
         if horarios_intervalos:
             array = devolver_disponibilidad(horarios_intervalos, 8, 14)
