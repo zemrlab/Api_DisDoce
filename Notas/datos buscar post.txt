@@ -217,6 +217,17 @@
 	"horaFin": "20"
 }
 
+// prueba 22
+{
+	"semestreFilter": "1",
+	"cursoFilter": "",
+	"docenteFilter": "Luis",
+	"diaFilter": "6",
+	"horaInicio": "",
+	"horaFin": ""
+}
+
+
 "disponibilidad": [
           {
             "id": "5b1857bebc1758deae36e63f",

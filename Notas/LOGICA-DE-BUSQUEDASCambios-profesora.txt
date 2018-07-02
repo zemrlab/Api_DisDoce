@@ -21,6 +21,6 @@ F(SEMESTRE,CURSO,DOCENTE,DIA,HORA INICIO,HORA FIN)
 18 F(1,0,0,1,1,0)=>docente, disponibilidad[]
 19 F(1,0,0,1,0,1)=>docente, disponibilidad[]
 20 F(1,0,0,1,1,1)=>docente, disponibilidad[]
-
-
 21 F(0,0,0,1,1,1)=>semestre,docente,disponibilidad[], correo, direccion, celular, grado acad mas alto
+22 F(1,0,1,1,0,0)=>docente, disponibilidad[]
+
