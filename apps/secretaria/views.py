@@ -215,7 +215,8 @@ class buscadorTotal(APIView):
         resultado = []
         cursor = connection.cursor()
         if buscarValidar==p1:
-            sql1="""select d.id,d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+            sql1="""select d.id,d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso
+                    from preferencia p
                     join curso c on p.id_curso = c.id_curso
                     join docente d on p.id_docente = d.id
                     where lower(c.nom_curso) like '%"""+curso+"""%' and p.id_ciclo="""+semestre
@@ -236,7 +237,8 @@ class buscadorTotal(APIView):
                     docente['disponibilidad']=disponibilidad
                     resultado.append(docente)
         if buscarValidar==p2:
-            sql1 = """select d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+            sql1 = """select d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso
+                        from preferencia p
                         join curso c on p.id_curso = c.id_curso
                         join docente d on p.id_docente = d.id
                         join disponibilidad dis on d.id = dis.id_docente
@@ -321,10 +323,10 @@ class buscadorTotal(APIView):
                     docente['disponibilidad']=disponibilidad
                     resultado.append(docente)
         if buscarValidar == p8 :
-            sql1="""select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido from preferencia p
+            sql1="""select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,c.nom_curso as curso from preferencia p
                         join curso c on p.id_curso = c.id_curso
                         join docente d on p.id_docente = d.id
-                        where lower(c.nom_curso) like '%"""+curso+"""%' and (lower(d.nombres||' '|| d.apell_pat||' '||d.apell_mat)  like '%"""+docente+"""%'"""
+                        where lower(c.nom_curso) like '%"""+curso+"""%' and lower(d.nombres||' '|| d.apell_pat||' '||d.apell_mat)  like '%"""+docente+"""%' """
             cursor.execute(sql1)
             docentes = dictfetchall(cursor)
             sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
@@ -339,7 +341,8 @@ class buscadorTotal(APIView):
                     docente['disponibilidad']=disponibilidad
                     resultado.append(docente)
         if buscarValidar == p9:
-            sql1="""select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+            sql1="""select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso 
+                        from preferencia p
                         join curso c on p.id_curso = c.id_curso
                         join docente d on p.id_docente = d.id
                         where lower(c.nom_curso) like '%"""+curso+"""%'"""
@@ -357,7 +360,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p10:
-            sql1 = """select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+            sql1 = """select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso from preferencia p
                                    join curso c on p.id_curso = c.id_curso
                                    join docente d on p.id_docente = d.id
                                    where lower(c.nom_curso) like '%""" + curso + """%'"""
@@ -377,7 +380,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p11:
-            sql1 = """select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular from preferencia p
+            sql1 = """select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso from preferencia p
                                                join curso c on p.id_curso = c.id_curso
                                                join docente d on p.id_docente = d.id
                                                where lower(c.nom_curso) like '%""" + curso + """%'"""

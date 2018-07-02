@@ -1,16 +1,16 @@
 F(SEMESTRE,CURSO,DOCENTE,DIA,HORA INICIO,HORA FIN)
 
-1 F(1,1,0,0,0,0)=>nombre,apellid,DNI,celular, disponibilidad(TABLA)
-2 F(1,1,0,1,1,1)=>nombre,apellid,DNI,celular
+1 F(1,1,0,0,0,0)=>nombre,apellid,DNI,celular, disponibilidad(TABLA),curso
+2 F(1,1,0,1,1,1)=>nombre,apellid,DNI,celular,curso
 3 F(1,0,0,0,0,0)=>curso,programa,nr ciclo, creditos
 4 F(1,0,1,0,0,0)=>curso,programa,nr ciclo, creditos,docente
 5 F(1,0,0,1,0,0)=>docente, disponibilidad[], correo, direccion, celular, grad acd mas alto
 6 F(1,0,0,0,1,0)=>docente, disponibilidad[]
 7 F(1,0,0,0,0,1)=>docente, disponibilidad[]
-8 F(0,1,1,0,0,0)=>disponibilidad(TABLA)
-9 F(0,1,0,1,0,0)=>nombre,apellid,DNI,celular,disponibilidad[]
-10 F(0,1,0,0,1,0)=>nombre,apellid,DNI,celular,disponibilidad[]
-11 F(0,1,0,0,0,1)=>nombre,apellid,DNI,celular,disponibilidad[]
+8 F(0,1,1,0,0,0)=>disponibilidad(TABLA),curso
+9 F(0,1,0,1,0,0)=>nombre,apellid,DNI,celular,disponibilidad[],curso
+10 F(0,1,0,0,1,0)=>nombre,apellid,DNI,celular,disponibilidad[],curso
+11 F(0,1,0,0,0,1)=>nombre,apellid,DNI,celular,disponibilidad[],curso
 12 F(0,0,1,1,0,0)=>semestre,docente,disponibilidad, correo direccion, celular y grado acad mas alto
 13 F(0,0,1,0,1,0)=>dia, disponibilidad[] //semestre,docente,disponibilidad, correo direccion, celular y grado acad mas alto
 14 F(0,0,1,0,0,1)=>dia, disponibilidad[] // semestre,docente,disponibilidad, correo direccion, celular y grado acad mas alto
