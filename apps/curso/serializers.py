@@ -3,7 +3,6 @@ from apps.curso.models import Programa, Curso, Preferencia, Ciclo
 
 
 
-
 class CursoSerializer(ModelSerializer):
     class Meta:
         model= Curso

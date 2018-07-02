@@ -25,8 +25,7 @@ SECRET_KEY = '#osbl4*3%_0r2rwr9zix!mrm_=#ugyp$z3#!b)6g1bmgwd5b8v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','.herokuapp.com','*']
-
+ALLOWED_HOSTS = ['localhost','127.0.0.1','.herokuapp.com']
 
 # Application definition
 
@@ -112,13 +111,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 CORS_ORIGIN_WHITELIST = (
-    '*',
     'localhost:3001',
     '127.0.0.1:3001',
     'localhost:3000',
     '127.0.0.1:3000',
     'disponibdocente.herokuapp.com',
-    '.herokuapp.com',
+    'resttesttest.com',
 )
 
 CORS_ALLOW_METHODS = (

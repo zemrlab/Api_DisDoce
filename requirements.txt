@@ -9,4 +9,5 @@ reportlab==3.4.0
 virtualenv==15.2.0
 webencodings==0.5.1
 whitenoise==3.3.1
+django-bulk-update
 xlwt

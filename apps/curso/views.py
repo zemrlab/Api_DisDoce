@@ -1,12 +1,8 @@
 import json
 
 from django.db import connection
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
-from rest_framework.exceptions import APIException
 from rest_framework.response import Response
-from django.http.response import HttpResponse
 from apps.curso.serializers import ProgramaSerializer, CursoPrefSerializer, CursoSerializer, CicloSerializer, \
     PreferenciaSerializer
 from apps.curso.models import Programa, Preferencia, Curso, Ciclo
@@ -105,7 +101,18 @@ class DocenteHorarioCursoList(APIView):
                     docentes.append(docente.data)
         return Response(docentes)
 
-
+class cicloListUpdate(APIView):
+    def post(self,request):
+        ciclos=request.data
+        cursor = connection.cursor()
+        ids=[]
+        sql="""update ciclo set nom_ciclo=(%s),fecha_inicio=(%s),fecha_fin=(%s),estado=(%s)  where id_ciclo=(%s)"""
+        for ciclo in ciclos:
+            ids.append(ciclo['id_ciclo'])
+            cursor.execute(sql,[ciclo['nom_ciclo'],ciclo['fecha_inicio'],ciclo['fecha_fin'],ciclo['estado'],ciclo['id_ciclo']])
+        cursor.close()
+        Ciclo.objects.exclude(id_ciclo__in=ids).delete()
+        return Response("completado")
 
 """  ALEJANDRO HABLAR
 class CicloCursoList(generics.ListAPIView):
