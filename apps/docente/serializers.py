@@ -15,4 +15,5 @@ class DocenteSerializer(ModelSerializer):
                   'pais',
                   'direccion',
                   'celular',
-                  'codigo',)
+                  'codigo',
+                  'foto')
