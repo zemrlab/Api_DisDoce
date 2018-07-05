@@ -84,23 +84,6 @@ class CicloListHabilitados(generics.ListAPIView):
     serializer_class = CicloSerializer
     queryset = Ciclo.objects.all().filter(estado=True).order_by('-id_ciclo')
 
-class DocenteHorarioCursoList(APIView):
-    serializerDocente = DocenteSerializer
-    def get(self, request, curso, hrinicio, hrfin, ciclo,dia):
-        curso_escogido=Curso.objects.get(nom_curso=curso)
-
-        ciclo=Ciclo.objects.get(nom_ciclo=ciclo)
-        preferencias = Preferencia.objects.filter(id_curso=curso_escogido.id_curso ,id_ciclo=ciclo.id_ciclo) # filter(id_docente=pk)
-        docentes = []
-        for preferencia in preferencias:
-            disponibilidades=Disponibilidad.objects.filter(id_docente=preferencia.id_docente,id_dia=dia)
-            for disponibilidad in disponibilidades:
-                if(disponibilidad.hr_inicio<=hrinicio and disponibilidad.hr_fin>=hrfin):
-                    doc=Docente.objects.get(id=preferencia.id_docente.id)
-                    docente=self.serializerDocente(doc)
-                    docentes.append(docente.data)
-        return Response(docentes)
-
 class cicloListUpdate(APIView):
     def post(self,request):
         ciclos=request.data

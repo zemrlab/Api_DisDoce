@@ -15,16 +15,16 @@ from Algoritmos.algoritmos_bd import dictfetchall
 from apps.docente.serializers import DocenteSerializer
 from apps.secretaria.serializers import PreferenciaSerializer
 
-
+"""
 class ConsultaDocentePDF(APIView):
     def get(self,request,id,ciclo):
         response = HttpResponse(content_type='application/pdf')
         nombre_pdf='Consulta Docente '+id
         response['Content-Disposition'] = 'filename="'+nombre_pdf+'.pdf"'
-        """try:
+        try:
             informacion_docente=Docente.objects.get(id=id)
         except Docente.DoesNotExist:
-            return Response('NO EXISTE DOCENTE',status=status.HTTP_400_BAD_REQUEST)"""
+            return Response('NO EXISTE DOCENTE',status=status.HTTP_400_BAD_REQUEST)
         p = canvas.Canvas(response)
         p.setTitle("Empezando...")
 
@@ -164,7 +164,7 @@ class ConsultaDocentePDF(APIView):
         p.showPage()
         p.save()
         return response
-
+"""
 class buscadorTotal(APIView):
     serializer_preferencia=PreferenciaSerializer
     serializer_docente=DocenteSerializer

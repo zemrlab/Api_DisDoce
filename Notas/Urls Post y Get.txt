@@ -1,8 +1,8 @@
 
-servidor_lccal_por_defecto=http://127.0.0.1:8000
+servidor_local_por_defecto=http://127.0.0.1:8000
 servidor_heroku=http://apidisponibilidad.herokuapp.com
 
-<servidor>/docente/pdf/<iddocente>  : GET - devuelve los datos por pdf
+<servidor>/docente/pdf/<iddocente>/<idciclo> : GET - devuelve los datos por pdf y por ciclo.
 
 <servidor>/docente/docente/<iddocente>  : GET - devuelve los datos del docente y sus datos academicos en un json
 
@@ -11,6 +11,7 @@ servidor_heroku=http://apidisponibilidad.herokuapp.com
 <servidor>/disponibilidad/api/<iddocente>/<idciclo> : GET - devuelve la disponibilidad del docente con su ciclo(de acuerdo al formato establecido , ver enviar datos a json del web service)
                                              POST - ingresa disponibilidad del docente con su ciclo(de acuerdo al formato establecido , ver enviar datos a json del web service)
 
+<servidor>/disponibilidad/dias : GET- devuelve los dias en la tabla dias.
 
 <servidor>/curso/cursos : GET - devuelve todos los datos de los programas y sus cursos.
 

@@ -6,5 +6,5 @@ app_name='secretaria'
 
 urlpatterns = [
     path('buscar', views.buscadorTotal.as_view(), name='api'),
-    path('consultarDocentePDF/<id>/<ciclo>', views.ConsultaDocentePDF.as_view(), name='pdf_docente'),
+    #path('consultarDocentePDF/<id>/<ciclo>', views.ConsultaDocentePDF.as_view(), name='pdf_docente'),
 ]
