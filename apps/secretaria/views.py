@@ -405,7 +405,7 @@ class buscadorTotal(APIView):
                         from docente d
                         join disponibilidad dis on d.id = dis.id_docente
                           join ciclo c on dis.id_ciclo = c.id_ciclo
-                        where lower (d.nombres||' '||d.apell_pat||' '||d.apell_mat) like '%""" + curso + """%' 
+                        where lower (d.nombres||' '||d.apell_pat||' '||d.apell_mat) like '%""" + docente + """%' 
                         group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,dis.id_ciclo,c.nom_ciclo,docente
                         """
             cursor.execute(sql1)
