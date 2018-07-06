@@ -620,7 +620,7 @@ class buscadorTotal(APIView):
                                             and (%s)<(%s)
                                             and dis.id_ciclo=(%s) and d.id=(%s)"""
             for docente in docentes:
-                cursor.execute(sqldisponibilidad, [dia, hora_fin, hora_inicio,hora_fin,hora_inicio ,semestre, docente['id']])
+                cursor.execute(sqldisponibilidad, [dia, hora_fin, hora_inicio,hora_inicio,hora_fin,semestre, docente['id']])
                 del docente['id']
                 disponibilidad = dictfetchall(cursor)
                 if disponibilidad:
