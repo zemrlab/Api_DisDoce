@@ -199,11 +199,11 @@
 
 // prueba 20
 {
-	"semestreFilter": "1",
+	"semestreFilter": "29",
 	"cursoFilter": "",
 	"docenteFilter": "",
-	"diaFilter": "1",
-	"horaInicio": "19",
+	"diaFilter": "6",
+	"horaInicio": "9",
 	"horaFin": "20"
 }
 

@@ -183,8 +183,16 @@ class buscadorTotal(APIView):
         buscarValidar.append((True if curso != '' else False))
         buscarValidar.append((True if docente != '' else False))
         buscarValidar.append((True if dia != '' else False))
-        buscarValidar.append((True if hora_inicio != '' else False))
-        buscarValidar.append((True if hora_fin != '' else False))
+        if hora_inicio!= '':
+            buscarValidar.append(True)
+            hora_inicio=int(hora_inicio)
+        else:
+            buscarValidar.append(False)
+        if hora_fin != '':
+            buscarValidar.append(True)
+            hora_fin = int(hora_fin)
+        else:
+            buscarValidar.append(False)
 
         p1=[True,True,False,False,False,False]
         p2=[True,True,False,True,True,True]
@@ -209,6 +217,9 @@ class buscadorTotal(APIView):
         p21 = [False, False, False, True, True, True]
         p22 = [True, False, True, True, False, False]
 
+
+        estadoBusqueda=False
+
         curso=curso.lower()
         docente=docente.lower()
 
@@ -216,6 +227,7 @@ class buscadorTotal(APIView):
         resultado = []
         cursor = connection.cursor()
         if buscarValidar==p1:
+            estadoBusqueda=True
             sql1="""select d.id,d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso
                     from preferencia p
                     join curso c on p.id_curso = c.id_curso
@@ -238,6 +250,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad']=disponibilidad
                     resultado.append(docente)
         if buscarValidar==p2:
+            estadoBusqueda=True
             sql1 = """select d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso
                         from preferencia p
                         join curso c on p.id_curso = c.id_curso
@@ -249,6 +262,7 @@ class buscadorTotal(APIView):
             cursor.execute(sql1)
             resultado=dictfetchall(cursor)
         if buscarValidar == p3:
+            estadoBusqueda=True
             sql1="""select c.nom_curso as curso,pr.nom_programa as programa,c.numciclo as "nr ciclo",c.numcreditaje as creditos from preferencia p
                     join curso c on p.id_curso = c.id_curso
                     join programa pr on c.id_programa = pr.id_programa
@@ -342,6 +356,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad']=disponibilidad
                     resultado.append(docente)
         if buscarValidar == p9:
+            estadoBusqueda=True
             sql1="""select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso 
                         from preferencia p
                         join curso c on p.id_curso = c.id_curso
@@ -361,6 +376,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p10:
+            estadoBusqueda=True
             sql1 = """select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso from preferencia p
                                    join curso c on p.id_curso = c.id_curso
                                    join docente d on p.id_docente = d.id
@@ -381,6 +397,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p11:
+            estadoBusqueda=True
             sql1 = """select d.id,d.nombres,(d.apell_pat||' '||d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso from preferencia p
                                                join curso c on p.id_curso = c.id_curso
                                                join docente d on p.id_docente = d.id
@@ -401,6 +418,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p12:
+            estadoBusqueda=True
             sql1="""select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                         from docente d
                         join disponibilidad dis on d.id = dis.id_docente
@@ -424,6 +442,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p13:
+            estadoBusqueda=True
             sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                     from docente d
                                     join disponibilidad dis on d.id = dis.id_docente
@@ -452,6 +471,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p14:
+            estadoBusqueda=True
             sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                     from docente d
                                     join disponibilidad dis on d.id = dis.id_docente
@@ -480,6 +500,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p15:
+            estadoBusqueda=True
             sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                            from docente d
                                            join disponibilidad dis on d.id = dis.id_docente
@@ -508,6 +529,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p16:
+            estadoBusqueda=True
             sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                     from docente d
                                     join disponibilidad dis on d.id = dis.id_docente
@@ -536,6 +558,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p17:
+            estadoBusqueda=True
             print("docente filter")
             sql1 = """select c.nom_ciclo as ciclo,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                                 from docente d
@@ -546,6 +569,7 @@ class buscadorTotal(APIView):
             cursor.execute(sql1)
             resultado = dictfetchall(cursor)
         if buscarValidar == p18:
+            estadoBusqueda=True
             sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                     from docente d
                                     join disponibilidad dis on d.id = dis.id_docente group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,docente"""
@@ -566,6 +590,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p18:
+            estadoBusqueda=True
             sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                     from docente d
                                     join disponibilidad dis on d.id = dis.id_docente group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,docente"""
@@ -586,6 +611,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p19:
+            estadoBusqueda=True
             sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                     from docente d
                                     join disponibilidad dis on d.id = dis.id_docente group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,docente"""
@@ -606,6 +632,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p20:
+            estadoBusqueda=True
             sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                            from docente d
                                            join disponibilidad dis on d.id = dis.id_docente group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,docente"""
@@ -614,7 +641,7 @@ class buscadorTotal(APIView):
             sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
                                            join docente d on dis.id_docente = d.id
                                            join dia di on dis.id_dia = di.id_dia
-                                           where   NULLIF(dis.id_dia, '')::int=(%s)
+                                           where NULLIF(dis.id_dia, '')::int=(%s)
                                             and NULLIF(dis.hr_fin, '')::int>=(%s)
                                             and NULLIF(dis.hr_inicio, '')::int<=(%s)
                                             and (%s)<(%s)
@@ -627,6 +654,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar==p21:
+            estadoBusqueda=True
             sql1 = """select c.nom_ciclo as ciclo,dis.id_ciclo ,d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
                                                 from docente d
                                                 join disponibilidad dis on d.id = dis.id_docente
@@ -656,6 +684,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad'] = disponibilidad
                     resultado.append(docente)
         if buscarValidar == p22:
+            estadoBusqueda=True
             sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.celular,d.direccion
                         from docente d
                         join disponibilidad dis on d.id = dis.id_docente 
@@ -677,7 +706,7 @@ class buscadorTotal(APIView):
                     docente['disponibilidad']=disponibilidad
                     resultado.append(docente)
         cursor.close()
-        return Response(resultado)
+        return Response({"resultado":resultado,"estadoBusqueda":estadoBusqueda})
         #preferencia=Preferencia.objects.filter(id_ciclo__nom_ciclo__contains=semestre,id_curso__nom_curso__contains=curso)
 
         #preferenciaSerializado=self.serializer_preferencia(preferencia,many=True)
