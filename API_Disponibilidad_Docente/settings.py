@@ -118,6 +118,7 @@ CORS_ORIGIN_WHITELIST = (
     'resttesttest.com',
     '35.225.206.236:3389',
     '35.225.206.236',
+    'sango.website',
 )
 
 CORS_ALLOW_METHODS = (
