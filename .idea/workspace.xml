@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bf67251-6dda-4584-8e74-30740adea253" name="Default" comment="">
+    <list default="true" id="7bf67251-6dda-4584-8e74-30740adea253" name="Default" comment="cambios jeanette V0.4">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/secretaria/views.py" afterPath="$PROJECT_DIR$/apps/secretaria/views.py" />
     </list>
@@ -52,9 +52,17 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/secretaria/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="591" column="45" lean-forward="false" selection-start-line="591" selection-start-column="45" selection-end-line="591" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="-5310">
+              <caret line="362" column="31" lean-forward="true" selection-start-line="362" selection-start-column="31" selection-end-line="362" selection-end-column="31" />
+              <folding>
+                <element signature="e#9650#10509#0" expanded="false" />
+                <element signature="e#10554#11109#0" expanded="false" />
+                <element signature="e#11154#12031#0" expanded="false" />
+                <element signature="e#12076#13286#0" expanded="false" />
+                <element signature="e#13331#14676#0" expanded="false" />
+                <element signature="e#14721#16059#0" expanded="false" />
+                <element signature="e#16104#17319#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +80,8 @@
       <file leaf-file-name="LOGICA-DE-BUSQUEDASCambios-profesora.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Notas/LOGICA-DE-BUSQUEDASCambios-profesora.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+            <state relative-caret-position="153">
+              <caret line="9" column="45" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -463,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531254260608</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="cambios jeanette V0.4">
+      <created>1531259627925</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1531259627925</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -514,7 +529,8 @@
     <MESSAGE value="cambios profesora v0.612 ( cambios de preferencias y disponibilidad )" />
     <MESSAGE value="cambios profesora v0.613 ( cambios notas )" />
     <MESSAGE value="cambios jeanette V0.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios jeanette V0.3" />
+    <MESSAGE value="cambios jeanette V0.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios jeanette V0.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -530,7 +546,7 @@
           <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="52" />
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -762,14 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notas/LOGICA-DE-BUSQUEDASCambios-profesora.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Notas/datos buscar post.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -778,11 +786,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Notas/LOGICA-DE-BUSQUEDASCambios-profesora.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/secretaria/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="591" column="45" lean-forward="false" selection-start-line="591" selection-start-column="45" selection-end-line="591" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="-5310">
+          <caret line="362" column="31" lean-forward="true" selection-start-line="362" selection-start-column="31" selection-end-line="362" selection-end-column="31" />
+          <folding>
+            <element signature="e#9650#10509#0" expanded="false" />
+            <element signature="e#10554#11109#0" expanded="false" />
+            <element signature="e#11154#12031#0" expanded="false" />
+            <element signature="e#12076#13286#0" expanded="false" />
+            <element signature="e#13331#14676#0" expanded="false" />
+            <element signature="e#14721#16059#0" expanded="false" />
+            <element signature="e#16104#17319#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
