@@ -117,7 +117,7 @@ CORS_ORIGIN_WHITELIST = (
     'disponibdocente.herokuapp.com',
     'resttesttest.com',
     '35.225.206.236:3389',
-    '35.225.206.236',
+    '35.225.206.236:80',
     'sango.website',
 )
 
