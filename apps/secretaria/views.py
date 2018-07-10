@@ -251,13 +251,14 @@ class buscadorTotal(APIView):
                     resultado.append(docente)
         if buscarValidar==p2:
             estadoBusqueda=True
+            print(type(hora_inicio))
             sql1 = """select d.nombres,(d.apell_pat|| ' '|| d.apell_mat) as apellido,d.nro_document as dni,d.celular,c.nom_curso as curso
                         from preferencia p
                         join curso c on p.id_curso = c.id_curso
                         join docente d on p.id_docente = d.id
                         join disponibilidad dis on d.id = dis.id_docente
                         where lower(c.nom_curso) like '%"""+curso+"""%' and p.id_ciclo="""+semestre+""" and NULLIF(dis.id_dia, '')::int="""+dia+"""
-                              and NULLIF(dis.hr_inicio, '')::int>="""+hora_inicio+""" and NULLIF(dis.hr_fin, '')::int>="""+hora_fin+"""  
+                              and NULLIF(dis.hr_inicio, '')::int>="""+str(hora_inicio)+""" and NULLIF(dis.hr_fin, '')::int>="""+str(hora_fin)+"""  
                               and NULLIF(dis.hr_fin, '')::int > NULLIF(dis.hr_inicio, '')::int"""
             cursor.execute(sql1)
             resultado=dictfetchall(cursor)
