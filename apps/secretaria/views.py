@@ -585,27 +585,7 @@ class buscadorTotal(APIView):
             for docente in docentes:
                 cursor.execute(sqldisponibilidad, [dia,hora_inicio,hora_inicio,semestre, docente['id']])
                 del docente['id']
-                disponibilidad = dictfetchall(cursor)
-                if disponibilidad:
-                    docente['disponibilidad'] = disponibilidad
-                    resultado.append(docente)
-        if buscarValidar == p18:
-            estadoBusqueda=True
-            sql1 = """select d.id,(d.nombres||' '|| d.apell_pat|| ' '|| d.apell_mat) as docente, d.email as correo,d.direccion,d.celular,d.mayor_grado as "mayor grado"
-                                    from docente d
-                                    join disponibilidad dis on d.id = dis.id_docente group by d.mayor_grado,d.celular,d.direccion,d.email,d.id,docente"""
-            cursor.execute(sql1)
-            docentes = dictfetchall(cursor)
-            sqldisponibilidad = """select dis.id_disponibilidad as id,di.nom_dia as nombre,dis.hr_inicio as hinicio,dis.hr_fin as hfin from disponibilidad dis
-                                    join docente d on dis.id_docente = d.id
-                                    join dia di on dis.id_dia = di.id_dia
-                                    where   NULLIF(dis.id_dia, '')::int=(%s)
-                                     and NULLIF(dis.hr_fin, '')::int>=(%s)
-                                     and NULLIF(dis.hr_inicio, '')::int<(%s)
-                                     and dis.id_ciclo=(%s) and d.id=(%s)"""
-            for docente in docentes:
-                cursor.execute(sqldisponibilidad, [dia,hora_inicio,hora_inicio,semestre, docente['id']])
-                del docente['id']
+
                 disponibilidad = dictfetchall(cursor)
                 if disponibilidad:
                     docente['disponibilidad'] = disponibilidad
