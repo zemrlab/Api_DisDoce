@@ -114,7 +114,7 @@ CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:3001',
     'localhost:3000',
     '127.0.0.1:3000',
-    'disponibdocente.herokuapp.com',
+    'sigap-disponibilidad.herokuapp.com',
     'resttesttest.com',
     '35.225.206.236:3389',
     '35.225.206.236:80',
